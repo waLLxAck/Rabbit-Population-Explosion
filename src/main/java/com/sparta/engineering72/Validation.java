@@ -1,5 +1,9 @@
 package com.sparta.engineering72;
 
-public class Validation {
+import java.util.Scanner;
 
+public class Validation {
+    public static boolean isValidNumber(Scanner input) {
+        return input.hasNextInt();
+    }
 }
