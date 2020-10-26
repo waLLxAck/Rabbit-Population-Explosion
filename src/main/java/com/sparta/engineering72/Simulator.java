@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Simulator {
-    public static int runSimulation() {
+    public static int runSimulation(int time) {
 
         List<Rabbit> rabbits = new ArrayList<>();
         Rabbit maleRabbit = new Rabbit("male");
