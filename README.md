@@ -49,12 +49,19 @@
 - difficulties coding when multiple sub-teams are working on the same classes
 
 
-## Sprint 1
+## Sprint 1 (Tuesday, 27.10. all day)
+### Work Done
+- created model classes and interface
+- handled input validation and output display
 
 ### Successes
-- 
-
+- working piece of software
+- readable code, easy to understand
+- following SOLID principles
 
 ### Challenges
 - struggled with merge conflicts
-- division of labor amongst 9 people (not enough work to be divided)
+- division of labor amongst 9 people - too many people working on the same things
+- user stories too big, a lot of overlaps
+- not enough testing
+- memory limitations
