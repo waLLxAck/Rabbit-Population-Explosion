@@ -2,10 +2,12 @@ package com.sparta.engineering72;
 
 public class Simulator {
     public static int runSimulation(int time) {
-
+        
+        //Simulation loop
+        //Add functionality inside
         for (int i = 0; i < time; i++) {
-            Printer.print(time);
-            Sleeper.sleep(1000);
+            Printer.print(time); //TBC
+            Sleeper.sleep(1000); //TBC
         }
 
         List<Rabbit> rabbits = new ArrayList<>();
