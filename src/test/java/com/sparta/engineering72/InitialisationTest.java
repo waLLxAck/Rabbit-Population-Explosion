@@ -7,6 +7,6 @@ public class InitialisationTest {
     @Test
     public void initialisationTest() {
         Simulator.runSimulation(0);
-        Assertions.assertEquals(2, Simulator.rabbits.size());
+        Assertions.assertEquals(2, Simulator.rabbitFluffle.getRabbitPopulationSize());
     }
 }

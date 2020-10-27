@@ -8,10 +8,8 @@ public abstract class Animal {
         MALE,
         FEMALE
     }
-
     private Gender gender;
     private int age = 0;
-
 
     public Gender getGender() {
         return gender;
@@ -24,7 +22,6 @@ public abstract class Animal {
         }
     }
 
-
     public int getAge() {
         return age;
     }
@@ -35,6 +32,5 @@ public abstract class Animal {
     public void incrementAge(){
         age++;
     }
-    public abstract List<Animal> breed();
 
 }
