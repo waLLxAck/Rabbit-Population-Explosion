@@ -6,6 +6,6 @@ import org.junit.jupiter.api.Test;
 public class InitialisationTest {
     @Test
     public void initialisationTest() {
-        Assertions.assertEquals(2, Simulator.runSimulation());
+        Assertions.assertEquals(2, Simulator.runSimulation(2));
     }
 }
