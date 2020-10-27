@@ -6,6 +6,11 @@ import java.util.List;
 public class Simulator {
     public static int runSimulation(int time) {
 
+        for (int i = 0; i < time; i++) {
+            Printer.print(time);
+            Sleeper.sleep(1000);
+        }
+
         List<Rabbit> rabbits = new ArrayList<>();
         Rabbit maleRabbit = new Rabbit("male");
         Rabbit femaleRabbit = new Rabbit("female");
