@@ -1,16 +1,25 @@
 package com.sparta.engineering72;
+import java.util.List;
 
-public class Rabbit extends Animal {
+public abstract class Rabbit extends Animal {
+    private int age;
+    private Gender gender;
+    private static final int DEATH_AGE = 60;
+    private static final int MATURITY_AGE = 3;
 
-    private static int age;
-    private static Gender gender;
+    public Rabbit() {
+        age = 0;
+    }
 
 
     @Override
     public boolean isMature() {
-        if (age > 3) {
-            return true;
-        }
-        return false;
+        return this.age >= MATURITY_AGE;
+    }
+
+    @Override
+    public boolean isReadyToDie() {
+        return this.age >= DEATH_AGE;
     }
 }
+
