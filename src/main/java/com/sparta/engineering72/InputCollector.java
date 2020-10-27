@@ -5,26 +5,25 @@ import java.util.Scanner;
 
 public class InputCollector {
     public static int getUserInput() {
-        int numberOfMonths = -1;
         int numberOfYears = -1;
+        int numberOfMonths = -1;
+        int totalMonths;
         do {
-            if (numberOfMonths < 0) {
-                numberOfMonths = getInteger("Months");
-                continue;
-            }
             if (numberOfYears < 0) {
-                numberOfYears = getInteger("Years");
+                numberOfYears = getTime("Years");
                 continue;
             }
-            if (numberOfMonths > 0 && numberOfYears > 0) {
-                int totalMonths = numberOfMonths+numberOfYears*12;
-                Printer.print(totalMonths);
-                return totalMonths;
+            if (numberOfMonths < 0 || (numberOfYears == 0 && numberOfMonths <= 0)) {
+                numberOfMonths = getTime("Months");
+                continue;
             }
+            totalMonths = numberOfMonths+numberOfYears*12;
+            return totalMonths;
+
         } while (true);
     }
 
-    private static int getInteger(String timeScale) {
+    private static int getTime(String timeScale) {
         Scanner input = new Scanner(System.in);
         int numberOfMonths;
         Printer.printEnterNumberOf(timeScale);
