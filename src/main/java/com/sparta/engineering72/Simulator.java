@@ -1,8 +1,5 @@
 package com.sparta.engineering72;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Simulator {
     public static int runSimulation(int time) {
 
@@ -20,7 +17,5 @@ public class Simulator {
 
         rabbits.add(maleRabbit);
         rabbits.add(femaleRabbit);
-
-        return rabbits.size();
     }
 }
