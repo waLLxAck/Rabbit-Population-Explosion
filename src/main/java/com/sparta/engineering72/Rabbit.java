@@ -1,5 +1,4 @@
 package com.sparta.engineering72;
-
 import java.util.List;
 
 public abstract class Rabbit extends Animal {
@@ -12,9 +11,6 @@ public abstract class Rabbit extends Animal {
         age = 0;
     }
 
-    public int getAge() {
-        return age;
-    }
 
     @Override
     public boolean isMature() {
@@ -25,5 +21,5 @@ public abstract class Rabbit extends Animal {
     public boolean isReadyToDie() {
         return this.age >= DEATH_AGE;
     }
-
 }
+

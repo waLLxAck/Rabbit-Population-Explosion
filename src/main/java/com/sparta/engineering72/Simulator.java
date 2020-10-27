@@ -1,8 +1,5 @@
 package com.sparta.engineering72;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Simulator {
     static List<Rabbit> rabbits = new ArrayList<>();
     public static void runSimulation(int time) {
