@@ -5,68 +5,51 @@ import java.util.List;
 
 public class RabbitFluffle {
 
-    static ArrayList<Rabbit> femaleRabbitList = new ArrayList<>();
-    static ArrayList<Rabbit> maleRabbitList = new ArrayList<>();
+    static ArrayList<FemaleRabbit> femaleRabbitList = new ArrayList<>();
+    static ArrayList<MaleRabbit> maleRabbitList = new ArrayList<>();
 
-    public static ArrayList<Rabbit> getFemaleRabbitList() {
+    public static ArrayList<FemaleRabbit> getFemaleRabbitList() {
         return femaleRabbitList;
     }
 
-    public static ArrayList<Rabbit> getMaleRabbitList() {
+    public static ArrayList<MaleRabbit> getMaleRabbitList() {
         return maleRabbitList;
     }
 
     public int getRabbitPopulationSize(){
-        return getFemaleRabbitSize() + getMaleRabbitSize();
+        return getFemaleRabbitPopulation() + getMaleRabbitPopulation();
     }
 
-    public int getFemaleRabbitSize(){
-       return femaleRabbitList.size();
-    }
-
-    public int getMaleRabbitSize(){
-        return maleRabbitList.size();
-    }
-
-    public void addRabbit(Rabbit rabbit){
-        if(rabbit.getGender().equals(Animal.Gender.FEMALE)){
-            addFemaleRabbit(rabbit);
+    public int getFemaleRabbitPopulation(){
+        int femalePopulation = 0;
+        for(FemaleRabbit femaleRabbit : femaleRabbitList){
+            femalePopulation += femaleRabbit.getCount();
         }
-        else { addMaleRabbit(rabbit);}
+        return femalePopulation;
     }
 
-    private void addFemaleRabbit(Rabbit rabbit) {
-        femaleRabbitList.add(rabbit);
-    }
-
-    private void addMaleRabbit(Rabbit rabbit) {
-        maleRabbitList.add(rabbit);
-    }
-
-    public void removeRabbit(Rabbit rabbit){
-        if(rabbit.getGender().equals(Animal.Gender.FEMALE)) removeFemaleRabbit(rabbit);
-        else { removeMaleRabbit(rabbit);}
-    }
-
-    private void removeFemaleRabbit(Rabbit rabbit) {
-        femaleRabbitList.remove(rabbit);
-    }
-
-    private void removeMaleRabbit(Rabbit rabbit) {
-        maleRabbitList.remove(rabbit);
-    }
-
-
-    public void addRabbits(List<Animal> breed) {
-        for (Animal animal : breed) {
-            addRabbit((Rabbit) animal);
+    public int getMaleRabbitPopulation(){
+        int malePopulation = 0;
+        for(MaleRabbit maleRabbit : maleRabbitList){
+            malePopulation += maleRabbit.getCount();
         }
+        return malePopulation;
     }
 
-    public void removeRabbits(ArrayList<Animal> rabbitsToRemove) {
-        for (Animal animal : rabbitsToRemove) {
-            removeRabbit((Rabbit) animal);
-        }
-
+    public void addFemaleRabbit(FemaleRabbit femaleRabbit) {
+        femaleRabbitList.add(femaleRabbit);
     }
+
+    public void addMaleRabbit(MaleRabbit maleRabbit) {
+        maleRabbitList.add(maleRabbit);
+    }
+
+    public void removeFemaleRabbit(FemaleRabbit femaleRabbit) {
+        femaleRabbitList.remove(femaleRabbit);
+    }
+
+    public void removeMaleRabbit(MaleRabbit maleRabbit) {
+        maleRabbitList.remove(maleRabbit);
+    }
+
 }

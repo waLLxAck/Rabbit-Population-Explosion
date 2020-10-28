@@ -3,16 +3,19 @@ package com.sparta.engineering72;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FemaleRabbit extends Rabbit implements Breedable{
+public class FemaleRabbit extends Rabbit {
+    public static double PREGNANCY_CHANCE = 0.5d; //TODO: Setters for user input
     private int age;
     private Gender gender;
     private boolean isPregnant;
+    private int count;
 
     public FemaleRabbit(){
         super(Gender.FEMALE);
         this.gender=Gender.FEMALE;
         age = 0;
         isPregnant = false;
+        count = 1;
     }
 
     public boolean isPregnant(){
@@ -23,18 +26,44 @@ public class FemaleRabbit extends Rabbit implements Breedable{
         isPregnant = true;
     }
 
-    @Override
-    public List<Animal> breed() {
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public static double getPregnancyChance() {
+        return PREGNANCY_CHANCE;
+    }
+
+    public static void setPregnancyChance(double getPregnantChance) {
+        PREGNANCY_CHANCE = getPregnantChance;
+    }
+
+    public static List<Animal> breed(int count) {
         List<Animal> animals = new ArrayList<>();
-        for (int i = 0; i < Randomizer.getRandomOffspring(); i++) { //TODO: Check if right
+
+        MaleRabbit maleRabbit = new MaleRabbit();
+        FemaleRabbit femaleRabbit = new FemaleRabbit();
+
+        int countMaleOffspring = 0;
+        int countFemaleOffspring = 0;
+
+        for (int i = 0; i < count; i++) {
             if (Randomizer.getRandomGender() == 0) {
-                MaleRabbit maleRabbit = new MaleRabbit();
-                animals.add(maleRabbit);
+                countMaleOffspring++;
             } else {
-                FemaleRabbit femaleRabbit = new FemaleRabbit();
-                animals.add(femaleRabbit);
+                countFemaleOffspring++;
             }
         }
+
+        maleRabbit.setCount(countMaleOffspring);
+        femaleRabbit.setCount(countFemaleOffspring);
+
+        animals.add(maleRabbit);
+        animals.add(femaleRabbit);
         return animals;
     }
 }
