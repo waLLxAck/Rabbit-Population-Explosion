@@ -90,3 +90,13 @@
 - GUI not added yet
 - Refactoring not completed yet.
 
+### Future Work
+
+- Begin working on presentation
+- Begin working on GUI
+- Completion of code refactoring
+- Completion of Test cases
+- Handle possible code crashing or code freezing statements
+
+
+
