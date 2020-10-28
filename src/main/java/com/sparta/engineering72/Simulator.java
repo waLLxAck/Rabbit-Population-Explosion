@@ -6,15 +6,15 @@ import java.util.Iterator;
 
 public class Simulator {
     static RabbitFluffle rabbitFluffle = new RabbitFluffle();
-    static ArrayList<Rabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
-    static ArrayList<Rabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
+    static ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
+    static ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
     static ArrayList<Animal> rabbitsToAdd = new ArrayList<>();
     static ArrayList<Animal> rabbitsToRemove = new ArrayList<>();
     static boolean oneMaleAndMature = false;
 
     public static void runSimulation(int time) {
-        rabbitFluffle.addRabbit(new MaleRabbit());
-        rabbitFluffle.addRabbit(new FemaleRabbit());
+        rabbitFluffle.addMaleRabbit(new MaleRabbit());
+        rabbitFluffle.addFemaleRabbit(new FemaleRabbit());
 
         //Simulation starts with 1 male 1 female rabbit print
 
@@ -40,8 +40,8 @@ public class Simulator {
                 }
                 rabbit.incrementAge();
             }
-            rabbitFluffle.addRabbits(rabbitsToAdd); //FIXME: !!!!
-            rabbitFluffle.removeRabbits(rabbitsToRemove);
+//            rabbitFluffle.addRabbits(rabbitsToAdd); //FIXME: !!!!
+//            rabbitFluffle.removeRabbits(rabbitsToRemove);
 
             femaleRabbits = RabbitFluffle.getFemaleRabbitList();
             maleRabbits = RabbitFluffle.getMaleRabbitList();
@@ -49,8 +49,8 @@ public class Simulator {
 
         Printer.printFinalPopulation(rabbitFluffle.getRabbitPopulationSize());
 //        Printer.printDeathCount();
-        Printer.printMalePopulation(rabbitFluffle.getMaleRabbitSize());
-        Printer.printFemalePopulation(rabbitFluffle.getFemaleRabbitSize());
+        Printer.printMalePopulation(rabbitFluffle.getMaleRabbitPopulation());
+        Printer.printFemalePopulation(rabbitFluffle.getFemaleRabbitPopulation());
         Printer.printSimulationTime(time);
     }
 }

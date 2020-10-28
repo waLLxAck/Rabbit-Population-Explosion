@@ -8,6 +8,7 @@ public class FemaleRabbit extends Rabbit {
     private int age;
     private Gender gender;
     private boolean isPregnant;
+    private int count;
 
     public FemaleRabbit(){
         super(Gender.FEMALE);
@@ -22,6 +23,14 @@ public class FemaleRabbit extends Rabbit {
 
     public void getPregnant(){
         isPregnant = true;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public static double getGetPregnantChance() {
