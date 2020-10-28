@@ -1,7 +1,6 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Animal.Rabbit;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RabbitFluffle {
 

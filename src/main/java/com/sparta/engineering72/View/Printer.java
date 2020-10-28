@@ -1,4 +1,4 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.View;
 
 public class Printer {
     public static void print(Object object) {

@@ -1,5 +1,6 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Logger;
 
+import com.sparta.engineering72.Animal.Rabbit.Simulator;
 import org.apache.logging.log4j.LogManager;
 
 public class Logger {

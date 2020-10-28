@@ -1,16 +1,20 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Animal.Rabbit;
+
+import com.sparta.engineering72.Animal.Animal;
+import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
+import com.sparta.engineering72.Animal.Rabbit.MaleRabbit;
+import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
+import com.sparta.engineering72.Utility.Randomizer;
+import com.sparta.engineering72.View.Printer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 public class Simulator {
-    static RabbitFluffle rabbitFluffle = new RabbitFluffle();
+    public static RabbitFluffle rabbitFluffle = new RabbitFluffle();
     static ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
     static ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
-    static ArrayList<Animal> rabbitsToAdd = new ArrayList<>();
-    static ArrayList<Animal> rabbitsToRemove = new ArrayList<>();
     static int pregnancies = 0;
     static int deathCount = 0;
     static boolean oneMaleAndMature = false;
@@ -29,21 +33,10 @@ public class Simulator {
                 if (rabbit.isReadyToDie()){
                     deathCount += rabbit.getCount();
                     maleRabbitIterator.remove();
-//                    rabbitFluffle.removeMaleRabbit(rabbit);
                 } else if (rabbit.isMature()) {
                     oneMaleAndMature = true;
                 }
             }
-//
-//            for (MaleRabbit rabbit: maleRabbits) {
-//                if (rabbit.isReadyToDie()){
-//                    rabbitFluffle.removeMaleRabbit(rabbit);
-//                    deathCount += rabbit.getCount();
-//                } else if (rabbit.isMature()) {
-//                    oneMaleAndMature = true;
-//                }
-//                rabbit.incrementAge();
-//            }
             if (pregnancies > 0) {
                 List<Animal> animals = FemaleRabbit.breed(pregnancies);
                 for (Animal animal : animals) {
@@ -64,25 +57,10 @@ public class Simulator {
                 if (rabbit.isReadyToDie()){
                     deathCount += rabbit.getCount();
                     femaleRabbitIterator.remove();
-//                    rabbitFluffle.removeFemaleRabbit(rabbit);
                 } else if (rabbit.isMature()) {
                     oneMaleAndMature = true;
                 }
             }
-
-//            for (FemaleRabbit rabbit: femaleRabbits) {
-//                if (rabbit.isReadyToDie()){
-//                    rabbitFluffle.removeFemaleRabbit(rabbit);
-//                    deathCount += rabbit.getCount();
-//                }
-////                if (((FemaleRabbit) rabbit).isPregnant()) {
-////                    rabbitsToAdd.addAll((((FemaleRabbit) rabbit).breed())); //FIXME
-////                }
-////                if (rabbit.isMature() && oneMaleAndMature) {
-////                    ((FemaleRabbit) rabbit).getPregnant();
-////                }
-//                rabbit.incrementAge();
-//            }
 
             for (MaleRabbit rabbit: maleRabbits) {
                 rabbit.incrementAge();

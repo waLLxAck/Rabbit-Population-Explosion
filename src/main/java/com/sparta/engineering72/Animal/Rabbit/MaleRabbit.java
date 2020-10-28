@@ -1,6 +1,4 @@
-package com.sparta.engineering72;
-
-import java.util.List;
+package com.sparta.engineering72.Animal.Rabbit;
 
 public class MaleRabbit extends Rabbit {
 

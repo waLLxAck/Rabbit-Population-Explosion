@@ -1,5 +1,6 @@
 package com.sparta.engineering72;
 
+import com.sparta.engineering72.Animal.Rabbit.Simulator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
