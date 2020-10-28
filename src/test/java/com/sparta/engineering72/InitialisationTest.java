@@ -9,4 +9,28 @@ public class InitialisationTest {
         Simulator.runSimulation(0);
         Assertions.assertEquals(2, Simulator.rabbitFluffle.getRabbitPopulationSize());
     }
+
+    @Test
+    public void initialisationMaleTest() {
+        Simulator.runSimulation(0);
+        Assertions.assertEquals(1, Simulator.rabbitFluffle.getMaleRabbitSize());
+    }
+
+    @Test
+    public void initialisationFemaleTest() {
+        Simulator.runSimulation(0);
+        Assertions.assertEquals(1, Simulator.rabbitFluffle.getFemaleRabbitSize());
+    }
+
+    @Test
+    public void initialisationMaturityTest(){
+
+    }
+
+    @Test
+    public void initialisationAgeTest(){
+
+    }
+
+
 }
