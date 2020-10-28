@@ -9,7 +9,7 @@ public class InitialisationTest {
     @Test
     public void initialisationTest() {
         try {
-            Simulator.runSimulation(0);
+            Simulator.runSimulation(0, 1);
         } catch (IOException e) {
             e.printStackTrace();
         }

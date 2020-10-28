@@ -8,6 +8,12 @@ public class Printer {
         System.out.println(object);
     }
 
+    public static void printReportChoice(){
+        System.out.println("Please choose how you want the report to be displayed:");
+        System.out.println("Enter 1 for a Final report");
+        System.out.println("Enter 2 for a month by month breakdown for the simulation");
+    }
+
     public static void printStartMessage() {
         System.out.println("\nWELCOME TO THE RABBIT SIMULATOR");
         System.out.println("-------------------------------");

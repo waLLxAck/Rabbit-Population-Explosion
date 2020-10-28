@@ -18,7 +18,7 @@ public class Simulator {
     static int deathCount = 0;
     static boolean oneMaleAndMature = false;
 
-    public static void runSimulation(int time) throws IOException {
+    public static void runSimulation(int time, int reportChoice) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("resources/report.txt"));
         bufferedWriter.write("\nSIMULATION REPORT\n");
 
@@ -101,8 +101,10 @@ public class Simulator {
             RabbitFluffle.femaleRabbitList = femaleRabbits;
             RabbitFluffle.maleRabbitList = maleRabbits;
 
-        Printer.printMonthlyReport(rabbitFluffle, deathCount, i);
-        Printer.writeMonthlyReportToFile(bufferedWriter, rabbitFluffle, deathCount, i);
+            if(reportChoice == 2) {
+                Printer.printMonthlyReport(rabbitFluffle, deathCount, i);
+                Printer.writeMonthlyReportToFile(bufferedWriter, rabbitFluffle, deathCount, i);
+            }
         }
 
 //        Printer.printFinalPopulation(rabbitFluffle.getRabbitPopulationSize());
@@ -111,8 +113,10 @@ public class Simulator {
 //        Printer.printFemalePopulation(rabbitFluffle.getFemaleRabbitPopulation());
 //        Printer.printSimulationTime(time);
 
-        Printer.printFinalReport(rabbitFluffle, deathCount, time);
-        Printer.writeFinalReportToFile(bufferedWriter, rabbitFluffle, deathCount, time);
+        if(reportChoice == 1) {
+            Printer.printFinalReport(rabbitFluffle, deathCount, time);
+            Printer.writeFinalReportToFile(bufferedWriter, rabbitFluffle, deathCount, time);
+        }
         bufferedWriter.close();
     }
     public static int getPregnancies() {

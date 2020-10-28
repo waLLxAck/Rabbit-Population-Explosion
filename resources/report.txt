@@ -1,64 +1,14 @@
 
 SIMULATION REPORT
 
-==============================================================
- Monthly report for 0 years and 0 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 2
-The male population of Rabbits: 1
-The female population of Rabbits: 1
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
--------------------------------
-==============================================================
- Monthly report for 0 years and 1 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 2
-The male population of Rabbits: 1
-The female population of Rabbits: 1
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
--------------------------------
-==============================================================
- Monthly report for 0 years and 2 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 2
-The male population of Rabbits: 1
-The female population of Rabbits: 1
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
--------------------------------
-==============================================================
- Monthly report for 0 years and 3 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 2
-The male population of Rabbits: 1
-The female population of Rabbits: 1
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
--------------------------------
-==============================================================
- Monthly report for 0 years and 4 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 3
-The male population of Rabbits: 1
-The female population of Rabbits: 2
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
--------------------------------
 
 ==============================================================
- The Simulation ran for 0 years and 5 months
+ The Simulation ran for 0 years and 6 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 3
+The total population of Rabbits: 4
 The male population of Rabbits: 1
-The female population of Rabbits: 2
+The female population of Rabbits: 3
  == DEATH REPORT == 
 The total number of Rabbits that died: 0
 -------------------------------
