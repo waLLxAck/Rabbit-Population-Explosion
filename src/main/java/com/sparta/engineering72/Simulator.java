@@ -3,52 +3,124 @@ package com.sparta.engineering72;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 public class Simulator {
     static RabbitFluffle rabbitFluffle = new RabbitFluffle();
-    static ArrayList<Rabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
-    static ArrayList<Rabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
+    static ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
+    static ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
     static ArrayList<Animal> rabbitsToAdd = new ArrayList<>();
     static ArrayList<Animal> rabbitsToRemove = new ArrayList<>();
+    static int pregnancies = 0;
+    static int deathCount = 0;
     static boolean oneMaleAndMature = false;
 
     public static void runSimulation(int time) {
-        rabbitFluffle.addRabbit(new MaleRabbit());
-        rabbitFluffle.addRabbit(new FemaleRabbit());
+        maleRabbits.add(new MaleRabbit());
+        femaleRabbits.add(new FemaleRabbit());
+
+        //Simulation starts with 1 male 1 female rabbit print
 
         for (int i = 0; i < time; i++) {
-            for (Rabbit rabbit: maleRabbits) {
+            Iterator<MaleRabbit> maleRabbitIterator = maleRabbits.iterator();
+
+            while(maleRabbitIterator.hasNext()) {
+                MaleRabbit rabbit = maleRabbitIterator.next();
                 if (rabbit.isReadyToDie()){
-                    rabbitsToRemove.add(rabbit);
+                    deathCount += rabbit.getCount();
+                    maleRabbitIterator.remove();
+//                    rabbitFluffle.removeMaleRabbit(rabbit);
                 } else if (rabbit.isMature()) {
                     oneMaleAndMature = true;
                 }
-                rabbit.incrementAge();
             }
+//
+//            for (MaleRabbit rabbit: maleRabbits) {
+//                if (rabbit.isReadyToDie()){
+//                    rabbitFluffle.removeMaleRabbit(rabbit);
+//                    deathCount += rabbit.getCount();
+//                } else if (rabbit.isMature()) {
+//                    oneMaleAndMature = true;
+//                }
+//                rabbit.incrementAge();
+//            }
+            if (pregnancies > 0) {
+                List<Animal> animals = FemaleRabbit.breed(pregnancies);
+                for (Animal animal : animals) {
+                    if (animal.getGender() == Animal.Gender.MALE) {
+                        maleRabbits.add((MaleRabbit) animal);
+                    } else {
+                        femaleRabbits.add((FemaleRabbit) animal);
+                    }
+                }
+                pregnancies = 0;
+            }
+            pregnancies = getPregnancies();
 
-            for (Rabbit rabbit: femaleRabbits) {
+            Iterator<FemaleRabbit> femaleRabbitIterator = femaleRabbits.iterator();
+
+            while(femaleRabbitIterator.hasNext()) {
+                FemaleRabbit rabbit = femaleRabbitIterator.next();
                 if (rabbit.isReadyToDie()){
-                    rabbitsToRemove.add(rabbit);
+                    deathCount += rabbit.getCount();
+                    femaleRabbitIterator.remove();
+//                    rabbitFluffle.removeFemaleRabbit(rabbit);
+                } else if (rabbit.isMature()) {
+                    oneMaleAndMature = true;
                 }
-                if (((FemaleRabbit) rabbit).isPregnant()) {
-                    rabbitsToAdd.addAll((((FemaleRabbit) rabbit).breed())); //FIXME
-                }
-                if (rabbit.isMature() && oneMaleAndMature) {
-                    ((FemaleRabbit) rabbit).getPregnant();
-                }
+            }
+
+//            for (FemaleRabbit rabbit: femaleRabbits) {
+//                if (rabbit.isReadyToDie()){
+//                    rabbitFluffle.removeFemaleRabbit(rabbit);
+//                    deathCount += rabbit.getCount();
+//                }
+////                if (((FemaleRabbit) rabbit).isPregnant()) {
+////                    rabbitsToAdd.addAll((((FemaleRabbit) rabbit).breed())); //FIXME
+////                }
+////                if (rabbit.isMature() && oneMaleAndMature) {
+////                    ((FemaleRabbit) rabbit).getPregnant();
+////                }
+//                rabbit.incrementAge();
+//            }
+
+            for (MaleRabbit rabbit: maleRabbits) {
                 rabbit.incrementAge();
             }
-            rabbitFluffle.addRabbits(rabbitsToAdd); //FIXME: !!!!
-            rabbitFluffle.removeRabbits(rabbitsToRemove);
+            for (FemaleRabbit rabbit: femaleRabbits) {
+                rabbit.incrementAge();
+            }
 
-            femaleRabbits = RabbitFluffle.getFemaleRabbitList();
-            maleRabbits = RabbitFluffle.getMaleRabbitList();
+            RabbitFluffle.femaleRabbitList = femaleRabbits;
+            RabbitFluffle.maleRabbitList = maleRabbits;
         }
 
         Printer.printFinalPopulation(rabbitFluffle.getRabbitPopulationSize());
-//        Printer.printDeathCount();
-        Printer.printMalePopulation(rabbitFluffle.getMaleRabbitSize());
-        Printer.printFemalePopulation(rabbitFluffle.getFemaleRabbitSize());
+        Printer.printDeathCount(deathCount);
+        Printer.printMalePopulation(rabbitFluffle.getMaleRabbitPopulation());
+        Printer.printFemalePopulation(rabbitFluffle.getFemaleRabbitPopulation());
         Printer.printSimulationTime(time);
+    }
+    public static int getPregnancies() {
+        int maleRabbitCount = 0;
+        for (MaleRabbit rabbit : maleRabbits) {
+            if (rabbit.isMature()) {
+                maleRabbitCount += rabbit.getCount();
+            }
+        }
+        int femaleRabbitCount = 0;
+        for (FemaleRabbit rabbit : femaleRabbits) {
+            if (rabbit.isMature()) {
+                femaleRabbitCount += rabbit.getCount();
+            }
+        }
+        int potentialPregnancies = Math.min(maleRabbitCount, femaleRabbitCount);
+        int totalPregnancies = 0;
+        for (int i = 0; i < potentialPregnancies; i++) {
+            if (Randomizer.getPregnancyChance(FemaleRabbit.getPregnancyChance()) == 1){
+                totalPregnancies += 1;
+            }
+        }
+        return totalPregnancies;
     }
 }
