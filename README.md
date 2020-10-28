@@ -65,3 +65,38 @@
 - user stories too big, a lot of overlaps
 - not enough testing
 - memory limitations
+
+
+## Sprint 2 (Wednesday, 28.10. all day)
+### Work Done
+- solved Concurrency issues by using different methods handling large amounts of objects
+- added user input for report display
+- writing report to both the console and a txt file
+- handled input validation and output display
+- added extra layers of abstraction to overall code
+- added tests for different user cases
+- using threading to code
+- packaged code
+
+### Successes
+- SOLID principles adhered to
+- tests for different user stories 
+- accurate information for certain test cases
+- pre-working report printed in console
+- no merge conflicts 
+- successful demo
+- better communication
+- better job dividing the work
+
+### Challenges
+- project freezing on certain test cases (need better memory management)
+- testing still incomplete
+- GUI not added yet
+- refactoring not completed yet
+
+### Future Work
+- begin working on presentation
+- begin working on GUI
+- completion of code refactoring
+- completion of Test cases
+- handle possible code crashing or code freezing statements
