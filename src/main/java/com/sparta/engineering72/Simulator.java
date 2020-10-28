@@ -1,5 +1,8 @@
 package com.sparta.engineering72;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -15,11 +18,15 @@ public class Simulator {
     static int deathCount = 0;
     static boolean oneMaleAndMature = false;
 
-    public static void runSimulation(int time) {
+    public static void runSimulation(int time) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("resources/report.txt"));
+        bufferedWriter.write("\nSIMULATION REPORT\n");
+
         maleRabbits.add(new MaleRabbit());
         femaleRabbits.add(new FemaleRabbit());
 
         //Simulation starts with 1 male 1 female rabbit print
+        Printer.printSimulationStart();
 
         for (int i = 0; i < time; i++) {
             Iterator<MaleRabbit> maleRabbitIterator = maleRabbits.iterator();
@@ -93,13 +100,20 @@ public class Simulator {
 
             RabbitFluffle.femaleRabbitList = femaleRabbits;
             RabbitFluffle.maleRabbitList = maleRabbits;
+
+        Printer.printMonthlyReport(rabbitFluffle, deathCount, i);
+        Printer.writeMonthlyReportToFile(bufferedWriter, rabbitFluffle, deathCount, i);
         }
 
-        Printer.printFinalPopulation(rabbitFluffle.getRabbitPopulationSize());
-        Printer.printDeathCount(deathCount);
-        Printer.printMalePopulation(rabbitFluffle.getMaleRabbitPopulation());
-        Printer.printFemalePopulation(rabbitFluffle.getFemaleRabbitPopulation());
-        Printer.printSimulationTime(time);
+//        Printer.printFinalPopulation(rabbitFluffle.getRabbitPopulationSize());
+//        Printer.printDeathCount(deathCount);
+//        Printer.printMalePopulation(rabbitFluffle.getMaleRabbitPopulation());
+//        Printer.printFemalePopulation(rabbitFluffle.getFemaleRabbitPopulation());
+//        Printer.printSimulationTime(time);
+
+        Printer.printFinalReport(rabbitFluffle, deathCount, time);
+        Printer.writeFinalReportToFile(bufferedWriter, rabbitFluffle, deathCount, time);
+        bufferedWriter.close();
     }
     public static int getPregnancies() {
         int maleRabbitCount = 0;
