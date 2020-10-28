@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FemaleRabbit extends Rabbit {
-    public static double PREGNANCY_CHANCE = 0.5d; //TODO: Setters for user input
+    public static double PREGNANCY_CHANCE = 1d; //TODO: Setters for user input
     private int age;
     private Gender gender;
     private boolean isPregnant;

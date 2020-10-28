@@ -3,6 +3,8 @@ package com.sparta.engineering72;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 public class InitialisationTest {
     @Test
     public void initialisationTest() {
