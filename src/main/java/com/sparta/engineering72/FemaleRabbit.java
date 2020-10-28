@@ -3,7 +3,8 @@ package com.sparta.engineering72;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FemaleRabbit extends Rabbit implements Breedable{
+public class FemaleRabbit extends Rabbit {
+    public static double GET_PREGNANCY_CHANCE = 0.5d;
     private int age;
     private Gender gender;
     private boolean isPregnant;
@@ -32,18 +33,36 @@ public class FemaleRabbit extends Rabbit implements Breedable{
         this.count = count;
     }
 
-    @Override
-    public List<Animal> breed() {
+    public static double getGetPregnantChance() {
+        return GET_PREGNANCY_CHANCE;
+    }
+
+    public static void setGetPregnantChance(double getPregnantChance) {
+        GET_PREGNANCY_CHANCE = getPregnantChance;
+    }
+
+    public static List<Animal> breed(int count) {
         List<Animal> animals = new ArrayList<>();
-        for (int i = 0; i < Randomizer.getRandomOffspring(); i++) { //TODO: Check if right
+
+        MaleRabbit maleRabbit = new MaleRabbit();
+        FemaleRabbit femaleRabbit = new FemaleRabbit();
+
+        int countMaleOffspring = 0;
+        int countFemaleOffspring = 0;
+
+        for (int i = 0; i < count; i++) {
             if (Randomizer.getRandomGender() == 0) {
-                MaleRabbit maleRabbit = new MaleRabbit();
-                animals.add(maleRabbit);
+                countMaleOffspring++;
             } else {
-                FemaleRabbit femaleRabbit = new FemaleRabbit();
-                animals.add(femaleRabbit);
+                countFemaleOffspring++;
             }
         }
+
+        maleRabbit.setCount(countMaleOffspring);
+        femaleRabbit.setCount(countFemaleOffspring);
+
+        animals.add(maleRabbit);
+        animals.add(femaleRabbit);
         return animals;
     }
 }

@@ -16,6 +16,8 @@ public class Simulator {
         rabbitFluffle.addMaleRabbit(new MaleRabbit());
         rabbitFluffle.addFemaleRabbit(new FemaleRabbit());
 
+        //Simulation starts with 1 male 1 female rabbit print
+
         for (int i = 0; i < time; i++) {
             for (Rabbit rabbit: maleRabbits) {
                 if (rabbit.isReadyToDie()){
