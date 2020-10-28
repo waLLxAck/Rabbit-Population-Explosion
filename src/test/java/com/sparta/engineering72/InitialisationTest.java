@@ -19,17 +19,25 @@ public class InitialisationTest {
     @Test
     public void initialisationFemaleTest() {
         Simulator.runSimulation(0);
-        Assertions.assertEquals(1, Simulator.rabbitFluffle.getMaleRabbitPopulation());
+        Assertions.assertEquals(1, Simulator.rabbitFluffle.getFemaleRabbitPopulation());
     }
 
     @Test
-    public void initialisationMaturityTest(){
+    public void initialisationFemaleMaturityTest(){
+        Simulator.runSimulation(0);
+        Assertions.assertEquals(false, RabbitFluffle.femaleRabbitList.get(0).isMature());
+    }
 
+    @Test
+    public void initialisationMaleMaturityTest(){
+        Simulator.runSimulation(0);
+        Assertions.assertEquals(false, RabbitFluffle.maleRabbitList.get(0).isMature());
     }
 
     @Test
     public void initialisationAgeTest(){
-
+        Simulator.runSimulation(0);
+        Assertions.assertEquals(0, RabbitFluffle.maleRabbitList.get(0).getAge());
     }
 
 
