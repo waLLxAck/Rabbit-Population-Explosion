@@ -13,7 +13,7 @@ public class InputCollector {
                 numberOfYears = getTime("Years");
                 continue;
             }
-            if (numberOfMonths < 0 || (numberOfYears == 0 && numberOfMonths <= 0)) {
+            if (numberOfMonths < 0 || isaBoolean(numberOfYears, numberOfMonths)) {
                 numberOfMonths = getTime("Months");
                 continue;
             }
@@ -21,6 +21,10 @@ public class InputCollector {
             return totalMonths;
 
         } while (true);
+    }
+
+    private static boolean isaBoolean(int numberOfYears, int numberOfMonths) { //FIXME name
+        return numberOfYears == 0 && numberOfMonths <= 0;
     }
 
     private static int getTime(String timeScale) {
