@@ -1,18 +1,21 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Animal.Rabbit;
+
+import com.sparta.engineering72.Animal.Animal;
+import com.sparta.engineering72.Utility.Randomizer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FemaleRabbit extends Rabbit {
-    public static double PREGNANCY_CHANCE = 1d; //TODO: Setters for user input
+    public static double PREGNANCY_CHANCE = 0.5d; //TODO: Setters for user input
     private int age;
-    private Gender gender;
+    private Animal.Gender gender;
     private boolean isPregnant;
     private int count;
 
     public FemaleRabbit(){
-        super(Gender.FEMALE);
-        this.gender=Gender.FEMALE;
+        super(Animal.Gender.FEMALE);
+        this.gender= Animal.Gender.FEMALE;
         age = 0;
         isPregnant = false;
         count = 1;

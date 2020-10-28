@@ -4,15 +4,15 @@ java.util.InputMismatchException: null
 	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
 	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
 	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
-	at com.sparta.engineering72.InputCollector.getTime(InputCollector.java:35) [classes/:?]
-	at com.sparta.engineering72.InputCollector.getUserInput(InputCollector.java:13) [classes/:?]
-	at com.sparta.engineering72.Starter.start(Starter.java:6) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getTime(InputCollector.java:35) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getUserInput(InputCollector.java:13) [classes/:?]
+	at com.sparta.engineering72.Starter.Starter.start(Starter.java:6) [classes/:?]
 	at com.sparta.engineering72.Main.main(Main.java:5) [classes/:?]
 [ERROR] 2020-10-28 09:39:55.326 [main] Simulator - Invalid input
 java.util.InputMismatchException: Invalid input
-	at com.sparta.engineering72.InputCollector.getTime(InputCollector.java:37) [classes/:?]
-	at com.sparta.engineering72.InputCollector.getUserInput(InputCollector.java:13) [classes/:?]
-	at com.sparta.engineering72.Starter.start(Starter.java:6) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getTime(InputCollector.java:37) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getUserInput(InputCollector.java:13) [classes/:?]
+	at com.sparta.engineering72.Starter.Starter.start(Starter.java:6) [classes/:?]
 	at com.sparta.engineering72.Main.main(Main.java:5) [classes/:?]
 [ERROR] 2020-10-28 09:40:11.540 [main] Simulator - Invalid input
 java.util.InputMismatchException: null
@@ -20,9 +20,9 @@ java.util.InputMismatchException: null
 	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
 	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
 	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
-	at com.sparta.engineering72.InputCollector.getTime(InputCollector.java:35) [classes/:?]
-	at com.sparta.engineering72.InputCollector.getUserInput(InputCollector.java:13) [classes/:?]
-	at com.sparta.engineering72.Starter.start(Starter.java:6) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getTime(InputCollector.java:35) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getUserInput(InputCollector.java:13) [classes/:?]
+	at com.sparta.engineering72.Starter.Starter.start(Starter.java:6) [classes/:?]
 	at com.sparta.engineering72.Main.main(Main.java:5) [classes/:?]
 [ERROR] 2020-10-28 09:41:19.119 [main] Simulator - Invalid input
 java.util.InputMismatchException: null
@@ -30,15 +30,15 @@ java.util.InputMismatchException: null
 	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
 	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
 	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
-	at com.sparta.engineering72.InputCollector.getTime(InputCollector.java:35) [classes/:?]
-	at com.sparta.engineering72.InputCollector.getUserInput(InputCollector.java:17) [classes/:?]
-	at com.sparta.engineering72.Starter.start(Starter.java:6) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getTime(InputCollector.java:35) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getUserInput(InputCollector.java:17) [classes/:?]
+	at com.sparta.engineering72.Starter.Starter.start(Starter.java:6) [classes/:?]
 	at com.sparta.engineering72.Main.main(Main.java:5) [classes/:?]
 [ERROR] 2020-10-28 09:41:20.426 [main] Simulator - Invalid input
 java.util.InputMismatchException: Invalid input
-	at com.sparta.engineering72.InputCollector.getTime(InputCollector.java:37) [classes/:?]
-	at com.sparta.engineering72.InputCollector.getUserInput(InputCollector.java:17) [classes/:?]
-	at com.sparta.engineering72.Starter.start(Starter.java:6) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getTime(InputCollector.java:37) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getUserInput(InputCollector.java:17) [classes/:?]
+	at com.sparta.engineering72.Starter.Starter.start(Starter.java:6) [classes/:?]
 	at com.sparta.engineering72.Main.main(Main.java:5) [classes/:?]
 [ERROR] 2020-10-28 09:41:22.095 [main] Simulator - Invalid input
 java.util.InputMismatchException: null
@@ -46,7 +46,7 @@ java.util.InputMismatchException: null
 	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
 	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
 	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
-	at com.sparta.engineering72.InputCollector.getTime(InputCollector.java:35) [classes/:?]
-	at com.sparta.engineering72.InputCollector.getUserInput(InputCollector.java:17) [classes/:?]
-	at com.sparta.engineering72.Starter.start(Starter.java:6) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getTime(InputCollector.java:35) [classes/:?]
+	at com.sparta.engineering72.Input.InputCollector.getUserInput(InputCollector.java:17) [classes/:?]
+	at com.sparta.engineering72.Starter.Starter.start(Starter.java:6) [classes/:?]
 	at com.sparta.engineering72.Main.main(Main.java:5) [classes/:?]

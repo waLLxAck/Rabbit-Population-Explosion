@@ -1,26 +1,31 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Simulation;
+
+import com.sparta.engineering72.Animal.Animal;
+import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
+import com.sparta.engineering72.Animal.Rabbit.MaleRabbit;
+import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
+import com.sparta.engineering72.Log.Logger;
+import com.sparta.engineering72.Utility.Randomizer;
+import com.sparta.engineering72.View.Printer;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 public class Simulator {
-    static RabbitFluffle rabbitFluffle = new RabbitFluffle();
+    public static RabbitFluffle rabbitFluffle = new RabbitFluffle();
     static ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
     static ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
-    static ArrayList<Animal> rabbitsToAdd = new ArrayList<>();
-    static ArrayList<Animal> rabbitsToRemove = new ArrayList<>();
     static int pregnancies = 0;
-    static int deathCount = 0;
+    public static int deathCount = 0;
     static boolean oneMaleAndMature = false;
 
-    public static void runSimulation(int time, int reportChoice) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("resources/report.txt"));
-        bufferedWriter.write("\nSIMULATION REPORT\n");
+    public static void runSimulation(int time, int reportChoice) {
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("resources/report.txt"))) {
+            bufferedWriter.write("\nSIMULATION REPORT\n");
 
         maleRabbits.add(new MaleRabbit());
         femaleRabbits.add(new FemaleRabbit());
@@ -28,7 +33,7 @@ public class Simulator {
         //Simulation starts with 1 male 1 female rabbit print
         Printer.printSimulationStart();
 
-        for (int i = 0; i < time; i++) {
+        for (int i = 0; i <= time; i++) {
             Iterator<MaleRabbit> maleRabbitIterator = maleRabbits.iterator();
 
             while(maleRabbitIterator.hasNext()) {
@@ -36,21 +41,10 @@ public class Simulator {
                 if (rabbit.isReadyToDie()){
                     deathCount += rabbit.getCount();
                     maleRabbitIterator.remove();
-//                    rabbitFluffle.removeMaleRabbit(rabbit);
                 } else if (rabbit.isMature()) {
                     oneMaleAndMature = true;
                 }
             }
-//
-//            for (MaleRabbit rabbit: maleRabbits) {
-//                if (rabbit.isReadyToDie()){
-//                    rabbitFluffle.removeMaleRabbit(rabbit);
-//                    deathCount += rabbit.getCount();
-//                } else if (rabbit.isMature()) {
-//                    oneMaleAndMature = true;
-//                }
-//                rabbit.incrementAge();
-//            }
             if (pregnancies > 0) {
                 List<Animal> animals = FemaleRabbit.breed(pregnancies);
                 for (Animal animal : animals) {
@@ -71,25 +65,10 @@ public class Simulator {
                 if (rabbit.isReadyToDie()){
                     deathCount += rabbit.getCount();
                     femaleRabbitIterator.remove();
-//                    rabbitFluffle.removeFemaleRabbit(rabbit);
                 } else if (rabbit.isMature()) {
                     oneMaleAndMature = true;
                 }
             }
-
-//            for (FemaleRabbit rabbit: femaleRabbits) {
-//                if (rabbit.isReadyToDie()){
-//                    rabbitFluffle.removeFemaleRabbit(rabbit);
-//                    deathCount += rabbit.getCount();
-//                }
-////                if (((FemaleRabbit) rabbit).isPregnant()) {
-////                    rabbitsToAdd.addAll((((FemaleRabbit) rabbit).breed())); //FIXME
-////                }
-////                if (rabbit.isMature() && oneMaleAndMature) {
-////                    ((FemaleRabbit) rabbit).getPregnant();
-////                }
-//                rabbit.incrementAge();
-//            }
 
             for (MaleRabbit rabbit: maleRabbits) {
                 rabbit.incrementAge();
@@ -106,18 +85,14 @@ public class Simulator {
                 Printer.writeMonthlyReportToFile(bufferedWriter, rabbitFluffle, deathCount, i);
             }
         }
-
-//        Printer.printFinalPopulation(rabbitFluffle.getRabbitPopulationSize());
-//        Printer.printDeathCount(deathCount);
-//        Printer.printMalePopulation(rabbitFluffle.getMaleRabbitPopulation());
-//        Printer.printFemalePopulation(rabbitFluffle.getFemaleRabbitPopulation());
-//        Printer.printSimulationTime(time);
-
         if(reportChoice == 1) {
             Printer.printFinalReport(rabbitFluffle, deathCount, time);
             Printer.writeFinalReportToFile(bufferedWriter, rabbitFluffle, deathCount, time);
         }
-        bufferedWriter.close();
+
+        } catch (IOException ioException) {
+            Logger.logError(ioException);
+        }
     }
     public static int getPregnancies() {
         int maleRabbitCount = 0;

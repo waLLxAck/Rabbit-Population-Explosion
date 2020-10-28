@@ -1,9 +1,9 @@
 package com.sparta.engineering72;
 
+import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
+import com.sparta.engineering72.Simulation.Simulator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
 
 public class InitialisationTest {
     @Test

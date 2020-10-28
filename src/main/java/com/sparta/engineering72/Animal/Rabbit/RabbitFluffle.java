@@ -1,12 +1,11 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Animal.Rabbit;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RabbitFluffle {
 
-    static ArrayList<FemaleRabbit> femaleRabbitList = new ArrayList<>();
-    static ArrayList<MaleRabbit> maleRabbitList = new ArrayList<>();
+    public static ArrayList<FemaleRabbit> femaleRabbitList = new ArrayList<>();
+    public static ArrayList<MaleRabbit> maleRabbitList = new ArrayList<>();
 
     public static ArrayList<FemaleRabbit> getFemaleRabbitList() {
         return femaleRabbitList;

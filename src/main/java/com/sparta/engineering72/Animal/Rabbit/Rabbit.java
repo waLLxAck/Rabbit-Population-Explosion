@@ -1,4 +1,6 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Animal.Rabbit;
+
+import com.sparta.engineering72.Animal.Animal;
 
 public abstract class Rabbit extends Animal {
     private int age;

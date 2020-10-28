@@ -1,4 +1,6 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.View;
+
+import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
