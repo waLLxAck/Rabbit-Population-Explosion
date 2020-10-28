@@ -7,6 +7,7 @@ public class FemaleRabbit extends Rabbit implements Breedable{
     private int age;
     private Gender gender;
     private boolean isPregnant;
+    private int count;
 
     public FemaleRabbit(){
         super(Gender.FEMALE);
@@ -21,6 +22,14 @@ public class FemaleRabbit extends Rabbit implements Breedable{
 
     public void getPregnant(){
         isPregnant = true;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     @Override
