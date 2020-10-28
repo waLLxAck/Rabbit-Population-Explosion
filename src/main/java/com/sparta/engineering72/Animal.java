@@ -1,15 +1,18 @@
 package com.sparta.engineering72;
 
-import java.util.List;
-
 public abstract class Animal {
 
     public enum Gender {
         MALE,
         FEMALE
     }
-    private Gender gender;
-    private int age = 0;
+
+    public Gender gender;
+    public int age = 0;
+
+    public Animal(Gender gender) {
+        this.gender = gender;
+    }
 
     public Gender getGender() {
         return gender;

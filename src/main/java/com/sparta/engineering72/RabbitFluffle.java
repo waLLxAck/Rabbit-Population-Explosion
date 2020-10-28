@@ -29,7 +29,9 @@ public class RabbitFluffle {
     }
 
     public void addRabbit(Rabbit rabbit){
-        if(rabbit.getGender().equals(Animal.Gender.FEMALE)) addFemaleRabbit(rabbit);
+        if(rabbit.getGender().equals(Animal.Gender.FEMALE)){
+            addFemaleRabbit(rabbit);
+        }
         else { addMaleRabbit(rabbit);}
     }
 
@@ -55,4 +57,16 @@ public class RabbitFluffle {
     }
 
 
+    public void addRabbits(List<Animal> breed) {
+        for (Animal animal : breed) {
+            addRabbit((Rabbit) animal);
+        }
+    }
+
+    public void removeRabbits(ArrayList<Animal> rabbitsToRemove) {
+        for (Animal animal : rabbitsToRemove) {
+            removeRabbit((Rabbit) animal);
+        }
+
+    }
 }

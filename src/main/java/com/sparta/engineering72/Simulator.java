@@ -1,25 +1,54 @@
 package com.sparta.engineering72;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
 public class Simulator {
     static RabbitFluffle rabbitFluffle = new RabbitFluffle();
-  
-    public static void runSimulation(int time) {
+    static ArrayList<Rabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
+    static ArrayList<Rabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
+    static ArrayList<Animal> rabbitsToAdd = new ArrayList<>();
+    static ArrayList<Animal> rabbitsToRemove = new ArrayList<>();
+    static boolean oneMaleAndMature = false;
 
-        Rabbit maleRabbit = new MaleRabbit();
-        Rabbit femaleRabbit = new FemaleRabbit();
-  
+    public static void runSimulation(int time) {
+        rabbitFluffle.addRabbit(new MaleRabbit());
+        rabbitFluffle.addRabbit(new FemaleRabbit());
+
         for (int i = 0; i < time; i++) {
-            Printer.print(time); //TBC
-            Sleeper.sleep(1000); //TBC
+            for (Rabbit rabbit: maleRabbits) {
+                if (rabbit.isReadyToDie()){
+                    rabbitsToRemove.add(rabbit);
+                } else if (rabbit.isMature()) {
+                    oneMaleAndMature = true;
+                }
+                rabbit.incrementAge();
+            }
+
+            for (Rabbit rabbit: femaleRabbits) {
+                if (rabbit.isReadyToDie()){
+                    rabbitsToRemove.add(rabbit);
+                }
+                if (((FemaleRabbit) rabbit).isPregnant()) {
+                    rabbitsToAdd.addAll((((FemaleRabbit) rabbit).breed())); //FIXME
+                }
+                if (rabbit.isMature() && oneMaleAndMature) {
+                    ((FemaleRabbit) rabbit).getPregnant();
+                }
+                rabbit.incrementAge();
+            }
+            rabbitFluffle.addRabbits(rabbitsToAdd); //FIXME: !!!!
+            rabbitFluffle.removeRabbits(rabbitsToRemove);
+
+            femaleRabbits = RabbitFluffle.getFemaleRabbitList();
+            maleRabbits = RabbitFluffle.getMaleRabbitList();
         }
 
-        Printer.print("Rabbit 1 = " + maleRabbit.getGender());
-        Printer.print("Rabbit 2 = " + femaleRabbit.getGender());
-
-        rabbitFluffle.addRabbit(maleRabbit);
-        rabbitFluffle.addRabbit(femaleRabbit);
-        Printer.print("current size of the population of rabbits is: " + rabbitFluffle.getRabbitPopulationSize());
+        Printer.printFinalPopulation(rabbitFluffle.getRabbitPopulationSize());
+//        Printer.printDeathCount();
+        Printer.printMalePopulation(rabbitFluffle.getMaleRabbitSize());
+        Printer.printFemalePopulation(rabbitFluffle.getFemaleRabbitSize());
+        Printer.printSimulationTime(time);
     }
 }
