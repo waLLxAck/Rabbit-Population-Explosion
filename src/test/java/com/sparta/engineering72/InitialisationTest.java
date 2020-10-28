@@ -13,13 +13,13 @@ public class InitialisationTest {
     @Test
     public void initialisationMaleTest() {
         Simulator.runSimulation(0);
-        Assertions.assertEquals(1, Simulator.rabbitFluffle.getMaleRabbitSize());
+        Assertions.assertEquals(1, Simulator.rabbitFluffle.getMaleRabbitPopulation());
     }
 
     @Test
     public void initialisationFemaleTest() {
         Simulator.runSimulation(0);
-        Assertions.assertEquals(1, Simulator.rabbitFluffle.getFemaleRabbitSize());
+        Assertions.assertEquals(1, Simulator.rabbitFluffle.getMaleRabbitPopulation());
     }
 
     @Test
