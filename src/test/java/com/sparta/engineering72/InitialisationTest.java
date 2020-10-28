@@ -3,10 +3,16 @@ package com.sparta.engineering72;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 public class InitialisationTest {
     @Test
     public void initialisationTest() {
-        Simulator.runSimulation(0);
+        try {
+            Simulator.runSimulation(0, 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Assertions.assertEquals(2, Simulator.rabbitFluffle.getRabbitPopulationSize());
     }
 }

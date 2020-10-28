@@ -4,6 +4,26 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputCollector {
+
+    public static int getReportChoice() {
+        Scanner scanner = new Scanner(System.in);
+        int input = -1;
+        Printer.printReportChoice();
+        do {
+            try {
+                input = scanner.nextInt();
+                if (input < 0 || input > 2) {
+                    throw new InputMismatchException("Invalid input");
+                }
+                return input;
+            } catch (InputMismatchException ime) {
+                Logger.logError(ime, "Invalid input");
+                Printer.printError();
+                Sleeper.sleep(100);
+            }
+        } while (true);
+    }
+
     public static int getUserInput() {
         int numberOfYears = -1;
         int numberOfMonths = -1;
