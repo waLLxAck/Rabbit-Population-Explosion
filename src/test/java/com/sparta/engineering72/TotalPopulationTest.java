@@ -11,7 +11,7 @@ public class TotalPopulationTest {
         int minimum = 2;
         long maximum = 16;
         long rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
-        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitSize();
+        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
     }
 
@@ -21,7 +21,7 @@ public class TotalPopulationTest {
         Simulator.runSimulation(6);
         long minimum = 2;
         long rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
-        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitSize();
+        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         long maximum = femaleRabbitSize * 14;
 
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
@@ -34,7 +34,7 @@ public class TotalPopulationTest {
 
         int minimum = 2;
         int rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
-        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitSize();
+        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         long maximum = femaleRabbitSize * 14;
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
     }
@@ -46,7 +46,7 @@ public class TotalPopulationTest {
 
         int minimum = 2;
         int rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
-        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitSize();
+        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         long maximum = femaleRabbitSize * 14;
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
     }
@@ -58,7 +58,7 @@ public class TotalPopulationTest {
 
         int minimum = 2;
         int rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
-        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitSize();
+        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         long maximum = femaleRabbitSize * 14;
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
     }
@@ -70,7 +70,7 @@ public class TotalPopulationTest {
 
         int minimum = 2;
         int rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
-        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitSize();
+        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         long maximum = femaleRabbitSize * 14;
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
     }
@@ -82,7 +82,7 @@ public class TotalPopulationTest {
 
         int minimum = 2;
         int rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
-        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitSize();
+        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         long maximum = femaleRabbitSize * 14;
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
     }
@@ -92,7 +92,7 @@ public class TotalPopulationTest {
     {
         Simulator.runSimulation(12);
         int minimum = 2;
-        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitSize();
+        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         long maximum = femaleRabbitSize * 14;
         int rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
