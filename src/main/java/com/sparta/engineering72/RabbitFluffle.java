@@ -44,11 +44,11 @@ public class RabbitFluffle {
         maleRabbitList.add(maleRabbit);
     }
 
-    private void removeFemaleRabbit(FemaleRabbit femaleRabbit) {
+    public void removeFemaleRabbit(FemaleRabbit femaleRabbit) {
         femaleRabbitList.remove(femaleRabbit);
     }
 
-    private void removeMaleRabbit(MaleRabbit maleRabbit) {
+    public void removeMaleRabbit(MaleRabbit maleRabbit) {
         maleRabbitList.remove(maleRabbit);
     }
 

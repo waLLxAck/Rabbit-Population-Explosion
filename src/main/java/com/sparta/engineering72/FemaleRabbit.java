@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FemaleRabbit extends Rabbit {
-    public static double GET_PREGNANCY_CHANCE = 0.5d;
+    public static double PREGNANCY_CHANCE = 0.5d; //TODO: Setters for user input
     private int age;
     private Gender gender;
     private boolean isPregnant;
@@ -15,6 +15,7 @@ public class FemaleRabbit extends Rabbit {
         this.gender=Gender.FEMALE;
         age = 0;
         isPregnant = false;
+        count = 1;
     }
 
     public boolean isPregnant(){
@@ -33,12 +34,12 @@ public class FemaleRabbit extends Rabbit {
         this.count = count;
     }
 
-    public static double getGetPregnantChance() {
-        return GET_PREGNANCY_CHANCE;
+    public static double getPregnancyChance() {
+        return PREGNANCY_CHANCE;
     }
 
-    public static void setGetPregnantChance(double getPregnantChance) {
-        GET_PREGNANCY_CHANCE = getPregnantChance;
+    public static void setPregnancyChance(double getPregnantChance) {
+        PREGNANCY_CHANCE = getPregnantChance;
     }
 
     public static List<Animal> breed(int count) {

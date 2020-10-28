@@ -12,6 +12,7 @@ public class MaleRabbit extends Rabbit {
         super(Gender.MALE);
         this.gender=Gender.MALE;
         age = 0;
+        count = 1;
     }
 
     public int getCount() {

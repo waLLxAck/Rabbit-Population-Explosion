@@ -10,7 +10,7 @@ public class Randomizer {
 
     public static int getPregnancyChance(double pregnancyChance) {
         Random random = new Random();
-        return random.nextInt((int) (1/pregnancyChance));
+        return random.nextInt((int) (1/pregnancyChance))+1;
     }
 
     public static int getRandomOffspring() {
