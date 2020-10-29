@@ -46,7 +46,7 @@ public class Simulator {
             if(reportChoice == 2) {
                 reportPackerMonthly = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
                         rabbitFluffle.getMaleRabbitPopulation(), rabbitFluffle.getFemaleRabbitPopulation(),
-                        0, 0, 0, deathCount, 0, 0);
+                        0, 0, 0, RabbitLifeCycle.naturalDeathCount, 0, 0);
                 Printer.printMonthlyReportToConsole(reportPackerMonthly, i);
                 Printer.writeMonthlyReportToFile(bufferedWriter, rabbitFluffle, RabbitLifeCycle.naturalDeathCount, i);
             }
@@ -54,7 +54,7 @@ public class Simulator {
 
         reportPackerFinal = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
                 rabbitFluffle.getFemaleRabbitPopulation(), rabbitFluffle.getMaleRabbitPopulation(),
-                0, 0, 0, deathCount, 0, 0);
+                0, 0, 0, RabbitLifeCycle.naturalDeathCount, 0, 0);
 
             if(reportChoice == 1) {
             Printer.printFinalReportToConsole(reportPackerFinal, time);
