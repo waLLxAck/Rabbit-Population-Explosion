@@ -9,6 +9,7 @@ import java.util.List;
 public class FemaleFox extends Fox{
 
     private int age;
+    public static double PREGNANCY_CHANCE = 0.5d;
     private Animal.Gender gender;
     private boolean isPregnant;
     private int count;
@@ -25,6 +26,14 @@ public class FemaleFox extends Fox{
         return isPregnant;
     }
 
+    public static double getPregnancyChance() {
+        return PREGNANCY_CHANCE;
+    }
+
+    public static void setPregnancyChance(double pregnancyChance) {
+        PREGNANCY_CHANCE = pregnancyChance;
+    }
+
     public void getPregnant(){
         isPregnant = true;
     }
@@ -36,6 +45,8 @@ public class FemaleFox extends Fox{
     public void setCount(int count) {
         this.count = count;
     }
+
+
 
     public static List<Animal> breedFoxes(int count){
         List<Animal> animals = new ArrayList<>();
