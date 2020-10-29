@@ -2,6 +2,7 @@ package com.sparta.engineering72.View;
 
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 import com.sparta.engineering72.Utility.ReportPacker;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.io.BufferedWriter;
@@ -39,18 +40,8 @@ public class Printer {
         System.out.println("--------------------------------------------------------------\n");
     }
 
-    public static JSONObject populateJSONObject(ReportPacker reportPacker){
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("totalRabbits", reportPacker.getTotalRabbits());
-        jsonObject.put("maleRabbits", reportPacker.getMaleFoxes());
-        jsonObject.put("femaleRabbits", reportPacker.getFemaleRabbits());
-        jsonObject.put("totalFoxes", reportPacker.getTotalFoxes());
-        jsonObject.put("maleFoxes", reportPacker.getMaleFoxes());
-        jsonObject.put("femaleFoxes", reportPacker.getFemaleFoxes());
-        jsonObject.put("rabbitAgeDeaths", reportPacker.getRabbitAgeDeaths());
-        jsonObject.put("rabbitPreyDeaths", reportPacker.getRabbitPreyDeaths());
-        jsonObject.put("foxDeaths", reportPacker.getFoxDeaths());
-        return jsonObject;
+    public static void writeJSONReport(BufferedWriter bufferedWriter, JSONArray jsonArray) throws IOException {
+        bufferedWriter.write(jsonArray.toJSONString());
     }
 
     public static void writeMonthlyReportToFile(BufferedWriter bufferedWriter, RabbitFluffle rabbitFluffle, int deathCount, int time) throws IOException {
