@@ -5,6 +5,7 @@ import com.sparta.engineering72.Animal.Fox.FemaleFox;
 import com.sparta.engineering72.Animal.Fox.FoxSkulk;
 import com.sparta.engineering72.Animal.Fox.MaleFox;
 import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
+import com.sparta.engineering72.Animal.Rabbit.MaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 import com.sparta.engineering72.Settings.Settings;
 import com.sparta.engineering72.Utility.Randomizer;
@@ -103,7 +104,45 @@ public class FoxLifeCycle implements LifeCycle {
                 rabbitsEaten += Randomizer.getRandomHunt();
             }
         }
-        rabbitsHunted = Math.min(rabbitsEaten, rabbitPopulation);
+        int rabbitsToHunt = Math.min(rabbitsEaten, rabbitPopulation);
+        rabbitsHunted = rabbitsToHunt;
+        ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
+        ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
+        int idRange = maleRabbits.size() + femaleRabbits.size();
+        while (rabbitsToHunt > 0) {
+            int id = Randomizer.getRandomId(idRange);
+            if (id >= maleRabbits.size()) {
+                FemaleRabbit femaleRabbit = femaleRabbits.get(id - maleRabbits.size());
+                int count = femaleRabbit.getCount();
+                if (count >= rabbitsToHunt) {
+                    count -= rabbitsToHunt;
+                    if (count == 0) {
+                        femaleRabbits.remove(id - maleRabbits.size());
+                    }
+                    idRange--;
+                    rabbitsToHunt = 0;
+                } else {
+                    rabbitsToHunt -= count;
+                    femaleRabbits.remove(id - maleRabbits.size());
+                    idRange--;
+                }
+            } else {
+                MaleRabbit maleRabbit = maleRabbits.get(id);
+                int count = maleRabbit.getCount();
+                if (count >= rabbitsToHunt) {
+                    count -= rabbitsToHunt;
+                    if (count == 0) {
+                        maleRabbits.remove(id);
+                    }
+                    idRange--;
+                    rabbitsToHunt = 0;
+                } else {
+                    rabbitsToHunt -= count;
+                    maleRabbits.remove(id);
+                    idRange--;
+                }
+            }
+        }
     }
 
     @Override

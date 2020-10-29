@@ -27,5 +27,9 @@ public class Randomizer {
         Random random = new Random();
         return random.nextInt(20)+1;
     }
+    public static int getRandomId(int idRange) {
+        Random random = new Random();
+        return random.nextInt(idRange);
+    }
 
 }
