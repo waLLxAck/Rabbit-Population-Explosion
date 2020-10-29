@@ -12,7 +12,7 @@ public class FemaleFox extends Fox{
     private int count;
 
     public FemaleFox() {
-        this.gender = Animal.Gender.FEMALE;
+        super(Animal.Gender.FEMALE);
         age = 0;
         isPregnant = false;
         count = 1;
