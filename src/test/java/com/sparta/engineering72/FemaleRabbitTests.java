@@ -1,6 +1,7 @@
 package com.sparta.engineering72;
 
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
+import com.sparta.engineering72.Simulation.RabbitLifeCycle;
 import com.sparta.engineering72.Simulation.Simulator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -25,6 +26,6 @@ public class FemaleRabbitTests {
     {
         RabbitFluffle rabbitFluffle = new RabbitFluffle();
         Simulator.runSimulation(21,1);
-        Assertions.assertEquals(true , rabbitFluffle.getMaleRabbitPopulation() >= RabbitLifeCycle.getPregnancies());
+        Assertions.assertEquals(true , rabbitFluffle.getMaleRabbitPopulation() >= RabbitLifeCycle.pregnancies);
     }
 }

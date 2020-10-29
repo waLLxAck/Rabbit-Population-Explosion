@@ -1,6 +1,7 @@
 package com.sparta.engineering72;
 
 import com.sparta.engineering72.Animal.Fox.FoxSkulk;
+import com.sparta.engineering72.Simulation.FoxLifeCycle;
 import com.sparta.engineering72.Simulation.Simulator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ public class FoxBreedingTests {
     public void OneMaleFoxForOneFemaleFox(){
         FoxSkulk foxSkulk = new FoxSkulk();
         Simulator.runSimulation(46,1);
-        Assertions.assertEquals(true, FoxSkulk.getMaleFoxPopulation() >= FoxLifeCycle.getPregnancies());
+        Assertions.assertEquals(true, foxSkulk.getMaleFoxPopulation() >= FoxLifeCycle.foxPregnancies);
     }
 
 }

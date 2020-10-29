@@ -41,17 +41,17 @@ public class Printer {
 
     private static void printRabbitPopulation(ReportPacker reportPacker){
         System.out.println(" == RABBIT POPULATION REPORT == ");
-        printFinalPopulation(reportPacker.getTotalRabbits());
-        printMalePopulation(reportPacker.getMaleRabbits());
-        printFemalePopulation(reportPacker.getFemaleRabbits());
+        printFinalPopulation(reportPacker.getTotalRabbits(),"Rabbits");
+        printMalePopulation(reportPacker.getMaleRabbits(),"Rabbits");
+        printFemalePopulation(reportPacker.getFemaleRabbits(),"Rabbits");
         System.out.println("--------------------------------------------------------------");
     }
 
     private static void printFoxPopulation(ReportPacker reportPacker){
         System.out.println(" == FOX POPULATION REPORT == ");
-        printFinalPopulation(reportPacker.getTotalFoxes());
-        printMalePopulation(reportPacker.getMaleFoxes());
-        printFemalePopulation(reportPacker.getFemaleFoxes());
+        printFinalPopulation(reportPacker.getTotalFoxes(),"Foxes");
+        printMalePopulation(reportPacker.getMaleFoxes(),"Foxes");
+        printFemalePopulation(reportPacker.getFemaleFoxes(),"Foxes");
         System.out.println("--------------------------------------------------------------");
     }
 
@@ -63,16 +63,16 @@ public class Printer {
         System.out.println("==============================================================\n");
     }
 
-    private static void printFinalPopulation(long number) {
-        System.out.println("The total population of Rabbits: " + myFormatter.format(number));
+    private static void printFinalPopulation(long number, String animal) {
+        System.out.println("The total population of "+animal+": " + myFormatter.format(number));
     }
 
-    private static void printMalePopulation(long number) {
-        System.out.println("The male population of Rabbits: " + myFormatter.format(number));
+    private static void printMalePopulation(long number, String animal) {
+        System.out.println("The male population of "+animal+": " + myFormatter.format(number));
     }
 
-    private static void printFemalePopulation(long number) {
-        System.out.println("The female population of Rabbits: " + myFormatter.format(number));
+    private static void printFemalePopulation(long number, String animal) {
+        System.out.println("The female population of "+animal+": " + myFormatter.format(number));
     }
 
     private static void printRabbitAgeDeathCount(long number) {

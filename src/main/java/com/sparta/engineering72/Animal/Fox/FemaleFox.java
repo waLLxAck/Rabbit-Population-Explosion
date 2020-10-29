@@ -11,7 +11,7 @@ import java.util.List;
 public class FemaleFox extends Fox{
     public static double PREGNANCY_CHANCE = 0.5d;
     private boolean isPregnant;
-    private int count;
+    private long count;
 
     public FemaleFox() {
         super(Animal.Gender.FEMALE);

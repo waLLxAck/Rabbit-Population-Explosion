@@ -1,5 +1,6 @@
 package com.sparta.engineering72;
 
+import com.sparta.engineering72.Animal.Fox.FoxSkulk;
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 import com.sparta.engineering72.Simulation.Simulator;
 import org.junit.jupiter.api.Assertions;
@@ -71,24 +72,24 @@ public class InitialisationTest {
     @Test
     public void FoxInitialisationFemaleMaturityTest(){
         Simulator.runSimulation(0, 1);
-        Assertions.assertEquals(false, foxSkulk.femaleFoxList.get(0).isMature());
+        Assertions.assertEquals(false, FoxSkulk.femaleFoxList.get(0).isMature());
     }
 
     @Test
     public void FoxInitialisationMaleMaturityTest(){
         Simulator.runSimulation(0, 1);
-        Assertions.assertEquals(false, foxSkulk.maleFoxList.get(0).isMature());
+        Assertions.assertEquals(false, FoxSkulk.maleFoxList.get(0).isMature());
     }
 
     @Test
     public void FoxInitialisationAgeTest(){
         Simulator.runSimulation(0, 1);
-        Assertions.assertEquals(0, foxSkulk.maleFoxList.get(0).getAge());
+        Assertions.assertEquals(0, FoxSkulk.maleFoxList.get(0).getAge());
     }
 
     @Test
     public void Fox6MonthsAgeTest(){
         Simulator.runSimulation(6, 1);
-        Assertions.assertEquals(6, foxSkulk.maleFoxList.get(0).getAge());
+        Assertions.assertEquals(6, FoxSkulk.maleFoxList.get(0).getAge());
     }
 }

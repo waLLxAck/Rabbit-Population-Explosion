@@ -107,7 +107,7 @@ public class TotalPopulationTest {
         long minimum = (totalRabbitPopulation/2);
         long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         long maximum = 0;
-        int rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
+        long rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
     }
 
