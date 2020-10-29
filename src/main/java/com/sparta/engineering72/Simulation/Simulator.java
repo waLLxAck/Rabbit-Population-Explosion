@@ -1,119 +1,87 @@
 package com.sparta.engineering72.Simulation;
 
-import com.sparta.engineering72.Animal.Animal;
+import com.sparta.engineering72.Animal.Fox.FemaleFox;
+import com.sparta.engineering72.Animal.Fox.FoxSkulk;
+import com.sparta.engineering72.Animal.Fox.MaleFox;
 import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.MaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 import com.sparta.engineering72.Log.Logger;
-import com.sparta.engineering72.Utility.Randomizer;
+import com.sparta.engineering72.View.Display;
+import com.sparta.engineering72.View.JSONHandler;
+import com.sparta.engineering72.Utility.ReportPacker;
 import com.sparta.engineering72.View.Printer;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class Simulator {
     public static RabbitFluffle rabbitFluffle = new RabbitFluffle();
-    static ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
-    static ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
-    public static int pregnancies = 0;
+    public static FoxSkulk foxSkulk = new FoxSkulk();
     public static int deathCount = 0;
-    static boolean oneMaleAndMature = false;
 
-    public static void runSimulation(int time, int reportChoice) {
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("resources/report.txt"))) {
-            bufferedWriter.write("\nSIMULATION REPORT\n");
+    public static ReportPacker runSimulation(int time, int reportChoice) {
+        ReportPacker reportPackerFinal = null;
+        try(BufferedWriter bufferedWriterTxt = new BufferedWriter(new FileWriter("resources/report.txt"));
+           BufferedWriter bufferedWriterJson = new BufferedWriter(new FileWriter("resources/report.json"))) {
+            bufferedWriterTxt.write("\nSIMULATION REPORT\n");
+          
+        RabbitLifeCycle.maleRabbits.add(new MaleRabbit());
+        RabbitLifeCycle.femaleRabbits.add(new FemaleRabbit());
 
-        maleRabbits.add(new MaleRabbit());
-        femaleRabbits.add(new FemaleRabbit());
+        FoxLifeCycle.maleFoxes.add(new MaleFox());
+        FoxLifeCycle.femaleFoxes.add(new FemaleFox());
 
-        //Simulation starts with 1 male 1 female rabbit print
-        Printer.printSimulationStart();
+        Display.displaySimulationStart();
+        RabbitLifeCycle rabbitLifeCycle = new RabbitLifeCycle();
+        FoxLifeCycle foxLifeCycle = new FoxLifeCycle();
 
         for (int i = 0; i <= time; i++) {
-            Iterator<MaleRabbit> maleRabbitIterator = maleRabbits.iterator();
-
-            while(maleRabbitIterator.hasNext()) {
-                MaleRabbit rabbit = maleRabbitIterator.next();
-                if (rabbit.isReadyToDie()){
-                    deathCount += rabbit.getCount();
-                    maleRabbitIterator.remove();
-                } else if (rabbit.isMature()) {
-                    oneMaleAndMature = true;
-                }
+            foxLifeCycle.naturalDeath();
+            rabbitLifeCycle.naturalDeath();
+            foxLifeCycle.hunt(i);
+            rabbitLifeCycle.breed();
+            foxLifeCycle.breed();
+            if (i % 12 == 0) {
+                foxLifeCycle.getPregnancies();
             }
-            if (pregnancies > 0) {
-                List<Animal> animals = FemaleRabbit.breed(pregnancies);
-                for (Animal animal : animals) {
-                    if (animal.getGender() == Animal.Gender.MALE) {
-                        maleRabbits.add((MaleRabbit) animal);
-                    } else {
-                        femaleRabbits.add((FemaleRabbit) animal);
-                    }
-                }
-                pregnancies = 0;
-            }
-            pregnancies = getPregnancies();
+            rabbitLifeCycle.age();
+            foxLifeCycle.age();
 
-            Iterator<FemaleRabbit> femaleRabbitIterator = femaleRabbits.iterator();
+            RabbitFluffle.femaleRabbitList = RabbitLifeCycle.femaleRabbits;
+            RabbitFluffle.maleRabbitList = RabbitLifeCycle.maleRabbits;
 
-            while(femaleRabbitIterator.hasNext()) {
-                FemaleRabbit rabbit = femaleRabbitIterator.next();
-                if (rabbit.isReadyToDie()){
-                    deathCount += rabbit.getCount();
-                    femaleRabbitIterator.remove();
-                } else if (rabbit.isMature()) {
-                    oneMaleAndMature = true;
-                }
-            }
+            FoxSkulk.maleFoxList = FoxLifeCycle.maleFoxes;
+            FoxSkulk.femaleFoxList = FoxLifeCycle.femaleFoxes;
 
-            for (MaleRabbit rabbit: maleRabbits) {
-                rabbit.incrementAge();
-            }
-            for (FemaleRabbit rabbit: femaleRabbits) {
-                rabbit.incrementAge();
-            }
 
-            RabbitFluffle.femaleRabbitList = femaleRabbits;
-            RabbitFluffle.maleRabbitList = maleRabbits;
+            ReportPacker reportPackerMonthly = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
+                    rabbitFluffle.getMaleRabbitPopulation(), rabbitFluffle.getFemaleRabbitPopulation(),
+                    foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(),
+                    RabbitLifeCycle.naturalDeathCount, FoxLifeCycle.rabbitsHunted, FoxLifeCycle.FoxDeathCount);
+            JSONHandler.jsonArray = JSONHandler.populateJSON(reportPackerMonthly);
 
-            if(reportChoice == 2) {
-                Printer.printMonthlyReport(rabbitFluffle, deathCount, i);
-                Printer.writeMonthlyReportToFile(bufferedWriter, rabbitFluffle, deathCount, i);
-            }
+            if(reportChoice == 2) Display.display(reportPackerMonthly, i, bufferedWriterTxt);
+
         }
-        if(reportChoice == 1) {
-            Printer.printFinalReport(rabbitFluffle, deathCount, time);
-            Printer.writeFinalReportToFile(bufferedWriter, rabbitFluffle, deathCount, time);
-        }
+            reportPackerFinal = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
+                rabbitFluffle.getFemaleRabbitPopulation(), rabbitFluffle.getMaleRabbitPopulation(),
+                foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(),
+                RabbitLifeCycle.naturalDeathCount, FoxLifeCycle.rabbitsHunted, FoxLifeCycle.FoxDeathCount);
+
+            JSONHandler.jsonArray = JSONHandler.populateJSON(reportPackerFinal);
+            JSONHandler.writeJSONReport(bufferedWriterJson, JSONHandler.jsonArray);
+
+
+            if(reportChoice == 1) Display.display(reportPackerFinal, time, bufferedWriterTxt);
+
+            Display.displaySimulationCompleted();
 
         } catch (IOException ioException) {
             Logger.logError(ioException);
         }
-    }
-    public static int getPregnancies() {
-        int maleRabbitCount = 0;
-        for (MaleRabbit rabbit : maleRabbits) {
-            if (rabbit.isMature()) {
-                maleRabbitCount += rabbit.getCount();
-            }
-        }
-        int femaleRabbitCount = 0;
-        for (FemaleRabbit rabbit : femaleRabbits) {
-            if (rabbit.isMature()) {
-                femaleRabbitCount += rabbit.getCount();
-            }
-        }
-        int potentialPregnancies = Math.min(maleRabbitCount, femaleRabbitCount);
-        int totalPregnancies = 0;
-        for (int i = 0; i < potentialPregnancies; i++) {
-            if (Randomizer.getPregnancyChance(FemaleRabbit.getPregnancyChance()) == 1){
-                totalPregnancies += 1;
-            }
-        }
-        return totalPregnancies;
+
+        return reportPackerFinal;
     }
 }

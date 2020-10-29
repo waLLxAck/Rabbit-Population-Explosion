@@ -3,9 +3,9 @@ package com.sparta.engineering72.Utility;
 import java.util.Random;
 
 public class Randomizer {
-    public static int getRandomGender() {
+    public static int[] getRandomGender(int count) {
         Random random = new Random();
-        return random.nextInt(2);
+        return random.ints(count, 0, 2).toArray();
     }
 
     public static int getPregnancyChance(double pregnancyChance) {
@@ -13,8 +13,27 @@ public class Randomizer {
         return random.nextInt((int) (1/pregnancyChance))+1;
     }
 
-    public static int getRandomOffspring() {
+    public static int getRandomRabbitOffspring() {
         Random random = new Random();
         return random.nextInt(14)+1;
+    }
+
+    public static int getRandomFoxOffspring() {
+        Random random = new Random();
+        return random.nextInt(10)+1;
+    }
+
+    public static int getRandomHunt() {
+        Random random = new Random();
+        return random.nextInt(20)+1;
+    }
+    public static int getRandomId(int idRange) {
+        Random random = new Random();
+        return random.nextInt(idRange);
+    }
+
+    public static int[] getRandomRabbitOffspring(int pregnancies) {
+        Random random = new Random();
+        return random.ints(pregnancies, 1, 14).toArray();
     }
 }
