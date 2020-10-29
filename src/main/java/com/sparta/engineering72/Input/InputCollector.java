@@ -2,6 +2,7 @@ package com.sparta.engineering72.Input;
 
 import com.sparta.engineering72.Log.Logger;
 import com.sparta.engineering72.Utility.Sleeper;
+import com.sparta.engineering72.View.Display;
 import com.sparta.engineering72.View.Printer;
 
 import java.util.InputMismatchException;
@@ -12,17 +13,17 @@ public class InputCollector {
     public static int getReportChoice() {
         Scanner scanner = new Scanner(System.in);
         int input = -1;
-        Printer.printReportChoice();
+        Display.displayReportChoice();
         do {
             try {
                 input = scanner.nextInt();
-                if (input < 1 || input > 2) {
+                if (input < 1 || input > 3) {
                     throw new InputMismatchException("Invalid input");
                 }
                 return input;
             } catch (InputMismatchException ime) {
                 Logger.logError(ime, "Invalid input");
-                Printer.printError();
+                Display.displayError();
                 Sleeper.sleep(100);
             }
         } while (true);
@@ -54,7 +55,7 @@ public class InputCollector {
     private static int getTime(String timeScale) {
         Scanner input = new Scanner(System.in);
         int numberOfMonths;
-        Printer.printEnterNumberOf(timeScale);
+        Display.displayEnterNumberOf(timeScale);
         try {
             numberOfMonths = input.nextInt();
             if (numberOfMonths < 0) {
@@ -63,7 +64,7 @@ public class InputCollector {
             return numberOfMonths;
         } catch (InputMismatchException ime) {
             Logger.logError(ime, "Invalid input");
-            Printer.printError();
+            Display.displayError();
             Sleeper.sleep(100);
         }
         return -1;

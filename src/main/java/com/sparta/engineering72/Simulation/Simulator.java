@@ -1,14 +1,14 @@
 package com.sparta.engineering72.Simulation;
 
 import com.sparta.engineering72.Animal.Fox.FemaleFox;
-import com.sparta.engineering72.Animal.Fox.Fox;
 import com.sparta.engineering72.Animal.Fox.FoxSkulk;
 import com.sparta.engineering72.Animal.Fox.MaleFox;
 import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.MaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 import com.sparta.engineering72.Log.Logger;
-import com.sparta.engineering72.Utility.JSONHandler;
+import com.sparta.engineering72.View.Display;
+import com.sparta.engineering72.View.JSONHandler;
 import com.sparta.engineering72.Utility.ReportPacker;
 import com.sparta.engineering72.View.Printer;
 
@@ -33,11 +33,10 @@ public class Simulator {
         FoxLifeCycle.maleFoxes.add(new MaleFox());
         FoxLifeCycle.femaleFoxes.add(new FemaleFox());
 
-        Printer.printSimulationStart();
+        Display.displaySimulationStart();
         RabbitLifeCycle rabbitLifeCycle = new RabbitLifeCycle();
         FoxLifeCycle foxLifeCycle = new FoxLifeCycle();
 
-        ReportPacker reportPackerMonthly = null;
         for (int i = 0; i <= time; i++) {
             foxLifeCycle.naturalDeath();
             rabbitLifeCycle.naturalDeath();
@@ -56,30 +55,28 @@ public class Simulator {
             FoxSkulk.maleFoxList = FoxLifeCycle.maleFoxes;
             FoxSkulk.femaleFoxList = FoxLifeCycle.femaleFoxes;
 
-                if(reportChoice == 2) {
-                    reportPackerMonthly = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
-                            rabbitFluffle.getMaleRabbitPopulation(), rabbitFluffle.getFemaleRabbitPopulation(),
-                            foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(), RabbitLifeCycle.naturalDeathCount, 0, FoxLifeCycle.FoxDeathCount);
 
-                    Printer.printReportToConsole(reportPackerMonthly, i);
-                    Printer.writeReportToFile(bufferedWriterTxt, reportPackerMonthly, i);
+            ReportPacker reportPackerMonthly = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
+                    rabbitFluffle.getMaleRabbitPopulation(), rabbitFluffle.getFemaleRabbitPopulation(),
+                    foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(),
+                    RabbitLifeCycle.naturalDeathCount, FoxLifeCycle.rabbitsHunted, FoxLifeCycle.FoxDeathCount);
+            JSONHandler.jsonArray = JSONHandler.populateJSON(reportPackerMonthly);
 
-                    JSONHandler.jsonArray = JSONHandler.populateJSONArray(JSONHandler.populateJSONObject(reportPackerMonthly));
-                    if(i == time) Printer.writeJSONReport(bufferedWriterJson, JSONHandler.jsonArray);
-                }
-            }
+            if(reportChoice == 2) Display.display(reportPackerMonthly, i, bufferedWriterTxt);
 
-        reportPackerFinal = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
+        }
+            reportPackerFinal = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
                 rabbitFluffle.getFemaleRabbitPopulation(), rabbitFluffle.getMaleRabbitPopulation(),
-                foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(), RabbitLifeCycle.naturalDeathCount, 0, FoxLifeCycle.FoxDeathCount);
+                foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(),
+                RabbitLifeCycle.naturalDeathCount, FoxLifeCycle.rabbitsHunted, FoxLifeCycle.FoxDeathCount);
 
-            if(reportChoice == 1) {
-                Printer.printReportToConsole(reportPackerFinal, time);
-                Printer.writeReportToFile(bufferedWriterTxt, reportPackerFinal, time);
-                Printer.writeJSONReport(bufferedWriterJson, JSONHandler.populateJSONArray(JSONHandler.populateJSONObject(reportPackerFinal)));
-            }
+            JSONHandler.jsonArray = JSONHandler.populateJSON(reportPackerFinal);
+            JSONHandler.writeJSONReport(bufferedWriterJson, JSONHandler.jsonArray);
 
-            Printer.printSimulationCompleted();
+
+            if(reportChoice == 1) Display.display(reportPackerFinal, time, bufferedWriterTxt);
+
+            Display.displaySimulationCompleted();
 
         } catch (IOException ioException) {
             Logger.logError(ioException);
