@@ -6,13 +6,31 @@ import org.junit.jupiter.api.Test;
 
 public class DeathTest{
     @Test
-    public void deathTestBefore() {
-        Simulator.runSimulation(59,1);
-        Assertions.assertEquals(true,Simulator.deathCount == 0);
+    public void deathTestBefore1Year() {
+        Simulator.runSimulation(11,1);
+        Assertions.assertEquals(true,Simulator.RabbitLifeCycle.deathCount == 0);
     }
     @Test
-    public void deathTestAfter() {
-        Simulator.runSimulation(61, 1);
-        Assertions.assertEquals(true,Simulator.deathCount == 2);
+    public void deathTestAfter1Year() {
+        Simulator.runSimulation(13, 1);
+        Assertions.assertEquals(true,Simulator.RabbitLifeCycle.deathCount <= 20);
     }
+
+    @Test
+    public void NaturalRabbitDeathsTest() {
+        Simulator.runSimulation(61, 1);
+        Assertions.assertEquals(true,Simulator.RabbitLifeCycle.naturalDeathCount <= 2);
+    }
+
+    @Test
+    public void FoxLivesBeforeFiveYears() {
+        Simulator.runSimulation(59, 1);
+        Assertions.assertEquals(true, FoxLifeCycle.deathCount == 0);
+    }
+    @Test
+    public void FoxDiesAfterFiveYears() {
+        Simulator.runSimulation(61, 1);
+        Assertions.assertEquals(true, FoxLifeCycle.deathCount == 2);
+    }
+
 }

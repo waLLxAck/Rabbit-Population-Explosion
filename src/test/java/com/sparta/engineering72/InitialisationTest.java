@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class InitialisationTest {
     @Test
-    public void initialisationTest() {
+    public void RabbitInitialisationTest() {
         Simulator.runSimulation(0, 1);
         Assertions.assertEquals(2, Simulator.rabbitFluffle.getRabbitPopulationSize());
     }
@@ -40,5 +40,55 @@ public class InitialisationTest {
     public void initialisationAgeTest(){
         Simulator.runSimulation(0, 1);
         Assertions.assertEquals(0, RabbitFluffle.maleRabbitList.get(0).getAge());
+    }
+
+
+    //Fox tests
+
+    @Test
+    public void FoxInitialisationTest() {
+        Simulator.runSimulation(0, 1);
+        Assertions.assertEquals(2, Simulator.foxSkulk.getFoxPopulationSize());
+    }
+    @Test
+    public void Fox11MonthsTest() {
+        Simulator.runSimulation(11, 1);
+        Assertions.assertEquals(2, Simulator.foxSkulk.getFoxPopulationSize());
+    }
+
+    @Test
+    public void FoxInitialisationMaleTest() {
+        Simulator.runSimulation(0, 1);
+        Assertions.assertEquals(1, Simulator.foxSkulk.getMaleFoxPopulation());
+    }
+
+    @Test
+    public void FoxInitialisationFemaleTest() {
+        Simulator.runSimulation(0, 1);
+        Assertions.assertEquals(1, Simulator.foxSkulk.getFemaleFoxPopulation());
+    }
+
+    @Test
+    public void FoxInitialisationFemaleMaturityTest(){
+        Simulator.runSimulation(0, 1);
+        Assertions.assertEquals(false, foxSkulk.femaleFoxList.get(0).isMature());
+    }
+
+    @Test
+    public void FoxInitialisationMaleMaturityTest(){
+        Simulator.runSimulation(0, 1);
+        Assertions.assertEquals(false, foxSkulk.maleFoxList.get(0).isMature());
+    }
+
+    @Test
+    public void FoxInitialisationAgeTest(){
+        Simulator.runSimulation(0, 1);
+        Assertions.assertEquals(0, foxSkulk.maleFoxList.get(0).getAge());
+    }
+
+    @Test
+    public void Fox6MonthsAgeTest(){
+        Simulator.runSimulation(6, 1);
+        Assertions.assertEquals(6, foxSkulk.maleFoxList.get(0).getAge());
     }
 }
