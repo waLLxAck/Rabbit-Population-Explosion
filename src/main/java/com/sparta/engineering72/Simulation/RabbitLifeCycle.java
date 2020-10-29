@@ -4,6 +4,7 @@ import com.sparta.engineering72.Animal.Animal;
 import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.MaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
+import com.sparta.engineering72.Settings.Settings;
 import com.sparta.engineering72.Utility.Randomizer;
 
 import java.util.ArrayList;
@@ -72,9 +73,13 @@ public class RabbitLifeCycle implements LifeCycle {
         if (FemaleRabbit.getPregnancyChance() == 1.0d) {
             totalPregnancies = potentialPregnancies;
         } else {
-            for (int i = 0; i < potentialPregnancies; i++) {
-                if (Randomizer.getPregnancyChance(FemaleRabbit.getPregnancyChance()) == 1) {
-                    totalPregnancies += 1;
+            if (potentialPregnancies > Settings.MAX_COUNT_THRESHOLD) {
+                totalPregnancies = (int) (potentialPregnancies*FemaleRabbit.getPregnancyChance());
+            } else {
+                for (int i = 0; i < potentialPregnancies; i++) {
+                    if (Randomizer.getPregnancyChance(FemaleRabbit.getPregnancyChance()) == 1) {
+                        totalPregnancies += 1;
+                    }
                 }
             }
         }
