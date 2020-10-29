@@ -7,14 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FemaleFox extends Fox{
-
-    private int age;
-    private Animal.Gender gender;
+    public static double PREGNANCY_CHANCE = 0.5d;
     private boolean isPregnant;
     private int count;
 
     public FemaleFox() {
-        super(Animal.Gender.FEMALE);
         this.gender = Animal.Gender.FEMALE;
         age = 0;
         isPregnant = false;
@@ -23,6 +20,14 @@ public class FemaleFox extends Fox{
 
     public boolean isPregnant(){
         return isPregnant;
+    }
+
+    public static double getPregnancyChance() {
+        return PREGNANCY_CHANCE;
+    }
+
+    public static void setPregnancyChance(double pregnancyChance) {
+        PREGNANCY_CHANCE = pregnancyChance;
     }
 
     public void getPregnant(){
@@ -46,16 +51,16 @@ public class FemaleFox extends Fox{
         int countMaleOffspring = 0;
         int countFemaleOffspring = 0;
 
-        for (int i = 0; i < count; i++) {
-            int numberOfOffsprings = Randomizer.getRandomFoxOffspring();
-            for(int j = 0; j < numberOfOffsprings; j++) {
-                if (Randomizer.getRandomGender() == 0) {
-                    countMaleOffspring++;
-                } else {
-                    countFemaleOffspring++;
-                }
-            }
-        }
+//        for (int i = 0; i < count; i++) {
+//            int numberOfOffsprings = Randomizer.getRandomFoxOffspring();
+//            for(int j = 0; j < numberOfOffsprings; j++) {
+//                if (Randomizer.getRandomGender() == 0) {
+//                    countMaleOffspring++;
+//                } else {
+//                    countFemaleOffspring++;
+//                }
+//            }
+//        }
 
         maleFox.setCount(countMaleOffspring);
         femaleFox.setCount(countFemaleOffspring);

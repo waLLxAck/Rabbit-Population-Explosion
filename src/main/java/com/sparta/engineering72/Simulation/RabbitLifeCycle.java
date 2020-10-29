@@ -54,7 +54,7 @@ public class RabbitLifeCycle implements LifeCycle {
         }
         getPregnancies();
     }
-    public static void getPregnancies() {
+    private void getPregnancies() {
         int maleRabbitCount = 0;
         for (MaleRabbit rabbit : maleRabbits) {
             if (rabbit.isMature()) {
@@ -69,9 +69,13 @@ public class RabbitLifeCycle implements LifeCycle {
         }
         int potentialPregnancies = Math.min(maleRabbitCount, femaleRabbitCount);
         int totalPregnancies = 0;
-        for (int i = 0; i < potentialPregnancies; i++) {
-            if (Randomizer.getPregnancyChance(FemaleRabbit.getPregnancyChance()) == 1){
-                totalPregnancies += 1;
+        if (FemaleRabbit.getPregnancyChance() == 1.0d) {
+            totalPregnancies = potentialPregnancies;
+        } else {
+            for (int i = 0; i < potentialPregnancies; i++) {
+                if (Randomizer.getPregnancyChance(FemaleRabbit.getPregnancyChance()) == 1) {
+                    totalPregnancies += 1;
+                }
             }
         }
         pregnancies = totalPregnancies;
