@@ -4,8 +4,12 @@ import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class Printer {
+
+    static DecimalFormat myFormatter = new DecimalFormat("###,###,###");
+
     public static void print(Object object) {
         System.out.println(object);
     }
@@ -14,6 +18,7 @@ public class Printer {
         System.out.println("Please choose how you want the report to be displayed:");
         System.out.println("Enter 1 for a Final report");
         System.out.println("Enter 2 for a month by month breakdown for the simulation");
+        System.out.println("-------------------------------");
     }
 
     public static void printStartMessage() {
@@ -49,11 +54,11 @@ public class Printer {
         bufferedWriter.write("\n Monthly report for " + years + " years and " + months + " months");
         bufferedWriter.write("\n==============================================================");
         bufferedWriter.write("\n == RABBIT POPULATION REPORT == ");
-        bufferedWriter.write("\nThe total population of Rabbits: " + rabbitFluffle.getRabbitPopulationSize());
-        bufferedWriter.write("\nThe male population of Rabbits: " + rabbitFluffle.getMaleRabbitPopulation());
-        bufferedWriter.write("\nThe female population of Rabbits: " + rabbitFluffle.getFemaleRabbitPopulation());
+        bufferedWriter.write("\nThe total population of Rabbits: " + myFormatter.format(rabbitFluffle.getRabbitPopulationSize()));
+        bufferedWriter.write("\nThe male population of Rabbits: " + myFormatter.format(rabbitFluffle.getMaleRabbitPopulation()));
+        bufferedWriter.write("\nThe female population of Rabbits: " + myFormatter.format(rabbitFluffle.getFemaleRabbitPopulation()));
         bufferedWriter.write("\n == DEATH REPORT == ");
-        bufferedWriter.write("\nThe total number of Rabbits that died: " + deathCount);
+        bufferedWriter.write("\nThe total number of Rabbits that died: " + myFormatter.format(deathCount));
         bufferedWriter.write("\n-------------------------------");
     }
 
@@ -64,11 +69,11 @@ public class Printer {
         bufferedWriter.write("\n The Simulation ran for " + years + " years and " + months + " months");
         bufferedWriter.write("\n==============================================================");
         bufferedWriter.write("\n == RABBIT POPULATION REPORT == ");
-        bufferedWriter.write("\nThe total population of Rabbits: " + rabbitFluffle.getRabbitPopulationSize());
-        bufferedWriter.write("\nThe male population of Rabbits: " + rabbitFluffle.getMaleRabbitPopulation());
-        bufferedWriter.write("\nThe female population of Rabbits: " + rabbitFluffle.getFemaleRabbitPopulation());
+        bufferedWriter.write("\nThe total population of Rabbits: " + myFormatter.format(rabbitFluffle.getRabbitPopulationSize()));
+        bufferedWriter.write("\nThe male population of Rabbits: " + myFormatter.format(rabbitFluffle.getMaleRabbitPopulation()));
+        bufferedWriter.write("\nThe female population of Rabbits: " + myFormatter.format(rabbitFluffle.getFemaleRabbitPopulation()));
         bufferedWriter.write("\n == DEATH REPORT == ");
-        bufferedWriter.write("\nThe total number of Rabbits that died: " + deathCount);
+        bufferedWriter.write("\nThe total number of Rabbits that died: " + myFormatter.format(deathCount));
         bufferedWriter.write("\n-------------------------------");
     }
 
@@ -109,19 +114,19 @@ public class Printer {
     }
 
     private static void printFinalPopulation(int number) {
-        System.out.println("The total population of Rabbits: " +number);
+        System.out.println("The total population of Rabbits: " + myFormatter.format(number));
     }
 
     private static void printMalePopulation(int number) {
-        System.out.println("The male population of Rabbits: " +number);
+        System.out.println("The male population of Rabbits: " + myFormatter.format(number));
     }
 
     private static void printFemalePopulation(int number) {
-        System.out.println("The female population of Rabbits: " +number);
+        System.out.println("The female population of Rabbits: " + myFormatter.format(number));
     }
 
     private static void printDeathCount(int number) {
-        System.out.println("The total number of Rabbits that died: " + number);
+        System.out.println("The total number of Rabbits that died: " + myFormatter.format(number));
     }
 
     public static void printEnterNumberPrompt() {

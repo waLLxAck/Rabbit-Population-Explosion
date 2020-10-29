@@ -13,8 +13,13 @@ public class Randomizer {
         return random.nextInt((int) (1/pregnancyChance))+1;
     }
 
-    public static int getRandomOffspring() {
+    public static int getRandomRabbitOffspring() {
         Random random = new Random();
         return random.nextInt(14)+1;
+    }
+
+    public static int getRandomFoxOffspring() {
+        Random random = new Random();
+        return random.nextInt(10)+1;
     }
 }
