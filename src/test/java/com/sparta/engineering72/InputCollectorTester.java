@@ -11,7 +11,7 @@ public class InputCollectorTester {
 
     @Test
     public void getReportChoiceTestInvalidUpperBound(){
-        ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("4".getBytes());
         System.setIn(in);
         InputCollector.getReportChoice();
     }
