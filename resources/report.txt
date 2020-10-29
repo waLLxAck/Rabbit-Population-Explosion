@@ -1,14 +1,18 @@
 
 SIMULATION REPORT
 
-
-==============================================================
- The Simulation ran for 3 years and 0 months
-==============================================================
  == RABBIT POPULATION REPORT == 
 The total population of Rabbits: 5,148,864
 The male population of Rabbits: 2,573,503
 The female population of Rabbits: 2,575,361
  == DEATH REPORT == 
 The total number of Rabbits that died: 0
--------------------------------
+=======
+ The Simulation ran for 10 years and 0 months
+==============================================================
+ == RABBIT POPULATION REPORT == 
+The total population of Rabbits: 15617114
+The male population of Rabbits: 7808609
+The female population of Rabbits: 7808505
+ == DEATH REPORT == 
+The total number of Rabbits that died: 2168
