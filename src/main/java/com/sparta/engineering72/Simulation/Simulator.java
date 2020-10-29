@@ -1,5 +1,9 @@
 package com.sparta.engineering72.Simulation;
 
+import com.sparta.engineering72.Animal.Fox.FemaleFox;
+import com.sparta.engineering72.Animal.Fox.Fox;
+import com.sparta.engineering72.Animal.Fox.FoxSkulk;
+import com.sparta.engineering72.Animal.Fox.MaleFox;
 import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.MaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
@@ -14,6 +18,7 @@ import java.io.IOException;
 
 public class Simulator {
     public static RabbitFluffle rabbitFluffle = new RabbitFluffle();
+    public static FoxSkulk foxSkulk = new FoxSkulk();
     public static int deathCount = 0;
 
     public static ReportPacker runSimulation(int time, int reportChoice) {
@@ -24,6 +29,9 @@ public class Simulator {
           
         RabbitLifeCycle.maleRabbits.add(new MaleRabbit());
         RabbitLifeCycle.femaleRabbits.add(new FemaleRabbit());
+
+        FoxLifeCycle.maleFoxes.add(new MaleFox());
+        FoxLifeCycle.femaleFoxes.add(new FemaleFox());
 
         Printer.printSimulationStart();
         RabbitLifeCycle rabbitLifeCycle = new RabbitLifeCycle();
@@ -44,13 +52,16 @@ public class Simulator {
             RabbitFluffle.femaleRabbitList = RabbitLifeCycle.femaleRabbits;
             RabbitFluffle.maleRabbitList = RabbitLifeCycle.maleRabbits;
 
+            FoxSkulk.maleFoxList = FoxLifeCycle.maleFoxes;
+            FoxSkulk.femaleFoxList = FoxLifeCycle.femaleFoxes;
+
                 if(reportChoice == 2) {
                     reportPackerMonthly = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
                             rabbitFluffle.getMaleRabbitPopulation(), rabbitFluffle.getFemaleRabbitPopulation(),
-                            0, 0, 0, RabbitLifeCycle.naturalDeathCount, 0, 0);
+                            foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(), RabbitLifeCycle.naturalDeathCount, 0, FoxLifeCycle.FoxDeathCount);
 
-                    Printer.printMonthlyReportToConsole(reportPackerMonthly, i);
-                    Printer.writeMonthlyReportToFile(bufferedWriterTxt, rabbitFluffle, RabbitLifeCycle.naturalDeathCount, i);
+                    Printer.printReportToConsole(reportPackerMonthly, i);
+                    Printer.writeReportToFile(bufferedWriterTxt, reportPackerMonthly, i);
 
                     JSONHandler.jsonArray = JSONHandler.populateJSONArray(JSONHandler.populateJSONObject(reportPackerMonthly));
                     if(i == time) Printer.writeJSONReport(bufferedWriterJson, JSONHandler.jsonArray);
@@ -59,13 +70,15 @@ public class Simulator {
 
         reportPackerFinal = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
                 rabbitFluffle.getFemaleRabbitPopulation(), rabbitFluffle.getMaleRabbitPopulation(),
-                0, 0, 0, RabbitLifeCycle.naturalDeathCount, 0, 0);
+                foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(), RabbitLifeCycle.naturalDeathCount, 0, FoxLifeCycle.FoxDeathCount);
 
             if(reportChoice == 1) {
-                Printer.printFinalReportToConsole(reportPackerFinal, time);
-                Printer.writeFinalReportToFile(bufferedWriterTxt, rabbitFluffle, RabbitLifeCycle.naturalDeathCount, time);
+                Printer.printReportToConsole(reportPackerFinal, time);
+                Printer.writeReportToFile(bufferedWriterTxt, reportPackerFinal, time);
                 Printer.writeJSONReport(bufferedWriterJson, JSONHandler.populateJSONArray(JSONHandler.populateJSONObject(reportPackerFinal)));
             }
+
+            Printer.printSimulationCompleted();
 
         } catch (IOException ioException) {
             Logger.logError(ioException);
