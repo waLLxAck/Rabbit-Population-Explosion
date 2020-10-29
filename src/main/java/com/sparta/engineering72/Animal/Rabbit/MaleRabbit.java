@@ -3,9 +3,6 @@ package com.sparta.engineering72.Animal.Rabbit;
 import com.sparta.engineering72.Animal.Animal;
 
 public class MaleRabbit extends Rabbit {
-
-    private int age;
-    private Animal.Gender gender;
     private int count;
 
     public MaleRabbit() {

@@ -3,16 +3,12 @@ package com.sparta.engineering72.Animal.Fox;
 import com.sparta.engineering72.Animal.Animal;
 
 public class MaleFox extends Fox{
-
-    private int age;
-    private Animal.Gender gender;
     private int count;
 
     public MaleFox() {
-        super(Animal.Gender.MALE);
-        this.gender= Animal.Gender.MALE;
-        age = 0;
-        count = 1;
+        this.gender = Animal.Gender.MALE;
+        this.age = 0;
+        this.count = 1;
     }
 
     public int getCount() {

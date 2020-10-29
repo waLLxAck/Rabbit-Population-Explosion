@@ -10,10 +10,6 @@ public abstract class Animal {
     public Gender gender;
     public int age = 0;
 
-    public Animal(Gender gender) {
-        this.gender = gender;
-    }
-
     public Gender getGender() {
         return gender;
     }

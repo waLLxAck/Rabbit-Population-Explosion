@@ -10,8 +10,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class FemaleRabbit extends Rabbit {
     public static double PREGNANCY_CHANCE = 0.5d; //TODO: Setters for user input
-    private int age;
-    private Animal.Gender gender;
     private boolean isPregnant;
     private int count;
 

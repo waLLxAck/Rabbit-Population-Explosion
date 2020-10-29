@@ -3,15 +3,12 @@ package com.sparta.engineering72.Animal.Rabbit;
 import com.sparta.engineering72.Animal.Animal;
 
 public abstract class Rabbit extends Animal {
-    private int age;
-    private Gender gender;
     private static final int DEATH_AGE = 60;
     private static final int MATURITY_AGE = 3;
 
     public Rabbit(Gender gender) {
-        super(gender);
         this.gender = gender;
-        age = 0;
+        this.age = 0;
     }
 
     @Override
@@ -27,7 +24,6 @@ public abstract class Rabbit extends Animal {
     @Override
     public void incrementAge() {
         super.incrementAge();
-        age = super.age;
     }
 }
 
