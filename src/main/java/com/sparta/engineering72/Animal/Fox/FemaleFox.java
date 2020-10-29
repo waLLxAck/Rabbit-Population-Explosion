@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FemaleFox extends Fox{
-    public static double PREGNANCY_CHANCE = 1d;
+    public static double PREGNANCY_CHANCE = 0.5d;
     private boolean isPregnant;
-    private long count;
+    private int count;
 
     public FemaleFox() {
         super(Animal.Gender.FEMALE);
