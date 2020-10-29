@@ -5,6 +5,8 @@ import com.sparta.engineering72.Animal.Fox.FemaleFox;
 import com.sparta.engineering72.Animal.Fox.FoxSkulk;
 import com.sparta.engineering72.Animal.Fox.MaleFox;
 import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
+import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
+import com.sparta.engineering72.Settings.Settings;
 import com.sparta.engineering72.Utility.Randomizer;
 
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ public class FoxLifeCycle implements LifeCycle {
     static ArrayList<MaleFox> maleFoxes = FoxSkulk.getMaleFoxList();
     public static int foxPregnancies = 0;
     public static int FoxDeathCount = 0;
+    public static int rabbitsHunted = 0;
 
     @Override
     public void naturalDeath() {
@@ -72,6 +75,8 @@ public class FoxLifeCycle implements LifeCycle {
         int totalPregnancies = 0;
         if (FemaleFox.getPregnancyChance() == 1.0d) {
             totalPregnancies = potentialPregnancies;
+        } else if (potentialPregnancies > Settings.MAX_COUNT_THRESHOLD) {
+            totalPregnancies = (int) (potentialPregnancies*FemaleFox.getPregnancyChance());
         } else {
             for (int i = 0; i < potentialPregnancies; i++) {
                 if (Randomizer.getPregnancyChance(FemaleFox.getPregnancyChance()) == 1) {
@@ -80,6 +85,25 @@ public class FoxLifeCycle implements LifeCycle {
             }
         }
         foxPregnancies = totalPregnancies;
+    }
+
+    public void hunt(int time) {
+        RabbitFluffle fluffle = new RabbitFluffle();
+        FoxSkulk skulk = new FoxSkulk();
+        int foxPopulation = skulk.getFoxPopulationSize();
+        if (time < 60) {
+            foxPopulation -= 2;
+        }
+        int rabbitsEaten = 0;
+        int rabbitPopulation = fluffle.getRabbitPopulationSize();
+        if (foxPopulation > Settings.MAX_COUNT_THRESHOLD) {
+            rabbitsEaten = (int) (foxPopulation*10.5);
+        } else {
+            for (int i = 0; i < foxPopulation; i++) {
+                rabbitsEaten += Randomizer.getRandomHunt();
+            }
+        }
+        rabbitsHunted = Math.min(rabbitsEaten, rabbitPopulation);
     }
 
     @Override
