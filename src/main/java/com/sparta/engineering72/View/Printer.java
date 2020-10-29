@@ -18,6 +18,19 @@ public class Printer {
         printRabbitDeaths(reportPacker);
     }
 
+    public static void printSimulationCompleted(){
+        System.out.println("Simulation completed.");
+        System.out.println("--------------------------------------------------------------\n");
+    }
+
+    private static void printTimeElapsedMonthly(int number){
+        int years = number/12;
+        int months = number % 12;
+        System.out.println("==============================================================");
+        System.out.printf("Monthly report for %d years and %d months\n", years, months);
+        System.out.println("==============================================================");
+    }
+
     private static void printSimulationTime(int number) {
         int years = number/12;
         int months = number % 12;
@@ -50,20 +63,28 @@ public class Printer {
         System.out.println("==============================================================\n");
     }
 
-    private static void printFinalPopulation(int number) {
+    private static void printFinalPopulation(long number) {
         System.out.println("The total population of Rabbits: " + myFormatter.format(number));
     }
 
-    private static void printMalePopulation(int number) {
+    private static void printMalePopulation(long number) {
         System.out.println("The male population of Rabbits: " + myFormatter.format(number));
     }
 
-    private static void printFemalePopulation(int number) {
+    private static void printFemalePopulation(long number) {
         System.out.println("The female population of Rabbits: " + myFormatter.format(number));
     }
 
-    private static void printRabbitAgeDeathCount(int number) {
+    private static void printRabbitAgeDeathCount(long number) {
         System.out.println("The total number of Rabbits that died: " + myFormatter.format(number));
+    }
+
+    private static void printRabbitPreyDeathCount(long number) {
+        System.out.println("The total number of Rabbits that were eaten: " + myFormatter.format(number));
+    }
+
+    private static void printFoxDeathCount(long number) {
+        System.out.println("The total number of Foxes that died: " + myFormatter.format(number));
     }
 
     private static void printRabbitPreyDeathCount(int number) {
@@ -77,6 +98,4 @@ public class Printer {
     public static void printEnterNumberPrompt() {
         System.out.print("Enter a number: ");
     }
-
-
 }

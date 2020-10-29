@@ -3,7 +3,7 @@ package com.sparta.engineering72.Animal.Rabbit;
 import com.sparta.engineering72.Animal.Animal;
 
 public class MaleRabbit extends Rabbit {
-    private int count;
+    private long count;
 
     public MaleRabbit() {
         super(Animal.Gender.MALE);
@@ -12,11 +12,11 @@ public class MaleRabbit extends Rabbit {
         count = 1;
     }
 
-    public int getCount() {
+    public long getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(long count) {
         this.count = count;
     }
 }

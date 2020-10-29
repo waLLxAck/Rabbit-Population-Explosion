@@ -15,20 +15,20 @@ public class RabbitFluffle {
         return maleRabbitList;
     }
 
-    public int getRabbitPopulationSize(){
+    public long getRabbitPopulationSize(){
         return getFemaleRabbitPopulation() + getMaleRabbitPopulation();
     }
 
-    public int getFemaleRabbitPopulation(){
-        int femalePopulation = 0;
+    public long getFemaleRabbitPopulation(){
+        long femalePopulation = 0;
         for(FemaleRabbit femaleRabbit : femaleRabbitList){
             femalePopulation += femaleRabbit.getCount();
         }
         return femalePopulation;
     }
 
-    public int getMaleRabbitPopulation(){
-        int malePopulation = 0;
+    public long getMaleRabbitPopulation(){
+        long malePopulation = 0;
         for(MaleRabbit maleRabbit : maleRabbitList){
             malePopulation += maleRabbit.getCount();
         }

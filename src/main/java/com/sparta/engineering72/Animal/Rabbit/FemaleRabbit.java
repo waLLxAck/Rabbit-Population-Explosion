@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class FemaleRabbit extends Rabbit {
     public static double PREGNANCY_CHANCE = 0.5d; //TODO: Setters for user input
     private boolean isPregnant;
-    private int count;
+    private long count;
 
     public FemaleRabbit(){
         super(Animal.Gender.FEMALE);
@@ -30,11 +30,11 @@ public class FemaleRabbit extends Rabbit {
         isPregnant = true;
     }
 
-    public int getCount() {
+    public long getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(long count) {
         this.count = count;
     }
 
@@ -46,7 +46,7 @@ public class FemaleRabbit extends Rabbit {
         PREGNANCY_CHANCE = getPregnantChance;
     }
 
-    public static List<Animal> breed(int count) {
+    public static List<Animal> breed(long count) {
         final int averageOffspringCount = 7;
 
         final List<BigInteger> listOfBigIntsMale = new ArrayList<>();
@@ -64,22 +64,22 @@ public class FemaleRabbit extends Rabbit {
             listOfBigIntsFemale.add(BigInteger.valueOf(0));
         }
 
-        int[] randomGenders;
+        long[] randomGenders;
 
         if (count > Settings.MAX_COUNT_THRESHOLD){
-            int totalOffspring = count*averageOffspringCount;
-            int totalOffspring2 = totalOffspring/2;
+            long totalOffspring = count*averageOffspringCount;
+            long totalOffspring2 = totalOffspring/2;
             maleRabbit.setCount(totalOffspring2);
             femaleRabbit.setCount(totalOffspring2);
         } else {
-            int countMaleOffspring = 0;
-            int countFemaleOffspring = 0;
+            long countMaleOffspring = 0;
+            long countFemaleOffspring = 0;
 
-            int totalOffspring = 0;
+            long totalOffspring = 0;
 
-            int[] childrenArray = Randomizer.getRandomRabbitOffspring(count);
+            long[] childrenArray = Randomizer.getRandomRabbitOffspring(count);
 
-            for (int child : childrenArray) {
+            for (long child : childrenArray) {
                 totalOffspring += child;
             }
 
