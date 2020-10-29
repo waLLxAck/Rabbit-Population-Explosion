@@ -28,4 +28,8 @@ public class Randomizer {
         return random.nextInt(20)+1;
     }
 
+    public static int[] getRandomRabbitOffspring(int pregnancies) {
+        Random random = new Random();
+        return random.ints(pregnancies, 1, 14).toArray();
+    }
 }

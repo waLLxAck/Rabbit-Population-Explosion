@@ -1,6 +1,7 @@
 package com.sparta.engineering72.Animal.Rabbit;
 
 import com.sparta.engineering72.Animal.Animal;
+import com.sparta.engineering72.Settings.Settings;
 import com.sparta.engineering72.Utility.Randomizer;
 
 import java.math.BigInteger;
@@ -45,45 +46,16 @@ public class FemaleRabbit extends Rabbit {
         PREGNANCY_CHANCE = getPregnantChance;
     }
 
-//    public static List<Animal> breed(int count) {
-//        List<Animal> animals = new ArrayList<>();
-//
-//        MaleRabbit maleRabbit = new MaleRabbit();
-//        FemaleRabbit femaleRabbit = new FemaleRabbit();
-//
-//        int countMaleOffspring = 0;
-//        int countFemaleOffspring = 0;
-//
-//        for (int i = 0; i < count; i++) {
-//            int numberOfOffsprings = Randomizer.getRandomRabbitOffspring();
-//            for(int j = 0; j < numberOfOffsprings; j++) {
-//                if (Randomizer.getRandomGender() == 0) {
-//                    countMaleOffspring++;
-//                } else {
-//                    countFemaleOffspring++;
-//                }
-//            }
-//        }
-//
-//        maleRabbit.setCount(countMaleOffspring);
-//        femaleRabbit.setCount(countFemaleOffspring);
-//
-//        animals.add(maleRabbit);
-//        animals.add(femaleRabbit);
-//        return animals;
-//    }
-
     public static List<Animal> breed(int count) {
+        final int averageOffspringCount = 7;
+
         final List<BigInteger> listOfBigIntsMale = new ArrayList<>();
         final List<BigInteger> listOfBigIntsFemale = new ArrayList<>();
         int THREAD_COUNT = 10;
         List<Animal> animals = new ArrayList<>();
         MaleRabbit maleRabbit = new MaleRabbit();
         FemaleRabbit femaleRabbit = new FemaleRabbit();
-        int random = Randomizer.getRandomRabbitOffspring();
-        int[] randomGenders = Randomizer.getRandomGender(count);
-        AtomicInteger countMaleOffspring = new AtomicInteger();
-        AtomicInteger countFemaleOffspring = new AtomicInteger();
+
         List<Thread> threads = new ArrayList<>();
         for (int i = 0; i < THREAD_COUNT; i++) {
             listOfBigIntsMale.add(BigInteger.valueOf(0));
@@ -92,68 +64,86 @@ public class FemaleRabbit extends Rabbit {
             listOfBigIntsFemale.add(BigInteger.valueOf(0));
         }
 
-        if (count>THREAD_COUNT){
-            for (int i = 0; i < THREAD_COUNT; i++) {
-                final int k = i;
-                listOfBigIntsFemale.get(i);
-                int lowerBound = (count/THREAD_COUNT * i);
-                int upperBound = (count/THREAD_COUNT * (i+1));
-                threads.add(new Thread(new Runnable() {
-                    final int v = k;
-                    @Override
-                    public void run() {
-                        int males = 0;
-                        int females = 0;
-                        for (int j = lowerBound; j < upperBound; j++) {
-                            for (int i = 0; i < Randomizer.getRandomRabbitOffspring(); i++) { //todo decide whether to add more loops
-                                if (randomGenders[j] == 0) {
-                                    males++;
-                                } else {
-                                    females++;
-                                }
-                            }
-                        }
-                        listOfBigIntsMale.set(v, BigInteger.valueOf(males));
-                        listOfBigIntsFemale.set(v, BigInteger.valueOf(females));
-                    }
-                }));
-            }
-            for (Thread thread : threads) {
-                thread.start();
-            }
-            for (Thread thread : threads) {
-                try {
-                    thread.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            int sumOfMales = 0;
-            int sumOfFemales = 0;
-            for (BigInteger bigInt : listOfBigIntsMale) {
-                sumOfMales += bigInt.intValue();
-            }
-            for (BigInteger bigInt : listOfBigIntsFemale) {
-                sumOfFemales += bigInt.intValue();
-            }
-            maleRabbit.setCount(sumOfMales);
-            femaleRabbit.setCount(sumOfFemales);
-            animals.add(maleRabbit);
-            animals.add(femaleRabbit);
-            return animals;
+        int[] randomGenders;
+
+        if (count > Settings.MAX_COUNT_THRESHOLD){
+            int totalOffspring = count*averageOffspringCount;
+            int totalOffspring2 = totalOffspring/2;
+            maleRabbit.setCount(totalOffspring2);
+            femaleRabbit.setCount(totalOffspring2);
         } else {
-            for (int i = 0; i < count; i++) {
-                if (randomGenders[i] == 0) {
-                    countMaleOffspring.getAndIncrement();
+            int countMaleOffspring = 0;
+            int countFemaleOffspring = 0;
+
+            int totalOffspring = 0;
+
+            int[] childrenArray = Randomizer.getRandomRabbitOffspring(count);
+
+            for (int child : childrenArray) {
+                totalOffspring += child;
+            }
+
+            randomGenders = Randomizer.getRandomGender(totalOffspring);
+
+//            for (int i = 0; i < THREAD_COUNT; i++) {
+//                final int k = i;
+//
+//                int lowerBound = (totalOffspring/THREAD_COUNT * i);
+//                int upperBound = (totalOffspring/THREAD_COUNT * (i+1));
+//                threads.add(new Thread(new Runnable() {
+//                    final int v = k;
+//                    @Override
+//                    public void run() {
+//                        int males = 0;
+//                        int females = 0;
+//                        for (int j = lowerBound; j < upperBound; j++) {
+//                            for (int i = 0; i < upperBound-lowerBound; i++) {
+//                                if (randomGenders[j] == 0) {
+//                                    males++;
+//                                } else {
+//                                    females++;
+//                                }
+//                            }
+//                        }
+//                        listOfBigIntsMale.set(v, BigInteger.valueOf(males));
+//                        listOfBigIntsFemale.set(v, BigInteger.valueOf(females));
+//                    }
+//                }));
+//            }
+//            for (Thread thread : threads) {
+//                thread.start();
+//            }
+//            for (Thread thread : threads) {
+//                try {
+//                    thread.join();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            int sumOfMales = 0;
+//            int sumOfFemales = 0;
+//            for (BigInteger bigInt : listOfBigIntsMale) {
+//                sumOfMales += bigInt.intValue();
+//            }
+//            for (BigInteger bigInt : listOfBigIntsFemale) {
+//                sumOfFemales += bigInt.intValue();
+//            }
+//            maleRabbit.setCount(sumOfMales);
+//            femaleRabbit.setCount(sumOfFemales);
+
+            for(int j = 0; j < totalOffspring; j++) {
+                if (randomGenders[j] == 1) {
+                    countMaleOffspring++;
                 } else {
-                    countFemaleOffspring.getAndIncrement();
+                    countFemaleOffspring++;
                 }
             }
-            maleRabbit.setCount(countMaleOffspring.get());
-            femaleRabbit.setCount(countFemaleOffspring.get());
-            animals.add(maleRabbit);
-            animals.add(femaleRabbit);
-            return animals;
+
+            maleRabbit.setCount(countMaleOffspring);
+            femaleRabbit.setCount(countFemaleOffspring);
         }
+        animals.add(maleRabbit);
+        animals.add(femaleRabbit);
+        return animals;
     }
 }
