@@ -23,7 +23,7 @@ public class Fox extends Animal {
 
     @Override
     public boolean isReadyToDie() {
-        return this.age >= MATURITY_AGE;
+        return this.age >= DEATH_AGE;
     }
 }
 
