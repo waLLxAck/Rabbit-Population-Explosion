@@ -1,11 +1,9 @@
 package com.sparta.engineering72;
-
 import com.sparta.engineering72.Animal.Fox.FoxSkulk;
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 import com.sparta.engineering72.Simulation.Simulator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 public class InitialisationTest {
     @Test
     public void RabbitInitialisationTest() {
@@ -18,7 +16,6 @@ public class InitialisationTest {
         Simulator.runSimulation(0, 1);
         Assertions.assertEquals(1, Simulator.rabbitFluffle.getMaleRabbitPopulation());
     }
-
     @Test
     public void initialisationFemaleTest() {
         Simulator.runSimulation(0, 1);
@@ -30,27 +27,24 @@ public class InitialisationTest {
         Simulator.runSimulation(0, 1);
         Assertions.assertEquals(false, RabbitFluffle.femaleRabbitList.get(0).isMature());
     }
-
     @Test
     public void initialisationMaleMaturityTest(){
         Simulator.runSimulation(0, 1);
         Assertions.assertEquals(false, RabbitFluffle.maleRabbitList.get(0).isMature());
     }
-
     @Test
     public void initialisationAgeTest(){
         Simulator.runSimulation(0, 1);
         Assertions.assertEquals(0, RabbitFluffle.maleRabbitList.get(0).getAge());
     }
 
-
     //Fox tests
-
     @Test
     public void FoxInitialisationTest() {
         Simulator.runSimulation(0, 1);
         Assertions.assertEquals(2, Simulator.foxSkulk.getFoxPopulationSize());
     }
+
     @Test
     public void Fox11MonthsTest() {
         Simulator.runSimulation(11, 1);
@@ -93,3 +87,5 @@ public class InitialisationTest {
         Assertions.assertEquals(6, FoxSkulk.maleFoxList.get(0).getAge());
     }
 }
+
+
