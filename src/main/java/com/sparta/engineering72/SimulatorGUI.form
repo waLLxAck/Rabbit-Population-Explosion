@@ -147,7 +147,7 @@
           <horizontalAlignment value="4"/>
           <horizontalTextPosition value="4"/>
           <labelFor value="e9eb1"/>
-          <text value="maturity age:"/>
+          <text value="Maturity age:"/>
         </properties>
       </component>
       <component id="2a15b" class="javax.swing.JLabel" binding="totalRabbitsLabel">
@@ -157,7 +157,7 @@
         <properties>
           <horizontalAlignment value="4"/>
           <labelFor value="79a27"/>
-          <text value="total:"/>
+          <text value="Total:"/>
         </properties>
       </component>
       <component id="9360b" class="javax.swing.JLabel" binding="rabbitDeathAgeLabel">
@@ -168,7 +168,7 @@
           <horizontalAlignment value="4"/>
           <horizontalTextPosition value="4"/>
           <labelFor value="4a5a4"/>
-          <text value="death age:"/>
+          <text value="Death age:"/>
         </properties>
       </component>
       <component id="aca67" class="javax.swing.JLabel" binding="foxMaturityAgeLabel">
@@ -179,7 +179,7 @@
           <horizontalAlignment value="4"/>
           <horizontalTextPosition value="4"/>
           <labelFor value="11e3"/>
-          <text value="maturity age:"/>
+          <text value="Maturity age:"/>
         </properties>
       </component>
       <component id="587be" class="javax.swing.JLabel" binding="foxDeathAgeLabel">
@@ -190,7 +190,7 @@
           <horizontalAlignment value="4"/>
           <horizontalTextPosition value="4"/>
           <labelFor value="11377"/>
-          <text value="death age:"/>
+          <text value="Death age:"/>
         </properties>
       </component>
       <component id="b4212" class="javax.swing.JLabel" binding="allSettingsLabel">
@@ -226,7 +226,7 @@
         <properties>
           <horizontalAlignment value="4"/>
           <labelFor value="41406"/>
-          <text value="male:"/>
+          <text value="Male:"/>
         </properties>
       </component>
       <component id="fc9aa" class="javax.swing.JTextField" binding="totalFoxesTextField">
@@ -258,7 +258,7 @@
         <properties>
           <horizontalAlignment value="4"/>
           <labelFor value="fc9aa"/>
-          <text value="total:"/>
+          <text value="Total:"/>
         </properties>
       </component>
       <component id="9bb82" class="javax.swing.JLabel" binding="maleFoxesLabel">
@@ -267,7 +267,7 @@
         </constraints>
         <properties>
           <labelFor value="d0642"/>
-          <text value="male:"/>
+          <text value="Male:"/>
         </properties>
       </component>
       <component id="85b3b" class="javax.swing.JLabel" binding="timerSettingsLabel" default-binding="true">
@@ -302,7 +302,7 @@
           <horizontalAlignment value="4"/>
           <horizontalTextPosition value="4"/>
           <labelFor value="e4033"/>
-          <text value="years:"/>
+          <text value="Years:"/>
         </properties>
       </component>
       <component id="42147" class="javax.swing.JLabel" binding="monthsLabel">
@@ -311,7 +311,7 @@
         </constraints>
         <properties>
           <labelFor value="3d458"/>
-          <text value="months:"/>
+          <text value="Months:"/>
         </properties>
       </component>
       <component id="a5710" class="javax.swing.JTextField" binding="oldAgeDeathRabbitsTextField">
@@ -331,7 +331,7 @@
         </constraints>
         <properties>
           <labelFor value="a5710"/>
-          <text value="rabbits - old age:"/>
+          <text value="Rabbits (natural):"/>
         </properties>
       </component>
       <component id="f739d" class="javax.swing.JTextField" binding="preyDeathRabbitsTextField">
@@ -351,7 +351,7 @@
         </constraints>
         <properties>
           <labelFor value="7348f"/>
-          <text value="female:"/>
+          <text value="Female:"/>
         </properties>
       </component>
       <component id="5a2df" class="javax.swing.JLabel" binding="deathReportLabel">
@@ -383,7 +383,7 @@
         </constraints>
         <properties>
           <labelFor value="c4d1d"/>
-          <text value="female:"/>
+          <text value="Female:"/>
         </properties>
       </component>
       <component id="b16f2" class="javax.swing.JLabel" binding="preyDeathRabbitsLabel">
@@ -391,7 +391,7 @@
           <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="rabbits - hunted:"/>
+          <text value="Rabbits (eaten):"/>
         </properties>
       </component>
       <component id="70d61" class="javax.swing.JTextField" binding="deathFoxesTextField">
@@ -411,7 +411,7 @@
         </constraints>
         <properties>
           <labelFor value="70d61"/>
-          <text value="foxes:"/>
+          <text value="Foxes (natural):"/>
         </properties>
       </component>
       <component id="68e46" class="javax.swing.JLabel" binding="successMessageTextField">

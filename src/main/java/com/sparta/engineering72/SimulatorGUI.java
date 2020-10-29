@@ -86,20 +86,8 @@ public class SimulatorGUI extends JFrame{
     }
 
     private void buttonHandler(){
-        startSimulationButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                callSimulator();
-
-            }
-        });
-        resetButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                resetAllInputTextFields();
-            }
-        });
+        startSimulationButton.addActionListener(e -> callSimulator());
+        resetButton.addActionListener(e -> resetAllInputTextFields());
     }
 
     private void enableButtons(boolean able){

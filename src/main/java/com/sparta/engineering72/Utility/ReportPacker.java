@@ -2,15 +2,15 @@ package com.sparta.engineering72.Utility;
 
 public class ReportPacker {
 
-    long totalRabbits = 0;
-    long maleRabbits = 0;
-    long femaleRabbits = 0;
-    long totalFoxes = 0;
-    long maleFoxes = 0;
-    long femaleFoxes = 0;
-    long rabbitAgeDeaths = 0;
-    long rabbitPreyDeaths = 0;
-    long foxDeaths = 0;
+    long totalRabbits;
+    long maleRabbits;
+    long femaleRabbits;
+    long totalFoxes;
+    long maleFoxes;
+    long femaleFoxes;
+    long rabbitAgeDeaths;
+    long rabbitPreyDeaths;
+    long foxDeaths;
 
     public ReportPacker(long totalRabbits, long maleRabbits, long femaleRabbits, long totalFoxes, long maleFoxes,
                         long femaleFoxes, long rabbitAgeDeaths, long rabbitPreyDeaths, long foxDeaths) {
