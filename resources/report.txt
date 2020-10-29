@@ -106,8 +106,8 @@ The total number of Foxes that died: 0
  The Simulation ran for 0 years and 5 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 2
-The male population of Rabbits: 1
+The total population of Rabbits: 3
+The male population of Rabbits: 2
 The female population of Rabbits: 1
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
@@ -126,8 +126,8 @@ The total number of Foxes that died: 0
  The Simulation ran for 0 years and 6 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 2
-The male population of Rabbits: 1
+The total population of Rabbits: 3
+The male population of Rabbits: 2
 The female population of Rabbits: 1
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
@@ -146,8 +146,8 @@ The total number of Foxes that died: 0
  The Simulation ran for 0 years and 7 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 2
-The male population of Rabbits: 1
+The total population of Rabbits: 3
+The male population of Rabbits: 2
 The female population of Rabbits: 1
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
@@ -166,9 +166,9 @@ The total number of Foxes that died: 0
  The Simulation ran for 0 years and 8 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 3
+The total population of Rabbits: 4
 The male population of Rabbits: 2
-The female population of Rabbits: 1
+The female population of Rabbits: 2
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
 The total population of Foxes: 2
@@ -186,9 +186,9 @@ The total number of Foxes that died: 0
  The Simulation ran for 0 years and 9 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 3
-The male population of Rabbits: 2
-The female population of Rabbits: 1
+The total population of Rabbits: 5
+The male population of Rabbits: 3
+The female population of Rabbits: 2
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
 The total population of Foxes: 2
@@ -204,166 +204,6 @@ The total number of Foxes that died: 0
 
 ==============================================================
  The Simulation ran for 0 years and 10 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 3
-The male population of Rabbits: 2
-The female population of Rabbits: 1
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 0 years and 11 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 3
-The male population of Rabbits: 2
-The female population of Rabbits: 1
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 1 years and 0 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 3
-The male population of Rabbits: 2
-The female population of Rabbits: 1
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 1 years and 1 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 4
-The male population of Rabbits: 3
-The female population of Rabbits: 1
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 1 years and 2 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 4
-The male population of Rabbits: 3
-The female population of Rabbits: 1
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 1 years and 3 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 5
-The male population of Rabbits: 3
-The female population of Rabbits: 2
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 1 years and 4 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 5
-The male population of Rabbits: 3
-The female population of Rabbits: 2
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 1 years and 5 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 5
-The male population of Rabbits: 3
-The female population of Rabbits: 2
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 1 years and 6 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
 The total population of Rabbits: 6
@@ -383,17 +223,177 @@ The total number of Foxes that died: 0
 
 
 ==============================================================
- The Simulation ran for 1 years and 7 months
+ The Simulation ran for 0 years and 11 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 8
+The total population of Rabbits: 6
 The male population of Rabbits: 3
-The female population of Rabbits: 5
+The female population of Rabbits: 3
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
 The total population of Foxes: 2
 The male population of Foxes: 1
 The female population of Foxes: 1
+--------------------------------------------------------------
+ == DEATH REPORT == 
+The total number of Rabbits that died: 0
+The total number of Rabbits that were eaten: 0
+The total number of Foxes that died: 0
+==============================================================
+
+
+==============================================================
+ The Simulation ran for 1 years and 0 months
+==============================================================
+ == RABBIT POPULATION REPORT == 
+The total population of Rabbits: 7
+The male population of Rabbits: 3
+The female population of Rabbits: 4
+--------------------------------------------------------------
+ == FOX POPULATION REPORT == 
+The total population of Foxes: 2
+The male population of Foxes: 1
+The female population of Foxes: 1
+--------------------------------------------------------------
+ == DEATH REPORT == 
+The total number of Rabbits that died: 0
+The total number of Rabbits that were eaten: 0
+The total number of Foxes that died: 0
+==============================================================
+
+
+==============================================================
+ The Simulation ran for 1 years and 1 months
+==============================================================
+ == RABBIT POPULATION REPORT == 
+The total population of Rabbits: 9
+The male population of Rabbits: 4
+The female population of Rabbits: 5
+--------------------------------------------------------------
+ == FOX POPULATION REPORT == 
+The total population of Foxes: 3
+The male population of Foxes: 1
+The female population of Foxes: 2
+--------------------------------------------------------------
+ == DEATH REPORT == 
+The total number of Rabbits that died: 0
+The total number of Rabbits that were eaten: 0
+The total number of Foxes that died: 0
+==============================================================
+
+
+==============================================================
+ The Simulation ran for 1 years and 2 months
+==============================================================
+ == RABBIT POPULATION REPORT == 
+The total population of Rabbits: 8
+The male population of Rabbits: 2
+The female population of Rabbits: 6
+--------------------------------------------------------------
+ == FOX POPULATION REPORT == 
+The total population of Foxes: 3
+The male population of Foxes: 1
+The female population of Foxes: 2
+--------------------------------------------------------------
+ == DEATH REPORT == 
+The total number of Rabbits that died: 0
+The total number of Rabbits that were eaten: 0
+The total number of Foxes that died: 0
+==============================================================
+
+
+==============================================================
+ The Simulation ran for 1 years and 3 months
+==============================================================
+ == RABBIT POPULATION REPORT == 
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
+--------------------------------------------------------------
+ == FOX POPULATION REPORT == 
+The total population of Foxes: 3
+The male population of Foxes: 1
+The female population of Foxes: 2
+--------------------------------------------------------------
+ == DEATH REPORT == 
+The total number of Rabbits that died: 0
+The total number of Rabbits that were eaten: 0
+The total number of Foxes that died: 0
+==============================================================
+
+
+==============================================================
+ The Simulation ran for 1 years and 4 months
+==============================================================
+ == RABBIT POPULATION REPORT == 
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
+--------------------------------------------------------------
+ == FOX POPULATION REPORT == 
+The total population of Foxes: 3
+The male population of Foxes: 1
+The female population of Foxes: 2
+--------------------------------------------------------------
+ == DEATH REPORT == 
+The total number of Rabbits that died: 0
+The total number of Rabbits that were eaten: 0
+The total number of Foxes that died: 0
+==============================================================
+
+
+==============================================================
+ The Simulation ran for 1 years and 5 months
+==============================================================
+ == RABBIT POPULATION REPORT == 
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
+--------------------------------------------------------------
+ == FOX POPULATION REPORT == 
+The total population of Foxes: 3
+The male population of Foxes: 1
+The female population of Foxes: 2
+--------------------------------------------------------------
+ == DEATH REPORT == 
+The total number of Rabbits that died: 0
+The total number of Rabbits that were eaten: 0
+The total number of Foxes that died: 0
+==============================================================
+
+
+==============================================================
+ The Simulation ran for 1 years and 6 months
+==============================================================
+ == RABBIT POPULATION REPORT == 
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
+--------------------------------------------------------------
+ == FOX POPULATION REPORT == 
+The total population of Foxes: 3
+The male population of Foxes: 1
+The female population of Foxes: 2
+--------------------------------------------------------------
+ == DEATH REPORT == 
+The total number of Rabbits that died: 0
+The total number of Rabbits that were eaten: 0
+The total number of Foxes that died: 0
+==============================================================
+
+
+==============================================================
+ The Simulation ran for 1 years and 7 months
+==============================================================
+ == RABBIT POPULATION REPORT == 
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
+--------------------------------------------------------------
+ == FOX POPULATION REPORT == 
+The total population of Foxes: 3
+The male population of Foxes: 1
+The female population of Foxes: 2
 --------------------------------------------------------------
  == DEATH REPORT == 
 The total number of Rabbits that died: 0
@@ -406,14 +406,14 @@ The total number of Foxes that died: 0
  The Simulation ran for 1 years and 8 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 10
-The male population of Rabbits: 3
-The female population of Rabbits: 7
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
-The total population of Foxes: 2
+The total population of Foxes: 3
 The male population of Foxes: 1
-The female population of Foxes: 1
+The female population of Foxes: 2
 --------------------------------------------------------------
  == DEATH REPORT == 
 The total number of Rabbits that died: 0
@@ -426,14 +426,14 @@ The total number of Foxes that died: 0
  The Simulation ran for 1 years and 9 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 12
-The male population of Rabbits: 4
-The female population of Rabbits: 8
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
-The total population of Foxes: 2
+The total population of Foxes: 3
 The male population of Foxes: 1
-The female population of Foxes: 1
+The female population of Foxes: 2
 --------------------------------------------------------------
  == DEATH REPORT == 
 The total number of Rabbits that died: 0
@@ -446,14 +446,14 @@ The total number of Foxes that died: 0
  The Simulation ran for 1 years and 10 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 13
-The male population of Rabbits: 5
-The female population of Rabbits: 8
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
-The total population of Foxes: 2
+The total population of Foxes: 3
 The male population of Foxes: 1
-The female population of Foxes: 1
+The female population of Foxes: 2
 --------------------------------------------------------------
  == DEATH REPORT == 
 The total number of Rabbits that died: 0
@@ -466,14 +466,14 @@ The total number of Foxes that died: 0
  The Simulation ran for 1 years and 11 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 13
-The male population of Rabbits: 5
-The female population of Rabbits: 8
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
-The total population of Foxes: 2
+The total population of Foxes: 3
 The male population of Foxes: 1
-The female population of Foxes: 1
+The female population of Foxes: 2
 --------------------------------------------------------------
  == DEATH REPORT == 
 The total number of Rabbits that died: 0
@@ -486,737 +486,17 @@ The total number of Foxes that died: 0
  The Simulation ran for 2 years and 0 months
 ==============================================================
  == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 16
-The male population of Rabbits: 7
-The female population of Rabbits: 9
+The total population of Rabbits: 0
+The male population of Rabbits: 0
+The female population of Rabbits: 0
 --------------------------------------------------------------
  == FOX POPULATION REPORT == 
-The total population of Foxes: 2
+The total population of Foxes: 3
 The male population of Foxes: 1
-The female population of Foxes: 1
+The female population of Foxes: 2
 --------------------------------------------------------------
  == DEATH REPORT == 
 The total number of Rabbits that died: 0
 The total number of Rabbits that were eaten: 0
 The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 1 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 18
-The male population of Rabbits: 8
-The female population of Rabbits: 10
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 2 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 19
-The male population of Rabbits: 9
-The female population of Rabbits: 10
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 3 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 21
-The male population of Rabbits: 10
-The female population of Rabbits: 11
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 4 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 23
-The male population of Rabbits: 11
-The female population of Rabbits: 12
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 5 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 27
-The male population of Rabbits: 12
-The female population of Rabbits: 15
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 6 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 32
-The male population of Rabbits: 15
-The female population of Rabbits: 17
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 7 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 37
-The male population of Rabbits: 17
-The female population of Rabbits: 20
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 8 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 46
-The male population of Rabbits: 23
-The female population of Rabbits: 23
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 9 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 51
-The male population of Rabbits: 24
-The female population of Rabbits: 27
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 10 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 57
-The male population of Rabbits: 27
-The female population of Rabbits: 30
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 2 years and 11 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 67
-The male population of Rabbits: 30
-The female population of Rabbits: 37
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 0 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 117
-The male population of Rabbits: 58
-The female population of Rabbits: 59
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 1 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 152
-The male population of Rabbits: 79
-The female population of Rabbits: 73
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 2 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 189
-The male population of Rabbits: 94
-The female population of Rabbits: 95
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 3 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 237
-The male population of Rabbits: 118
-The female population of Rabbits: 119
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 4 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 336
-The male population of Rabbits: 152
-The female population of Rabbits: 184
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 5 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 449
-The male population of Rabbits: 200
-The female population of Rabbits: 249
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 6 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 609
-The male population of Rabbits: 269
-The female population of Rabbits: 340
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 7 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 832
-The male population of Rabbits: 372
-The female population of Rabbits: 460
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 8 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 1,155
-The male population of Rabbits: 548
-The female population of Rabbits: 607
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 9 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 1,535
-The male population of Rabbits: 730
-The female population of Rabbits: 805
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 10 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 2,052
-The male population of Rabbits: 1,023
-The female population of Rabbits: 1,029
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 3 years and 11 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 2,870
-The male population of Rabbits: 1,427
-The female population of Rabbits: 1,443
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 0 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 4,063
-The male population of Rabbits: 2,058
-The female population of Rabbits: 2,005
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 1 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 5,602
-The male population of Rabbits: 2,851
-The female population of Rabbits: 2,751
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 2 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 7,778
-The male population of Rabbits: 4,068
-The female population of Rabbits: 3,710
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 3 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 10,894
-The male population of Rabbits: 5,500
-The female population of Rabbits: 5,394
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 4 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 15,351
-The male population of Rabbits: 7,582
-The female population of Rabbits: 7,769
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 5 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 21,441
-The male population of Rabbits: 10,568
-The female population of Rabbits: 10,873
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 6 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 29,666
-The male population of Rabbits: 14,695
-The female population of Rabbits: 14,971
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 7 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 41,173
-The male population of Rabbits: 20,639
-The female population of Rabbits: 20,534
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 8 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 57,695
-The male population of Rabbits: 29,042
-The female population of Rabbits: 28,653
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 9 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 80,765
-The male population of Rabbits: 40,460
-The female population of Rabbits: 40,305
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 10 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 113,215
-The male population of Rabbits: 56,466
-The female population of Rabbits: 56,749
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 4 years and 11 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 158,291
-The male population of Rabbits: 78,815
-The female population of Rabbits: 79,476
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 2
-The male population of Foxes: 1
-The female population of Foxes: 1
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 0
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 0
-==============================================================
-
-
-==============================================================
- The Simulation ran for 5 years and 0 months
-==============================================================
- == RABBIT POPULATION REPORT == 
-The total population of Rabbits: 220,890
-The male population of Rabbits: 110,777
-The female population of Rabbits: 110,113
---------------------------------------------------------------
- == FOX POPULATION REPORT == 
-The total population of Foxes: 0
-The male population of Foxes: 0
-The female population of Foxes: 0
---------------------------------------------------------------
- == DEATH REPORT == 
-The total number of Rabbits that died: 2
-The total number of Rabbits that were eaten: 0
-The total number of Foxes that died: 2
 ==============================================================
