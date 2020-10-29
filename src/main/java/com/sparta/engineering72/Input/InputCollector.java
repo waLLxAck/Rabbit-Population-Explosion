@@ -16,7 +16,7 @@ public class InputCollector {
         do {
             try {
                 input = scanner.nextInt();
-                if (input < 0 || input > 2) {
+                if (input < 1 || input > 2) {
                     throw new InputMismatchException("Invalid input");
                 }
                 return input;

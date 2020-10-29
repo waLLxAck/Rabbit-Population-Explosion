@@ -1,6 +1,8 @@
 package com.sparta.engineering72.View;
 
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
+import com.sparta.engineering72.Utility.ReportPacker;
+import org.json.simple.JSONObject;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -15,10 +17,11 @@ public class Printer {
     }
 
     public static void printReportChoice(){
+        System.out.println("--------------------------------------------------------------");
         System.out.println("Please choose how you want the report to be displayed:");
-        System.out.println("Enter 1 for a Final report");
-        System.out.println("Enter 2 for a month by month breakdown for the simulation");
-        System.out.println("-------------------------------");
+        System.out.println("    enter 1 for a final report");
+        System.out.println("    enter 2 for a month-by-month breakdown for the simulation");
+        System.out.println("--------------------------------------------------------------");
     }
 
     public static void printStartMessage() {
@@ -30,21 +33,24 @@ public class Printer {
     }
 
     public static void printSimulationStart(){
-        System.out.println("-------------------------------");
+        System.out.println("--------------------------------------------------------------");
         System.out.println("The Simulation starts off with 1 male and 1 female rabbit");
         System.out.println("The Simulation is starting now...");
-        System.out.println("-------------------------------\n");
+        System.out.println("--------------------------------------------------------------\n");
     }
 
-    private static void printSimulationCompleted(){
-        System.out.println("Simulation completed.");
-        System.out.println("-------------------------------");
-    }
-
-    public static void printMonthlyReport(RabbitFluffle rabbitFluffle, int deathCount, int time){
-        printTimeElapsedMonthly(time);
-        printRabbitPopulation(rabbitFluffle);
-        printRabbitDeaths(deathCount);
+    public static JSONObject populateJSONObject(ReportPacker reportPacker){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("totalRabbits", reportPacker.getTotalRabbits());
+        jsonObject.put("maleRabbits", reportPacker.getMaleFoxes());
+        jsonObject.put("femaleRabbits", reportPacker.getFemaleRabbits());
+        jsonObject.put("totalFoxes", reportPacker.getTotalFoxes());
+        jsonObject.put("maleFoxes", reportPacker.getMaleFoxes());
+        jsonObject.put("femaleFoxes", reportPacker.getFemaleFoxes());
+        jsonObject.put("rabbitAgeDeaths", reportPacker.getRabbitAgeDeaths());
+        jsonObject.put("rabbitPreyDeaths", reportPacker.getRabbitPreyDeaths());
+        jsonObject.put("foxDeaths", reportPacker.getFoxDeaths());
+        return jsonObject;
     }
 
     public static void writeMonthlyReportToFile(BufferedWriter bufferedWriter, RabbitFluffle rabbitFluffle, int deathCount, int time) throws IOException {
@@ -59,7 +65,13 @@ public class Printer {
         bufferedWriter.write("\nThe female population of Rabbits: " + myFormatter.format(rabbitFluffle.getFemaleRabbitPopulation()));
         bufferedWriter.write("\n == DEATH REPORT == ");
         bufferedWriter.write("\nThe total number of Rabbits that died: " + myFormatter.format(deathCount));
-        bufferedWriter.write("\n-------------------------------");
+        bufferedWriter.write("\n==============================================================\n");
+    }
+
+    public static void printMonthlyReportToConsole(ReportPacker reportPacker, int time){
+        printTimeElapsedMonthly(time);
+        printRabbitPopulation(reportPacker);
+        printRabbitDeaths(reportPacker);
     }
 
     public static void writeFinalReportToFile(BufferedWriter bufferedWriter, RabbitFluffle rabbitFluffle, int deathCount, int time) throws IOException {
@@ -74,13 +86,13 @@ public class Printer {
         bufferedWriter.write("\nThe female population of Rabbits: " + myFormatter.format(rabbitFluffle.getFemaleRabbitPopulation()));
         bufferedWriter.write("\n == DEATH REPORT == ");
         bufferedWriter.write("\nThe total number of Rabbits that died: " + myFormatter.format(deathCount));
-        bufferedWriter.write("\n-------------------------------");
+        bufferedWriter.write("\n==============================================================\n");
     }
 
-    public static void printFinalReport(RabbitFluffle rabbitFluffle, int deathCount, int time){
+    public static void printFinalReportToConsole(ReportPacker reportPacker, int time){
         printSimulationTime(time);
-        printRabbitPopulation(rabbitFluffle);
-        printRabbitDeaths(deathCount);
+        printRabbitPopulation(reportPacker);
+        printRabbitDeaths(reportPacker);
         printSimulationCompleted();
     }
 
@@ -100,17 +112,17 @@ public class Printer {
         System.out.println("==============================================================");
     }
 
-    private static void printRabbitPopulation(RabbitFluffle rabbitFluffle){
+    private static void printRabbitPopulation(ReportPacker reportPacker){
         System.out.println(" == RABBIT POPULATION REPORT == ");
-        printFinalPopulation(rabbitFluffle.getRabbitPopulationSize());
-        printMalePopulation(rabbitFluffle.getMaleRabbitPopulation());
-        printFemalePopulation(rabbitFluffle.getFemaleRabbitPopulation());
+        printFinalPopulation(reportPacker.getTotalRabbits());
+        printMalePopulation(reportPacker.getMaleRabbits());
+        printFemalePopulation(reportPacker.getFemaleRabbits());
     }
 
-    private static void printRabbitDeaths(int number){
+    private static void printRabbitDeaths(ReportPacker reportPacker){
         System.out.println(" == DEATH REPORT == ");
-        printDeathCount(number);
-        System.out.println("-------------------------------\n");
+        printDeathCount(reportPacker.getRabbitAgeDeaths());
+        System.out.println("==============================================================\n");
     }
 
     private static void printFinalPopulation(int number) {
@@ -139,5 +151,10 @@ public class Printer {
 
     public static void printEnterNumberOf(String timeScale) {
         System.out.print("Enter a number of " + timeScale.toLowerCase() + ": ");
+    }
+
+    private static void printSimulationCompleted(){
+        System.out.println("Simulation completed.");
+        System.out.println("--------------------------------------------------------------\n");
     }
 }
