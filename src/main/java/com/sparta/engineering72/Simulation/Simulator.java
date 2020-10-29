@@ -33,8 +33,9 @@ public class Simulator {
             foxLifeCycle.naturalDeath();
             rabbitLifeCycle.naturalDeath();
             rabbitLifeCycle.breed();
+            foxLifeCycle.breed();
             if (i % 12 == 0) {
-                foxLifeCycle.breed();
+                foxLifeCycle.getPregnancies();
             }
             rabbitLifeCycle.age();
             foxLifeCycle.age();
