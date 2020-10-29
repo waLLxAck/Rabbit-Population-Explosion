@@ -1,16 +1,16 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Animal.Rabbit;
 
-import java.util.List;
+import com.sparta.engineering72.Animal.Animal;
 
 public class MaleRabbit extends Rabbit {
 
     private int age;
-    private Gender gender;
+    private Animal.Gender gender;
     private int count;
 
     public MaleRabbit() {
-        super(Gender.MALE);
-        this.gender=Gender.MALE;
+        super(Animal.Gender.MALE);
+        this.gender= Animal.Gender.MALE;
         age = 0;
         count = 1;
     }

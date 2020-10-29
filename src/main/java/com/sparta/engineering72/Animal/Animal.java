@@ -1,4 +1,4 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Animal;
 
 public abstract class Animal {
 

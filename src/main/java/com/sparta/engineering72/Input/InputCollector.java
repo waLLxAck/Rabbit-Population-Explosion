@@ -1,4 +1,8 @@
-package com.sparta.engineering72;
+package com.sparta.engineering72.Input;
+
+import com.sparta.engineering72.Log.Logger;
+import com.sparta.engineering72.Utility.Sleeper;
+import com.sparta.engineering72.View.Printer;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
