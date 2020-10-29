@@ -19,7 +19,7 @@ public class Simulator {
     public static RabbitFluffle rabbitFluffle = new RabbitFluffle();
     static ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
     static ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
-    static int pregnancies = 0;
+    public static int pregnancies = 0;
     public static int deathCount = 0;
     static boolean oneMaleAndMature = false;
 
