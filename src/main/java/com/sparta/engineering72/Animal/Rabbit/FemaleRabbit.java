@@ -55,10 +55,13 @@ public class FemaleRabbit extends Rabbit {
         int countFemaleOffspring = 0;
 
         for (int i = 0; i < count; i++) {
-            if (Randomizer.getRandomGender() == 0) {
-                countMaleOffspring++;
-            } else {
-                countFemaleOffspring++;
+            int numberOfOffsprings = Randomizer.getRandomRabbitOffspring();
+            for(int j = 0; j < numberOfOffsprings; j++) {
+                if (Randomizer.getRandomGender() == 0) {
+                    countMaleOffspring++;
+                } else {
+                    countFemaleOffspring++;
+                }
             }
         }
 
