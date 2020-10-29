@@ -16,9 +16,9 @@ public class Display {
     public static void displayReportChoice(){
         System.out.println("--------------------------------------------------------------");
         System.out.println("Please choose how you want the report to be displayed:");
-        System.out.println("    enter 0 for no report (data written to JSON file)");
         System.out.println("    enter 1 for a final report");
         System.out.println("    enter 2 for a month-by-month breakdown for the simulation");
+        System.out.println("    enter 3 for no report (data written to JSON file)");
         System.out.println("--------------------------------------------------------------");
     }
 
