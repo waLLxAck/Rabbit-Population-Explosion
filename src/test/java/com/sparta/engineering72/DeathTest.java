@@ -8,12 +8,12 @@ public class DeathTest{
     @Test
     public void deathTestBefore1Year() {
         Simulator.runSimulation(11,1);
-        Assertions.assertEquals(true,Simulator.RabbitLifeCycle.deathCount == 0);
+        Assertions.assertEquals(true,Simulator.FoxLifeCycle.rabbitsHunted == 0);
     }
     @Test
     public void deathTestAfter1Year() {
         Simulator.runSimulation(13, 1);
-        Assertions.assertEquals(true,Simulator.RabbitLifeCycle.deathCount <= 20);
+        Assertions.assertEquals(true,Simulator.FoxLifeCycle.rabbitsHunted <= 20);
     }
 
     @Test
@@ -25,12 +25,12 @@ public class DeathTest{
     @Test
     public void FoxLivesBeforeFiveYears() {
         Simulator.runSimulation(59, 1);
-        Assertions.assertEquals(true, FoxLifeCycle.deathCount == 0);
+        Assertions.assertEquals(true, FoxLifeCycle.FoxDeathCount == 0);
     }
     @Test
     public void FoxDiesAfterFiveYears() {
         Simulator.runSimulation(61, 1);
-        Assertions.assertEquals(true, FoxLifeCycle.deathCount == 2);
+        Assertions.assertEquals(true, FoxLifeCycle.FoxDeathCount == 2);
     }
 
 }
