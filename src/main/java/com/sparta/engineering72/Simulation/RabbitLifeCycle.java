@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class RabbitLifeCycle {
+public class RabbitLifeCycle implements LifeCycle {
 
     static ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
     static ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
     public static int pregnancies = 0;
     public static int naturalDeathCount = 0;
 
-    public static void naturalDeath() {
+    @Override
+    public void naturalDeath() {
         Iterator<MaleRabbit> maleRabbitIterator = maleRabbits.iterator();
         while (maleRabbitIterator.hasNext()) {
             MaleRabbit rabbit = maleRabbitIterator.next();
@@ -38,7 +39,8 @@ public class RabbitLifeCycle {
         }
     }
 
-    public static void breed() {
+    @Override
+    public void breed() {
         if (pregnancies > 0) {
             List<Animal> animals = FemaleRabbit.breed(pregnancies);
             for (Animal animal : animals) {
@@ -75,7 +77,8 @@ public class RabbitLifeCycle {
         pregnancies = totalPregnancies;
     }
 
-    public static void age() {
+    @Override
+    public void age() {
         for (MaleRabbit rabbit: maleRabbits) {
             rabbit.incrementAge();
         }
