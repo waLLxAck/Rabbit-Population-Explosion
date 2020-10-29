@@ -3,6 +3,7 @@ package com.sparta.engineering72;
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 import com.sparta.engineering72.Simulation.Simulator;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class FemaleRabbitTests {
@@ -18,14 +19,12 @@ public class FemaleRabbitTests {
         Assertions.assertEquals(true, RabbitFluffle.getFemaleRabbitList().get(0).isPregnant());
     }
 
+    @DisplayName("1 Male 1 Female Test")
     @Test
-    public void OneMalePerEachPregnancy(){
-        Simulator.runSimulation(100, 1);
-        long numberOfMales = Simulator.rabbitFluffle.getMaleRabbitPopulation();
-
-        //long numberOfPregnantFemales = Simulator.rabbitFluffle.getPregnantCount();//TODO
-
-        //Assertions.assertTrue(numberOfMales >= numberOfPregnantFemales);
+    public void OneMaleOneFemaleTest()
+    {
+        RabbitFluffle rabbitFluffle = new RabbitFluffle();
+        Simulator.runSimulation(21,1);
+        Assertions.assertEquals(true , rabbitFluffle.getMaleRabbitPopulation() >= RabbitLifeCycle.getPregnancies());
     }
-
 }
