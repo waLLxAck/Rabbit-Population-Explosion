@@ -28,11 +28,18 @@ public class Simulator {
 
         //Simulation starts with 1 male 1 female rabbit print
         Printer.printSimulationStart();
+        RabbitLifeCycle rabbitLifeCycle = new RabbitLifeCycle();
+        FoxLifeCycle foxLifeCycle = new FoxLifeCycle();
 
         for (int i = 0; i <= time; i++) {
-            RabbitLifeCycle.naturalDeath();
-            RabbitLifeCycle.breed();
-            RabbitLifeCycle.age();
+            foxLifeCycle.naturalDeath();
+            rabbitLifeCycle.naturalDeath();
+            rabbitLifeCycle.breed();
+            if (i % 12 == 0) {
+                foxLifeCycle.breed();
+            }
+            rabbitLifeCycle.age();
+            foxLifeCycle.age();
 
             RabbitFluffle.femaleRabbitList = RabbitLifeCycle.femaleRabbits;
             RabbitFluffle.maleRabbitList = RabbitLifeCycle.maleRabbits;
