@@ -6,7 +6,7 @@ public class MaleFox extends Fox{
     private int count;
 
     public MaleFox() {
-        this.gender = Animal.Gender.MALE;
+        super(Animal.Gender.MALE);
         this.age = 0;
         this.count = 1;
     }
