@@ -40,6 +40,7 @@ public class Simulator {
         for (int i = 0; i <= time; i++) {
             foxLifeCycle.naturalDeath();
             rabbitLifeCycle.naturalDeath();
+            foxLifeCycle.hunt(i);
             rabbitLifeCycle.breed();
             foxLifeCycle.breed();
             if (i % 12 == 0) {
