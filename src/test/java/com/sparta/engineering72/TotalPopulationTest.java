@@ -98,4 +98,37 @@ public class TotalPopulationTest {
         long rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
         Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
     }
+
+    @Test
+    public void TotalFemalePopulationTest12Months()
+    {
+        Simulator.runSimulation(12, 1);
+        long totalRabbitPopulation = Simulator.rabbitFluffle.getRabbitPopulationSize();
+        long minimum = (totalRabbitPopulation/2);
+        long femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
+        long maximum = 0;
+        int rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
+        Assertions.assertTrue(rabbitSize >= minimum && rabbitSize <= maximum);
+    }
+
+    @Test
+    public void TotalFoxPopulationTest1Year()
+    {
+        Simulator.runSimulation(5, 1);
+        int minimum = 2;
+        long maximum = 12;
+        long foxSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
+        Assertions.assertTrue(foxSize >= minimum && foxSize <= maximum);
+    }
+
+
+    @Test
+    public void TotalFoxPopulationTest2Year()
+    {
+        Simulator.runSimulation(5, 1);
+        int minimum = 2;
+        long maximum = 12;
+        long foxSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
+        Assertions.assertTrue(foxSize >= minimum && foxSize <= maximum);
+    }
 }
