@@ -119,27 +119,27 @@ public class Printer {
         System.out.println("==============================================================\n");
     }
 
-    private static void printFinalPopulation(int number) {
+    private static void printFinalPopulation(long number) {
         System.out.println("The total population of Rabbits: " + myFormatter.format(number));
     }
 
-    private static void printMalePopulation(int number) {
+    private static void printMalePopulation(long number) {
         System.out.println("The male population of Rabbits: " + myFormatter.format(number));
     }
 
-    private static void printFemalePopulation(int number) {
+    private static void printFemalePopulation(long number) {
         System.out.println("The female population of Rabbits: " + myFormatter.format(number));
     }
 
-    private static void printRabbitAgeDeathCount(int number) {
+    private static void printRabbitAgeDeathCount(long number) {
         System.out.println("The total number of Rabbits that died: " + myFormatter.format(number));
     }
 
-    private static void printRabbitPreyDeathCount(int number) {
+    private static void printRabbitPreyDeathCount(long number) {
         System.out.println("The total number of Rabbits that were eaten: " + myFormatter.format(number));
     }
 
-    private static void printFoxDeathCount(int number) {
+    private static void printFoxDeathCount(long number) {
         System.out.println("The total number of Foxes that died: " + myFormatter.format(number));
     }
 

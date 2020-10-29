@@ -2,18 +2,18 @@ package com.sparta.engineering72.Utility;
 
 public class ReportPacker {
 
-    int totalRabbits = 0;
-    int maleRabbits = 0;
-    int femaleRabbits = 0;
-    int totalFoxes = 0;
-    int maleFoxes = 0;
-    int femaleFoxes = 0;
-    int rabbitAgeDeaths = 0;
-    int rabbitPreyDeaths = 0;
-    int foxDeaths = 0;
+    long totalRabbits = 0;
+    long maleRabbits = 0;
+    long femaleRabbits = 0;
+    long totalFoxes = 0;
+    long maleFoxes = 0;
+    long femaleFoxes = 0;
+    long rabbitAgeDeaths = 0;
+    long rabbitPreyDeaths = 0;
+    long foxDeaths = 0;
 
-    public ReportPacker(int totalRabbits, int maleRabbits, int femaleRabbits, int totalFoxes, int maleFoxes,
-                        int femaleFoxes, int rabbitAgeDeaths, int rabbitPreyDeaths, int foxDeaths) {
+    public ReportPacker(long totalRabbits, long maleRabbits, long femaleRabbits, long totalFoxes, long maleFoxes,
+                        long femaleFoxes, long rabbitAgeDeaths, long rabbitPreyDeaths, long foxDeaths) {
         this.totalRabbits = totalRabbits;
         this.femaleRabbits = femaleRabbits;
         this.maleRabbits = maleRabbits;
@@ -25,75 +25,75 @@ public class ReportPacker {
         this.foxDeaths = foxDeaths;
     }
 
-    public int getTotalRabbits() {
+    public long getTotalRabbits() {
         return totalRabbits;
     }
 
-    public void setTotalRabbits(int totalRabbits) {
+    public void setTotalRabbits(long totalRabbits) {
         this.totalRabbits = totalRabbits;
     }
 
-    public int getFemaleRabbits() {
+    public long getFemaleRabbits() {
         return femaleRabbits;
     }
 
-    public void setFemaleRabbits(int femaleRabbits) {
+    public void setFemaleRabbits(long femaleRabbits) {
         this.femaleRabbits = femaleRabbits;
     }
 
-    public int getMaleRabbits() {
+    public long getMaleRabbits() {
         return maleRabbits;
     }
 
-    public void setMaleRabbits(int maleRabbits) {
+    public void setMaleRabbits(long maleRabbits) {
         this.maleRabbits = maleRabbits;
     }
 
-    public int getTotalFoxes() {
+    public long getTotalFoxes() {
         return totalFoxes;
     }
 
-    public void setTotalFoxes(int totalFoxes) {
+    public void setTotalFoxes(long totalFoxes) {
         this.totalFoxes = totalFoxes;
     }
 
-    public int getMaleFoxes() {
+    public long getMaleFoxes() {
         return maleFoxes;
     }
 
-    public void setMaleFoxes(int maleFoxes) {
+    public void setMaleFoxes(long maleFoxes) {
         this.maleFoxes = maleFoxes;
     }
 
-    public int getFemaleFoxes() {
+    public long getFemaleFoxes() {
         return femaleFoxes;
     }
 
-    public void setFemaleFoxes(int femaleFoxes) {
+    public void setFemaleFoxes(long femaleFoxes) {
         this.femaleFoxes = femaleFoxes;
     }
 
-    public int getRabbitAgeDeaths() {
+    public long getRabbitAgeDeaths() {
         return rabbitAgeDeaths;
     }
 
-    public void setRabbitAgeDeaths(int rabbitAgeDeaths) {
+    public void setRabbitAgeDeaths(long rabbitAgeDeaths) {
         this.rabbitAgeDeaths = rabbitAgeDeaths;
     }
 
-    public int getRabbitPreyDeaths() {
+    public long getRabbitPreyDeaths() {
         return rabbitPreyDeaths;
     }
 
-    public void setRabbitPreyDeaths(int rabbitPreyDeaths) {
+    public void setRabbitPreyDeaths(long rabbitPreyDeaths) {
         this.rabbitPreyDeaths = rabbitPreyDeaths;
     }
 
-    public int getFoxDeaths() {
+    public long getFoxDeaths() {
         return foxDeaths;
     }
 
-    public void setFoxDeaths(int foxDeaths) {
+    public void setFoxDeaths(long foxDeaths) {
         this.foxDeaths = foxDeaths;
     }
 }

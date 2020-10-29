@@ -15,8 +15,8 @@ public class RabbitLifeCycle implements LifeCycle {
 
     static ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
     static ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
-    public static int pregnancies = 0;
-    public static int naturalDeathCount = 0;
+    public static long pregnancies = 0;
+    public static long naturalDeathCount = 0;
 
     @Override
     public void naturalDeath() {
@@ -56,27 +56,27 @@ public class RabbitLifeCycle implements LifeCycle {
         getPregnancies();
     }
     private void getPregnancies() {
-        int maleRabbitCount = 0;
+        long maleRabbitCount = 0;
         for (MaleRabbit rabbit : maleRabbits) {
             if (rabbit.isMature()) {
                 maleRabbitCount += rabbit.getCount();
             }
         }
-        int femaleRabbitCount = 0;
+        long femaleRabbitCount = 0;
         for (FemaleRabbit rabbit : femaleRabbits) {
             if (rabbit.isMature()) {
                 femaleRabbitCount += rabbit.getCount();
             }
         }
-        int potentialPregnancies = Math.min(maleRabbitCount, femaleRabbitCount);
-        int totalPregnancies = 0;
+        long potentialPregnancies = Math.min(maleRabbitCount, femaleRabbitCount);
+        long totalPregnancies = 0;
         if (FemaleRabbit.getPregnancyChance() == 1.0d) {
             totalPregnancies = potentialPregnancies;
         } else {
             if (potentialPregnancies > Settings.MAX_COUNT_THRESHOLD) {
-                totalPregnancies = (int) (potentialPregnancies*FemaleRabbit.getPregnancyChance());
+                totalPregnancies = (long) (potentialPregnancies*FemaleRabbit.getPregnancyChance());
             } else {
-                for (int i = 0; i < potentialPregnancies; i++) {
+                for (long i = 0; i < potentialPregnancies; i++) {
                     if (Randomizer.getPregnancyChance(FemaleRabbit.getPregnancyChance()) == 1) {
                         totalPregnancies += 1;
                     }

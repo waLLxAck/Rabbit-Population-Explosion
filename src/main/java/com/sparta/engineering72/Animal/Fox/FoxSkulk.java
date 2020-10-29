@@ -15,20 +15,20 @@ public class FoxSkulk {
         return maleFoxList;
     }
 
-    public int getFoxPopulationSize(){
+    public long getFoxPopulationSize(){
         return getFemaleFoxPopulation() + getMaleFoxPopulation();
     }
 
-    public int getFemaleFoxPopulation(){
-        int femalePopulation = 0;
+    public long getFemaleFoxPopulation(){
+        long femalePopulation = 0;
         for(FemaleFox femaleFox : femaleFoxList){
             femalePopulation += femaleFox.getCount();
         }
         return femalePopulation;
     }
 
-    public int getMaleFoxPopulation(){
-        int malePopulation = 0;
+    public long getMaleFoxPopulation(){
+        long malePopulation = 0;
         for(MaleFox maleFox : maleFoxList){
             malePopulation += maleFox.getCount();
         }

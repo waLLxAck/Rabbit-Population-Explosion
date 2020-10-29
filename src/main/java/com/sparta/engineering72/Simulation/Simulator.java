@@ -19,7 +19,7 @@ import java.io.IOException;
 public class Simulator {
     public static RabbitFluffle rabbitFluffle = new RabbitFluffle();
     public static FoxSkulk foxSkulk = new FoxSkulk();
-    public static int deathCount = 0;
+    public static long deathCount = 0;
 
     public static ReportPacker runSimulation(int time, int reportChoice) {
         ReportPacker reportPackerFinal = null;
@@ -59,7 +59,7 @@ public class Simulator {
                 if(reportChoice == 2) {
                     reportPackerMonthly = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
                             rabbitFluffle.getMaleRabbitPopulation(), rabbitFluffle.getFemaleRabbitPopulation(),
-                            foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(), RabbitLifeCycle.naturalDeathCount, 0, FoxLifeCycle.FoxDeathCount);
+                            foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(), RabbitLifeCycle.naturalDeathCount, FoxLifeCycle.rabbitsHunted, FoxLifeCycle.FoxDeathCount);
 
                     Printer.printReportToConsole(reportPackerMonthly, i);
                     Printer.writeReportToFile(bufferedWriterTxt, reportPackerMonthly, i);
@@ -71,7 +71,7 @@ public class Simulator {
 
         reportPackerFinal = new ReportPacker(rabbitFluffle.getRabbitPopulationSize(),
                 rabbitFluffle.getFemaleRabbitPopulation(), rabbitFluffle.getMaleRabbitPopulation(),
-                foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(), RabbitLifeCycle.naturalDeathCount, 0, FoxLifeCycle.FoxDeathCount);
+                foxSkulk.getFoxPopulationSize(), foxSkulk.getMaleFoxPopulation(), foxSkulk.getFemaleFoxPopulation(), RabbitLifeCycle.naturalDeathCount, FoxLifeCycle.rabbitsHunted, FoxLifeCycle.FoxDeathCount);
 
             if(reportChoice == 1) {
                 Printer.printReportToConsole(reportPackerFinal, time);
