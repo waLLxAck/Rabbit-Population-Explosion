@@ -4,7 +4,6 @@ import com.sparta.engineering72.Animal.Animal;
 import com.sparta.engineering72.Animal.Fox.FemaleFox;
 import com.sparta.engineering72.Animal.Fox.FoxSkulk;
 import com.sparta.engineering72.Animal.Fox.MaleFox;
-import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
 import com.sparta.engineering72.Utility.Randomizer;
 
 import java.util.ArrayList;
