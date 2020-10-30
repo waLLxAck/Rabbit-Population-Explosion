@@ -4,20 +4,21 @@ import com.sparta.engineering72.Animal.Animal;
 import com.sparta.engineering72.Settings.Settings;
 import com.sparta.engineering72.Utility.Randomizer;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FemaleRabbit extends Rabbit {
     public static double PREGNANCY_CHANCE = 0.5d; //TODO: Setters for user input
     private boolean isPregnant;
-    private long count;
+    private BigInteger count;
 
     public FemaleRabbit(){
         super(Animal.Gender.FEMALE);
         this.gender= Animal.Gender.FEMALE;
         age = 0;
         isPregnant = false;
-        count = 1;
+        count = BigInteger.valueOf(1);
     }
 
     public boolean isPregnant(){
@@ -28,11 +29,11 @@ public class FemaleRabbit extends Rabbit {
         isPregnant = true;
     }
 
-    public long getCount() {
+    public BigInteger getCount() {
         return count;
     }
 
-    public void setCount(long count) {
+    public void setCount(BigInteger count) {
         this.count = count;
     }
 
@@ -44,8 +45,8 @@ public class FemaleRabbit extends Rabbit {
         PREGNANCY_CHANCE = getPregnantChance;
     }
 
-    public static List<Animal> breed(long count) {
-        final int averageOffspringCount = 7;
+    public static List<Animal> breed(BigInteger count) {
+        final BigInteger averageOffspringCount = BigInteger.valueOf(7);
 
         List<Animal> animals = new ArrayList<>();
 
@@ -54,29 +55,29 @@ public class FemaleRabbit extends Rabbit {
 
         long[] randomGenders;
 
-        if (count > Settings.MAX_COUNT_THRESHOLD){
-            long totalOffspring = count*averageOffspringCount;
-            maleRabbit.setCount(totalOffspring/2);
-            femaleRabbit.setCount(totalOffspring/2);
+        if (count.compareTo(Settings.MAX_COUNT_THRESHOLD) > 0){
+            BigInteger totalOffspring = count.multiply(averageOffspringCount);
+            maleRabbit.setCount(totalOffspring.divide(BigInteger.valueOf(2)));
+            femaleRabbit.setCount(totalOffspring.divide(BigInteger.valueOf(2)));
         } else {
-            long countMaleOffspring = 0;
-            long countFemaleOffspring = 0;
+            BigInteger countMaleOffspring = BigInteger.valueOf(0);
+            BigInteger countFemaleOffspring = BigInteger.valueOf(0);
 
-            long totalOffspring = 0;
+            BigInteger totalOffspring = BigInteger.valueOf(0);
 
-            long[] childrenArray = Randomizer.getRandomRabbitOffspring(count);
+            long[] childrenArray = Randomizer.getRandomRabbitOffspring(count.longValue());
 
             for (long child : childrenArray) {
-                totalOffspring += child;
+                totalOffspring = totalOffspring.add(BigInteger.valueOf(child));
             }
 
-            randomGenders = Randomizer.getRandomGender(totalOffspring);
+            randomGenders = Randomizer.getRandomGender(totalOffspring.longValue());
 
-            for(int j = 0; j < totalOffspring; j++) {
+            for(int j = 0; j < totalOffspring.intValue(); j++) {
                 if (randomGenders[j] == 1) {
-                    countMaleOffspring++;
+                    countMaleOffspring = countMaleOffspring.add(BigInteger.ONE);
                 } else {
-                    countFemaleOffspring++;
+                    countFemaleOffspring = countFemaleOffspring.add(BigInteger.ONE);
                 }
             }
 

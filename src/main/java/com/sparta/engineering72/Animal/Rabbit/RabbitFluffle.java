@@ -16,22 +16,22 @@ public class RabbitFluffle {
         return maleRabbitList;
     }
 
-    public long getRabbitPopulationSize(){
-        return getFemaleRabbitPopulation() + getMaleRabbitPopulation();
+    public BigInteger getRabbitPopulationSize(){
+        return getFemaleRabbitPopulation().add(getMaleRabbitPopulation());
     }
 
     public BigInteger getFemaleRabbitPopulation(){
-        BigInteger femalePopulation = 0;
+        BigInteger femalePopulation = BigInteger.valueOf(0);
         for(FemaleRabbit femaleRabbit : femaleRabbitList){
-            femalePopulation += femaleRabbit.getCount();
+            femalePopulation = femalePopulation.add(BigInteger.valueOf(femaleRabbit.getCount()));
         }
         return femalePopulation;
     }
 
     public BigInteger getMaleRabbitPopulation(){
-        BigInteger malePopulation = 0;
+        BigInteger malePopulation = BigInteger.valueOf(0);
         for(MaleRabbit maleRabbit : maleRabbitList){
-            malePopulation += maleRabbit.getCount();
+            malePopulation = malePopulation.add(maleRabbit.getCount());
         }
         return malePopulation;
     }

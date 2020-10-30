@@ -25,7 +25,7 @@ public class RabbitLifeCycle implements LifeCycle {
         while (maleRabbitIterator.hasNext()) {
             MaleRabbit rabbit = maleRabbitIterator.next();
             if (rabbit.isReadyToDie()) {
-                naturalDeathCount.add(BigInteger.valueOf(rabbit.getCount()));
+                naturalDeathCount = naturalDeathCount.add(rabbit.getCount());
                 maleRabbitIterator.remove();
             }
         }
@@ -35,7 +35,7 @@ public class RabbitLifeCycle implements LifeCycle {
         while(femaleRabbitIterator.hasNext()) {
             FemaleRabbit rabbit = femaleRabbitIterator.next();
             if (rabbit.isReadyToDie()){
-                naturalDeathCount.add(BigInteger.valueOf(rabbit.getCount()));
+                naturalDeathCount = naturalDeathCount.add(rabbit.getCount());
                 femaleRabbitIterator.remove();
             }
         }

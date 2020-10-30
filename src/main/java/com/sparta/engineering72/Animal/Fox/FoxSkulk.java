@@ -16,22 +16,22 @@ public class FoxSkulk {
         return maleFoxList;
     }
 
-    public long getFoxPopulationSize(){
-        return getFemaleFoxPopulation() + getMaleFoxPopulation();
+    public BigInteger getFoxPopulationSize(){
+        return getFemaleFoxPopulation().add(getMaleFoxPopulation());
     }
 
     public BigInteger getFemaleFoxPopulation(){
-        BigInteger femalePopulation = 0;
+        BigInteger femalePopulation = BigInteger.valueOf(0);
         for(FemaleFox femaleFox : femaleFoxList){
-            femalePopulation += femaleFox.getCount();
+            femalePopulation = femalePopulation.add(femaleFox.getCount());
         }
         return femalePopulation;
     }
 
     public BigInteger getMaleFoxPopulation(){
-        BigInteger malePopulation = 0;
+        BigInteger malePopulation = BigInteger.valueOf(0);
         for(MaleFox maleFox : maleFoxList){
-            malePopulation += maleFox.getCount();
+            malePopulation = malePopulation.add(maleFox.getCount());
         }
         return malePopulation;
     }
