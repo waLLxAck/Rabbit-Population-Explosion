@@ -72,6 +72,4 @@ public class TotalPopulationTest {
         BigInteger foxSize = Simulator.foxSkulk.getFoxPopulationSize();
         Assertions.assertTrue(foxSize.compareTo(minimum) >= 0 && foxSize.compareTo(maximum) <= 0);
     }
-
-
 }
