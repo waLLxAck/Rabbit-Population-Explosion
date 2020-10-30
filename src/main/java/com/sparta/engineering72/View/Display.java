@@ -28,7 +28,7 @@ public class Display {
         System.out.println("--------------------------------------------------------------");
         System.out.println("Please choose how you want to run the application:");
         System.out.println("    Enter 1 for a console");
-        System.out.println("    Enter 2 for a GUI");
+        System.out.println("    Enter 2 for a Graphical User Interface (GUI)");
         System.out.println("--------------------------------------------------------------");
     }
 
