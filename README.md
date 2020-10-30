@@ -100,3 +100,44 @@
 - completion of code refactoring
 - completion of Test cases
 - handle possible code crashing or code freezing statements
+
+### Retrospective
+- start: working on GUI and third set of requirements
+- more: testing and improving memory management
+- keep: raising your hand when you want to speak
+- less: big merges
+- stop: staying overtime
+
+## Sprint 3 (Thursday, 29.10. all day)
+### Work Done
+- improved memory management
+- more tests written
+- storing reports in a JSON file
+- implemented most of the new requirements
+- GUI implemented
+- presentation outline
+
+### Successes
+- program can hypothetically run for infinitly long
+- handling report in 3 different ways (console, txt, json)
+- large test coverage
+- working GUI
+- outlined the presentation and divided slides
+
+### Challenges
+- haven't allowed for user to change constants yet (maturity/death age)
+- `long` is sometimes not big enough (numbers can get too big for large periods of time)
+- some struggles with merging
+
+### Future Work
+- allow for change in constants
+- finish the presentation
+- refactor the code (deep cleaning)
+- calcualte code coverage
+
+### Retrospective
+- start: 
+- more: 
+- keep: 
+- less: 
+- stop:

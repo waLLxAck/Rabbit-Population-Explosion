@@ -1,19 +1,21 @@
 package com.sparta.engineering72.Utility;
 
+import java.math.BigInteger;
+
 public class ReportPacker {
 
-    long totalRabbits;
-    long maleRabbits;
-    long femaleRabbits;
-    long totalFoxes;
-    long maleFoxes;
-    long femaleFoxes;
-    long rabbitAgeDeaths;
-    long rabbitPreyDeaths;
-    long foxDeaths;
+    BigInteger totalRabbits;
+    BigInteger maleRabbits;
+    BigInteger femaleRabbits;
+    BigInteger totalFoxes;
+    BigInteger maleFoxes;
+    BigInteger femaleFoxes;
+    BigInteger rabbitAgeDeaths;
+    BigInteger rabbitPreyDeaths;
+    BigInteger foxDeaths;
 
-    public ReportPacker(long totalRabbits, long maleRabbits, long femaleRabbits, long totalFoxes, long maleFoxes,
-                        long femaleFoxes, long rabbitAgeDeaths, long rabbitPreyDeaths, long foxDeaths) {
+    public ReportPacker(BigInteger totalRabbits, BigInteger maleRabbits, BigInteger femaleRabbits, BigInteger totalFoxes, BigInteger maleFoxes,
+                        BigInteger femaleFoxes, BigInteger rabbitAgeDeaths, BigInteger rabbitPreyDeaths, BigInteger foxDeaths) {
         this.totalRabbits = totalRabbits;
         this.femaleRabbits = femaleRabbits;
         this.maleRabbits = maleRabbits;
@@ -25,75 +27,31 @@ public class ReportPacker {
         this.foxDeaths = foxDeaths;
     }
 
-    public long getTotalRabbits() {
+    public BigInteger getTotalRabbits() {
         return totalRabbits;
     }
-
-    public void setTotalRabbits(long totalRabbits) {
-        this.totalRabbits = totalRabbits;
-    }
-
-    public long getFemaleRabbits() {
+    public BigInteger getFemaleRabbits() {
         return femaleRabbits;
     }
-
-    public void setFemaleRabbits(long femaleRabbits) {
-        this.femaleRabbits = femaleRabbits;
-    }
-
-    public long getMaleRabbits() {
+    public BigInteger getMaleRabbits() {
         return maleRabbits;
     }
-
-    public void setMaleRabbits(long maleRabbits) {
-        this.maleRabbits = maleRabbits;
-    }
-
-    public long getTotalFoxes() {
+    public BigInteger getTotalFoxes() {
         return totalFoxes;
     }
-
-    public void setTotalFoxes(long totalFoxes) {
-        this.totalFoxes = totalFoxes;
-    }
-
-    public long getMaleFoxes() {
+    public BigInteger getMaleFoxes() {
         return maleFoxes;
     }
-
-    public void setMaleFoxes(long maleFoxes) {
-        this.maleFoxes = maleFoxes;
-    }
-
-    public long getFemaleFoxes() {
+    public BigInteger getFemaleFoxes() {
         return femaleFoxes;
     }
-
-    public void setFemaleFoxes(long femaleFoxes) {
-        this.femaleFoxes = femaleFoxes;
-    }
-
-    public long getRabbitAgeDeaths() {
+    public BigInteger getRabbitAgeDeaths() {
         return rabbitAgeDeaths;
     }
-
-    public void setRabbitAgeDeaths(long rabbitAgeDeaths) {
-        this.rabbitAgeDeaths = rabbitAgeDeaths;
-    }
-
-    public long getRabbitPreyDeaths() {
+    public BigInteger getRabbitPreyDeaths() {
         return rabbitPreyDeaths;
     }
-
-    public void setRabbitPreyDeaths(long rabbitPreyDeaths) {
-        this.rabbitPreyDeaths = rabbitPreyDeaths;
-    }
-
-    public long getFoxDeaths() {
+    public BigInteger getFoxDeaths() {
         return foxDeaths;
-    }
-
-    public void setFoxDeaths(long foxDeaths) {
-        this.foxDeaths = foxDeaths;
     }
 }

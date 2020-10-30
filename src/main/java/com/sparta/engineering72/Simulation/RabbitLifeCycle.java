@@ -16,8 +16,8 @@ public class RabbitLifeCycle implements LifeCycle {
 
     static ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
     static ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
-    public static BigInteger pregnancies = 0;
-    public static BigInteger naturalDeathCount = 0;
+    public static BigInteger pregnancies = BigInteger.valueOf(0);
+    public static BigInteger naturalDeathCount = BigInteger.valueOf(0);
 
     @Override
     public void naturalDeath() {
@@ -44,7 +44,7 @@ public class RabbitLifeCycle implements LifeCycle {
     @Override
     public void breed() {
         if (pregnancies.compareTo(BigInteger.valueOf(0)) > 0) {
-            List<Animal> animals = FemaleRabbit.breed(pregnancies);
+            List<Animal> animals = FemaleRabbit.breed(BigInteger.valueOf(pregnancies));
             for (Animal animal : animals) {
                 if (animal.getGender() == Animal.Gender.MALE) {
                     maleRabbits.add((MaleRabbit) animal);
@@ -60,26 +60,29 @@ public class RabbitLifeCycle implements LifeCycle {
         BigInteger maleRabbitCount = BigInteger.valueOf(0);
         for (MaleRabbit rabbit : maleRabbits) {
             if (rabbit.isMature()) {
-                maleRabbitCount = maleRabbitCount.add(rabbit.getCount());
+                maleRabbitCount.add(BigInteger.valueOf(rabbit.getCount());
             }
         }
         BigInteger femaleRabbitCount = BigInteger.valueOf(0);
         for (FemaleRabbit rabbit : femaleRabbits) {
             if (rabbit.isMature()) {
-                femaleRabbitCount = femaleRabbitCount.add(rabbit.getCount());
+                femaleRabbitCount.add(BigInteger.valueOf(rabbit.getCount());
             }
         }
-        BigInteger potentialPregnancies = Math.min(maleRabbitCount, femaleRabbitCount);
-        long totalPregnancies = 0;
+        BigInteger potentialPregnancies = maleRabbitCount.min(femaleRabbitCount);
+
+        BigInteger totalPregnancies = BigInteger.valueOf(0);
         if (FemaleRabbit.getPregnancyChance() == 1.0d) {
             totalPregnancies = potentialPregnancies;
         } else {
-            if (potentialPregnancies > Settings.MAX_COUNT_THRESHOLD) {
-                totalPregnancies = (long) (potentialPregnancies*FemaleRabbit.getPregnancyChance());
+            if (potentialPregnancies.compareTo(Settings.MAX_COUNT_THRESHOLD) > 0) {
+                // see whats happening with this
+                totalPregnancies = (BigInteger) (potentialPregnancies * FemaleRabbit.getPregnancyChance());
             } else {
-                for (long i = 0; i < potentialPregnancies; i++) {
+                int potentialPregnanciesInt = potentialPregnancies.intValue();
+                for (int i = 0; i < potentialPregnanciesInt; i++) {
                     if (Randomizer.getPregnancyChance(FemaleRabbit.getPregnancyChance()) == 1) {
-                        totalPregnancies += 1;
+                        totalPregnancies.add(BigInteger.valueOf(1));
                     }
                 }
             }
