@@ -13,7 +13,7 @@ public class TotalPopulationTest {
         Simulator.runSimulation(5, 1);
         BigInteger minimum = BigInteger.valueOf(2);
         BigInteger maximum = BigInteger.valueOf(16);
-        BigInteger rabbitSize = BigInteger.valueOf(Simulator.rabbitFluffle.getRabbitPopulationSize());
+        BigInteger rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
         Assertions.assertTrue(rabbitSize.compareTo(minimum) >= 0 && rabbitSize.compareTo(maximum) <= 0);
     }
 
@@ -22,8 +22,8 @@ public class TotalPopulationTest {
     {
         Simulator.runSimulation(6, 1);
         BigInteger minimum = BigInteger.valueOf(2);
-        BigInteger rabbitSize = BigInteger.valueOf(Simulator.rabbitFluffle.getRabbitPopulationSize());
-        BigInteger femaleRabbitSize = BigInteger.valueOf(Simulator.rabbitFluffle.getFemaleRabbitPopulation());
+        BigInteger rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
+        BigInteger femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         BigInteger maximum = femaleRabbitSize.multiply(BigInteger.valueOf(14));
 
         Assertions.assertTrue(rabbitSize.compareTo(minimum) >= 0&& rabbitSize.compareTo(maximum) <= 0);
@@ -35,8 +35,8 @@ public class TotalPopulationTest {
         Simulator.runSimulation(11, 1);
 
         BigInteger minimum = BigInteger.valueOf(2);
-        BigInteger rabbitSize = BigInteger.valueOf(Simulator.rabbitFluffle.getRabbitPopulationSize());
-        BigInteger femaleRabbitSize = BigInteger.valueOf(Simulator.rabbitFluffle.getFemaleRabbitPopulation());
+        BigInteger rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
+        BigInteger femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         BigInteger maximum = femaleRabbitSize.multiply(BigInteger.valueOf(14));
         Assertions.assertTrue(rabbitSize.compareTo(minimum) >= 0 && rabbitSize.compareTo(maximum) <= 0);
     }
@@ -46,9 +46,9 @@ public class TotalPopulationTest {
     {
         Simulator.runSimulation(12, 1);
         BigInteger minimum = BigInteger.valueOf(2);
-        BigInteger femaleRabbitSize = BigInteger.valueOf(Simulator.rabbitFluffle.getFemaleRabbitPopulation());
+        BigInteger femaleRabbitSize = Simulator.rabbitFluffle.getFemaleRabbitPopulation();
         BigInteger maximum = femaleRabbitSize.multiply(BigInteger.valueOf(14));
-        BigInteger rabbitSize = BigInteger.valueOf(Simulator.rabbitFluffle.getRabbitPopulationSize());
+        BigInteger rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
         Assertions.assertTrue(rabbitSize.compareTo(minimum) >= 0 && rabbitSize.compareTo(maximum) <= 0);
     }
 
@@ -56,10 +56,10 @@ public class TotalPopulationTest {
     public void TotalFemalePopulationTest12Months()
     {
         Simulator.runSimulation(12, 1);
-        BigInteger totalRabbitPopulation = BigInteger.valueOf(Simulator.rabbitFluffle.getRabbitPopulationSize());
+        BigInteger totalRabbitPopulation = Simulator.rabbitFluffle.getRabbitPopulationSize();
         BigInteger minimum = (totalRabbitPopulation.divide(BigInteger.valueOf(2)));
         BigInteger maximum = BigInteger.valueOf(0);
-        BigInteger rabbitSize = BigInteger.valueOf(Simulator.rabbitFluffle.getRabbitPopulationSize());
+        BigInteger rabbitSize = Simulator.rabbitFluffle.getRabbitPopulationSize();
         Assertions.assertTrue(rabbitSize.compareTo(minimum) >= 0 && rabbitSize.compareTo(maximum) <= 0);
     }
 
@@ -69,9 +69,7 @@ public class TotalPopulationTest {
         Simulator.runSimulation(13, 1);
         BigInteger minimum = BigInteger.valueOf(2);
         BigInteger maximum = BigInteger.valueOf(12);
-        BigInteger foxSize = BigInteger.valueOf(Simulator.foxSkulk.getFoxPopulationSize());
+        BigInteger foxSize = Simulator.foxSkulk.getFoxPopulationSize();
         Assertions.assertTrue(foxSize.compareTo(minimum) >= 0 && foxSize.compareTo(maximum) <= 0);
     }
-
-
 }

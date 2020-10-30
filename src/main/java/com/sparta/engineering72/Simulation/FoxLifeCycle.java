@@ -2,7 +2,6 @@ package com.sparta.engineering72.Simulation;
 
 import com.sparta.engineering72.Animal.Animal;
 import com.sparta.engineering72.Animal.Fox.FemaleFox;
-import com.sparta.engineering72.Animal.Fox.Fox;
 import com.sparta.engineering72.Animal.Fox.FoxSkulk;
 import com.sparta.engineering72.Animal.Fox.MaleFox;
 import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
@@ -11,6 +10,8 @@ import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
 import com.sparta.engineering72.Settings.Settings;
 import com.sparta.engineering72.Utility.Randomizer;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -19,9 +20,9 @@ public class FoxLifeCycle implements LifeCycle {
 
     static ArrayList<FemaleFox> femaleFoxes = FoxSkulk.getFemaleFoxList();
     static ArrayList<MaleFox> maleFoxes = FoxSkulk.getMaleFoxList();
-    public static long foxPregnancies = 0;
-    public static long FoxDeathCount = 0;
-    public static long rabbitsHunted = 0;
+    public static BigInteger foxPregnancies = BigInteger.valueOf(0);
+    public static BigInteger FoxDeathCount = BigInteger.valueOf(0);
+    public static BigInteger rabbitsHunted = BigInteger.valueOf(0);
 
     @Override
     public void naturalDeath() {
@@ -29,7 +30,7 @@ public class FoxLifeCycle implements LifeCycle {
         while (maleFoxIterator.hasNext()) {
             MaleFox fox = maleFoxIterator.next();
             if (fox.isReadyToDie()) {
-                FoxDeathCount += fox.getCount();
+                FoxDeathCount = FoxDeathCount.add(fox.getCount());
                 maleFoxIterator.remove();
             }
         }
@@ -39,7 +40,7 @@ public class FoxLifeCycle implements LifeCycle {
         while(femaleFoxIterator.hasNext()) {
             FemaleFox fox = femaleFoxIterator.next();
             if (fox.isReadyToDie()){
-                FoxDeathCount += fox.getCount();
+                FoxDeathCount = FoxDeathCount.add(fox.getCount());
                 femaleFoxIterator.remove();
             }
         }
@@ -47,7 +48,7 @@ public class FoxLifeCycle implements LifeCycle {
 
     @Override
     public void breed() {
-        if (foxPregnancies > 0) {
+        if (foxPregnancies.compareTo(BigInteger.valueOf(0)) > 0) {
             List<Animal> animals = FemaleFox.breedFoxes(foxPregnancies);
             for (Animal animal : animals) {
                 if (animal.getGender() == Animal.Gender.MALE) {
@@ -56,33 +57,35 @@ public class FoxLifeCycle implements LifeCycle {
                     femaleFoxes.add((FemaleFox) animal);
                 }
             }
-            foxPregnancies = 0;
+            foxPregnancies = BigInteger.valueOf(0);
         }
     }
 
     public void getPregnancies() {
-        long maleFoxCount = 0;
+        BigInteger maleFoxCount = BigInteger.valueOf(0);
         for (MaleFox fox : maleFoxes) {
             if (fox.isMature()) {
-                maleFoxCount += fox.getCount();
+                maleFoxCount = maleFoxCount.add(fox.getCount());
             }
         }
-        long femaleFoxCount = 0;
+        BigInteger femaleFoxCount = BigInteger.valueOf(0);
         for (FemaleFox fox : femaleFoxes) {
             if (fox.isMature()) {
-                femaleFoxCount += fox.getCount();
+                femaleFoxCount = femaleFoxCount.add(fox.getCount());
             }
         }
-        long potentialPregnancies = Math.min(maleFoxCount, femaleFoxCount);
-        long totalPregnancies = 0;
+        BigInteger potentialPregnancies = maleFoxCount.min(femaleFoxCount);
+        BigInteger totalPregnancies = BigInteger.valueOf(0);
         if (FemaleFox.getPregnancyChance() == 1.0d) {
             totalPregnancies = potentialPregnancies;
-        } else if (potentialPregnancies > Settings.MAX_COUNT_THRESHOLD) {
-            totalPregnancies = (long) (potentialPregnancies*FemaleFox.getPregnancyChance());
+        } else if (potentialPregnancies.compareTo(Settings.MAX_COUNT_THRESHOLD) > 0) {
+            int pregnancyChance = (int) (1/FemaleFox.getPregnancyChance());
+            totalPregnancies = potentialPregnancies.divide(BigInteger.valueOf(pregnancyChance));
         } else {
-            for (long i = 0; i < potentialPregnancies; i++) {
+            int potentialPregnanciesInt = potentialPregnancies.intValue();
+            for (int i = 0; i < potentialPregnanciesInt; i++) {
                 if (Randomizer.getPregnancyChance(FemaleFox.getPregnancyChance()) == 1) {
-                    totalPregnancies += 1;
+                    totalPregnancies = totalPregnancies.add(BigInteger.valueOf(1));
                 }
             }
         }
@@ -92,53 +95,54 @@ public class FoxLifeCycle implements LifeCycle {
     public void hunt(int time) {
         RabbitFluffle fluffle = new RabbitFluffle();
         FoxSkulk skulk = new FoxSkulk();
-        long foxPopulation = skulk.getFoxPopulationSize();
+        BigInteger foxPopulation = skulk.getFoxPopulationSize();
         if (time < 60) {
-            foxPopulation -= 2;
+            foxPopulation = foxPopulation.subtract(BigInteger.valueOf(2));
         }
-        long rabbitsEaten = 0;
-        long rabbitPopulation = fluffle.getRabbitPopulationSize();
-        if (foxPopulation > Settings.MAX_COUNT_THRESHOLD) {
-            rabbitsEaten = (long) (foxPopulation*10.5);
+        BigInteger rabbitsEaten = BigInteger.valueOf(0);
+        BigInteger rabbitPopulation = fluffle.getRabbitPopulationSize();
+        if (foxPopulation.compareTo(Settings.MAX_COUNT_THRESHOLD) > 0) {
+            rabbitsEaten = foxPopulation.multiply(BigInteger.valueOf(11));
         } else {
-            for (long i = 0; i < foxPopulation; i++) {
-                rabbitsEaten += Randomizer.getRandomHunt();
+            int foxPopulationInt = foxPopulation.intValue();
+            for (int i = 0; i < foxPopulationInt; i++) {
+                rabbitsEaten = rabbitsEaten.add(BigInteger.valueOf(Randomizer.getRandomHunt()));
             }
         }
-        long rabbitsToHunt = Math.min(rabbitsEaten, rabbitPopulation);
-        rabbitsHunted += Math.min(rabbitsEaten, rabbitPopulation);
+        BigInteger rabbitsToHunt = rabbitsEaten.min(rabbitPopulation);
+        rabbitsHunted = rabbitsHunted.add(rabbitsEaten.min(rabbitPopulation));
         ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
         ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
-        long idRange = maleRabbits.size() + femaleRabbits.size();
-        while (rabbitsToHunt > 0) {
+        long idRange = maleRabbits.size() + femaleRabbits.size() - 1;
+        while (rabbitsToHunt.compareTo(BigInteger.valueOf(0)) > 0) {
             long id = Randomizer.getRandomId(idRange);
-            if (id >= maleRabbits.size()) {
+            if (id > maleRabbits.size() - 1) {
                 FemaleRabbit femaleRabbit = femaleRabbits.get((int) id - maleRabbits.size());
-                long count = femaleRabbit.getCount();
-                if (count >= rabbitsToHunt) {
-                    count -= rabbitsToHunt;
-                    if (count == 0) {
+                BigInteger count = femaleRabbit.getCount();
+                if (count.compareTo(rabbitsToHunt) > 0) {
+                    count = count.subtract(rabbitsToHunt);
+                    if (count.intValue() == 0) {
                         femaleRabbits.remove((int) id - maleRabbits.size());
                     }
                     idRange--;
-                    rabbitsToHunt = 0;
+                    rabbitsToHunt = BigInteger.valueOf(0);
                 } else {
-                    rabbitsToHunt -= count;
+                    rabbitsToHunt = rabbitsToHunt.subtract(count);
                     femaleRabbits.remove((int) id - maleRabbits.size());
                     idRange--;
                 }
             } else {
                 MaleRabbit maleRabbit = maleRabbits.get((int) id);
-                long count = maleRabbit.getCount();
-                if (count >= rabbitsToHunt) {
-                    count -= rabbitsToHunt;
-                    if (count == 0) {
+                BigInteger count = maleRabbit.getCount();
+                if (count.compareTo(rabbitsToHunt) > 0) {
+                    count = count.subtract(rabbitsToHunt);
+                    if (count.intValue() == 0) {
                         maleRabbits.remove((int) id);
                     }
                     idRange--;
-                    rabbitsToHunt = 0;
+                    rabbitsToHunt = BigInteger.valueOf(0);
                 } else {
-                    rabbitsToHunt -= count;
+                    rabbitsToHunt = rabbitsToHunt.subtract(count);
                     maleRabbits.remove((int) id);
                     idRange--;
                 }

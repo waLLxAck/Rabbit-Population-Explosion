@@ -7,13 +7,15 @@ import com.sparta.engineering72.View.Display;
 
 public class Starter {
     public static void start() {
-
         chooseApplicationStart(InputCollector.getApplicationChoice());
     }
 
     private static void chooseApplicationStart(int input) {
-
         if (input == 1) {
+            int constantChoice =  InputCollector.getConstantsChoice();
+            if (constantChoice != 1) {
+                InputCollector.getConstantsInput();
+            }
             Display.displayStartMessage();
             Simulator.runSimulation(InputCollector.getUserInput(), InputCollector.getReportChoice());
         } else if (input == 2) {

@@ -13,6 +13,7 @@ import com.sparta.engineering72.Utility.ReportPacker;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Simulator {
@@ -142,16 +143,16 @@ public class Simulator {
     }
 
     private static void resetFoxLifeCycle() {
-        FoxLifeCycle.rabbitsHunted = 0;
-        FoxLifeCycle.FoxDeathCount = 0;
-        FoxLifeCycle.foxPregnancies = 0;
+        FoxLifeCycle.rabbitsHunted = BigInteger.valueOf(0);
+        FoxLifeCycle.FoxDeathCount = BigInteger.valueOf(0);
+        FoxLifeCycle.foxPregnancies = BigInteger.valueOf(0);
         FoxLifeCycle.maleFoxes = new ArrayList<>();
         FoxLifeCycle.femaleFoxes = new ArrayList<>();
     }
 
     private static void resetRabbitLifeCycle() {
-        RabbitLifeCycle.naturalDeathCount = 0;
-        RabbitLifeCycle.pregnancies = 0;
+        RabbitLifeCycle.naturalDeathCount = BigInteger.valueOf(0);
+        RabbitLifeCycle.pregnancies = BigInteger.valueOf(0);
         RabbitLifeCycle.maleRabbits = new ArrayList<>();
         RabbitLifeCycle.femaleRabbits = new ArrayList<>();
     }
