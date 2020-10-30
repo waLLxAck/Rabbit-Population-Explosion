@@ -58,6 +58,27 @@ public class Display {
         System.out.print("Enter a number of " + timeScale.toLowerCase() + ": ");
     }
 
+    public static void displayConstantsChoice(){
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Please choose whether you want the simulation to run with default constants or to change them:");
+        System.out.println("    Enter 1 for default constants");
+        System.out.println("    Enter 2 to change the constants");
+        System.out.println("--------------------------------------------------------------");
+    }
+
+    public static void displayFoxMaturityAge(){
+        System.out.println("Please enter the Fox Maturity Age in Months");
+    }
+    public static void displayRabbitMaturityAge(){
+        System.out.println("Please enter the Rabbit Maturity Age in Months");
+    }
+    public static void displayFoxDeathAge(){
+        System.out.println("Please enter the Fox Death Age in Months");
+    }
+    public static void displayRabbitDeathAge(){
+        System.out.println("Please enter the Rabbit Death Age in Months");
+    }
+
     public static void displayChoicePrompt() {
         System.out.print("Choice: ");
     }
