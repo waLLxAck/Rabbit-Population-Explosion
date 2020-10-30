@@ -136,8 +136,8 @@
 - calcualte code coverage
 
 ### Retrospective
-- start: 
-- more: 
-- keep: 
-- less: 
-- stop:
+- start: test driven development in future
+- more: communicating well (jumping in different calls and keeping each other up to date)
+- keep: working in smaller groups (and smaller groups within those groups)
+- less: big merges
+- stop: staying late (past 5 o'clock)
