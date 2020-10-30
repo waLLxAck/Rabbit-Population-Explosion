@@ -58,7 +58,6 @@ public class SimulatorGUI extends JFrame{
 
     private static final Color DARK_GREEN = new Color(0,153,0);
 
-
     public SimulatorGUI(String s){
         super(s);
         setUpJFrame();
@@ -87,7 +86,6 @@ public class SimulatorGUI extends JFrame{
 
     private void buttonHandler(){
         startSimulationButton.addActionListener(e -> callSimulator());
-        resetButton.addActionListener(e -> resetAllInputTextFields());
     }
 
     private void enableButtons(boolean able){
@@ -124,52 +122,6 @@ public class SimulatorGUI extends JFrame{
         oldAgeDeathRabbitsTextField.setText("" + myFormatter.format(reportPacker.getRabbitAgeDeaths()));
         preyDeathRabbitsTextField.setText("" + myFormatter.format(reportPacker.getRabbitPreyDeaths()));
         deathFoxesTextField.setText("" + myFormatter.format(reportPacker.getFoxDeaths()));
-    }
-
-    private void resetAllInputTextFields(){
-        totalRabbitsTextField.setText("");
-        maleRabbitsTextField.setText("");
-        femaleRabbitsTextField.setText("");
-        totalFoxesTextField.setText("");
-        maleFoxesTextField.setText("");
-        femaleFoxesTextField.setText("");
-        oldAgeDeathRabbitsTextField.setText("");
-        preyDeathRabbitsTextField.setText("");
-        deathFoxesTextField.setText("");
-    }
-
-    // likely wont need validators
-    private boolean isInputValid(int rabbitMaturity, int rabbitDeath, int foxMaturity, int foxDeath, int years, int months ){
-        return (isRabbitMaturityValid(rabbitMaturity) &&
-                isRabbitDeathValid(rabbitDeath) &&
-                isFoxMaturityValid(foxMaturity) &&
-                isFoxDeathValid(foxDeath) &&
-                isYearsValid(years) &&
-                isMonthsValid(months));
-    }
-
-    private boolean isMonthsValid(int months) {
-        return (0 <= months && months <= 12);
-    }
-
-    private boolean isYearsValid(int years) {
-        return (0 <= years && years <= 50);
-    }
-
-    private boolean isFoxDeathValid(int foxDeath) {
-        return (1 <= foxDeath && foxDeath <= 120);
-    }
-
-    private boolean isFoxMaturityValid(int foxMaturity) {
-        return (1 <= foxMaturity && foxMaturity <= 120);
-    }
-
-    private boolean isRabbitDeathValid(int rabbitDeath) {
-        return (1 <= rabbitDeath && rabbitDeath <= 120);
-    }
-
-    private boolean isRabbitMaturityValid(int rabbitMaturity) {
-        return (1 <= rabbitMaturity && rabbitMaturity <= 12);
     }
 
 }

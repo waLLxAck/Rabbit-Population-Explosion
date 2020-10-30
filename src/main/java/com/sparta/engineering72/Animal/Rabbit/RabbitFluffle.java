@@ -1,5 +1,6 @@
 package com.sparta.engineering72.Animal.Rabbit;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class RabbitFluffle {
@@ -19,16 +20,16 @@ public class RabbitFluffle {
         return getFemaleRabbitPopulation() + getMaleRabbitPopulation();
     }
 
-    public long getFemaleRabbitPopulation(){
-        long femalePopulation = 0;
+    public BigInteger getFemaleRabbitPopulation(){
+        BigInteger femalePopulation = 0;
         for(FemaleRabbit femaleRabbit : femaleRabbitList){
             femalePopulation += femaleRabbit.getCount();
         }
         return femalePopulation;
     }
 
-    public long getMaleRabbitPopulation(){
-        long malePopulation = 0;
+    public BigInteger getMaleRabbitPopulation(){
+        BigInteger malePopulation = 0;
         for(MaleRabbit maleRabbit : maleRabbitList){
             malePopulation += maleRabbit.getCount();
         }

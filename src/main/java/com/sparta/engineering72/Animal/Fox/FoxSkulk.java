@@ -1,6 +1,7 @@
 package com.sparta.engineering72.Animal.Fox;
 
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class FoxSkulk {
@@ -19,16 +20,16 @@ public class FoxSkulk {
         return getFemaleFoxPopulation() + getMaleFoxPopulation();
     }
 
-    public long getFemaleFoxPopulation(){
-        long femalePopulation = 0;
+    public BigInteger getFemaleFoxPopulation(){
+        BigInteger femalePopulation = 0;
         for(FemaleFox femaleFox : femaleFoxList){
             femalePopulation += femaleFox.getCount();
         }
         return femalePopulation;
     }
 
-    public long getMaleFoxPopulation(){
-        long malePopulation = 0;
+    public BigInteger getMaleFoxPopulation(){
+        BigInteger malePopulation = 0;
         for(MaleFox maleFox : maleFoxList){
             malePopulation += maleFox.getCount();
         }
