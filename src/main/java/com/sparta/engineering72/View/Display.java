@@ -1,5 +1,7 @@
 package com.sparta.engineering72.View;
 
+import com.sparta.engineering72.Animal.Fox.Fox;
+import com.sparta.engineering72.Animal.Rabbit.Rabbit;
 import com.sparta.engineering72.Utility.ReportPacker;
 import org.json.simple.JSONObject;
 
@@ -32,15 +34,22 @@ public class Display {
 
     public static void displayStartMessage() {
         System.out.println("\nWELCOME TO THE RABBIT SIMULATOR");
-        System.out.println("-------------------------------");
+        System.out.println("-------------------------------------------------------------------------------");
         System.out.println("All required user inputs should be entered in the console when prompted");
         System.out.println("The final report from the simulation will also be displayed in the console");
-        System.out.println("-------------------------------");
+        System.out.println("-------------------------------------------------------------------------------");
+        System.out.println("Default values:");
+        System.out.println("Rabbit Maturity Age: " + Rabbit.getMaturityAge());
+        System.out.println("Rabbit Death Age: " + Rabbit.getDeathAge());
+        System.out.println("Fox Maturity Age: " + Fox.getMaturityAge());
+        System.out.println("Fox Death Age: " + Fox.getDeathAge());
+        System.out.println("-------------------------------------------------------------------------------");
     }
 
     public static void displaySimulationStart(){
         System.out.println("--------------------------------------------------------------");
-        System.out.println("The Simulation starts off with 1 male and 1 female rabbit and 1 male and 1 female fox.");
+        System.out.println("The Simulation starts off with 1 male and 1 female rabbit...");
+        System.out.println("... and 1 male and 1 female fox!");
         System.out.println("The Simulation is starting now...");
         System.out.println("--------------------------------------------------------------\n");
     }

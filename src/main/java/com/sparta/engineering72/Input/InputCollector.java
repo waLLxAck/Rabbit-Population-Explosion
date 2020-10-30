@@ -98,6 +98,7 @@ public class InputCollector {
         Scanner scanner = new Scanner(System.in);
         int input = -1;
         Display.displayConstantsChoice();
+        Display.displayChoicePrompt();
         do {
             try {
                 input = scanner.nextInt();
