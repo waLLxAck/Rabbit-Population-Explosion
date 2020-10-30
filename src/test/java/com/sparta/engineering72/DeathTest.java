@@ -13,19 +13,19 @@ public class DeathTest{
     @Test
     public void deathTestBefore1Year() {
         Simulator.runSimulation(11,1);
-        Assertions.assertEquals(true, FoxLifeCycle.rabbitsHunted.equals(0));
+        Assertions.assertEquals(true, FoxLifeCycle.rabbitsHunted.equals(BigInteger.valueOf(0)));
     }
     @Test
     public void deathTestAfter1Year() {
         Simulator.runSimulation(13, 1);
         BigInteger ra = BigInteger.valueOf(22);
-        Assertions.assertEquals(true,FoxLifeCycle.rabbitsHunted.compareTo(20) <= 0);
+        Assertions.assertEquals(true,FoxLifeCycle.rabbitsHunted.compareTo(BigInteger.valueOf(20)) <= 0);
     }
 
     @Test
     public void NaturalRabbitDeathsTest() {
         Simulator.runSimulation(61, 1);
-        Assertions.assertEquals(true, RabbitLifeCycle.naturalDeathCount.compareTo(2) <= 0);
+        Assertions.assertEquals(true, RabbitLifeCycle.naturalDeathCount.compareTo(BigInteger.valueOf(2)) <= 0);
     }
 
     @Test
