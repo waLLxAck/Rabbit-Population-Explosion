@@ -1,5 +1,6 @@
 package com.sparta.engineering72.Utility;
 
+import java.math.BigInteger;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Randomizer {
@@ -15,7 +16,7 @@ public class Randomizer {
         return ThreadLocalRandom.current().nextInt(14)+1;
     }
 
-    public static long[] getRandomFoxOffspring(long pregnancies) {
+    public static BigInteger[] getRandomFoxOffspring(BigInteger pregnancies) {
         return ThreadLocalRandom.current().longs(pregnancies, 1, 11).toArray();
     }
 

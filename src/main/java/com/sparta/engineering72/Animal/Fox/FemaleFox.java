@@ -11,13 +11,13 @@ import java.util.List;
 public class FemaleFox extends Fox{
     public static double PREGNANCY_CHANCE = 0.5d;
     private boolean isPregnant;
-    private long count;
+    private BigInteger count;
 
     public FemaleFox() {
         super(Animal.Gender.FEMALE);
         age = 0;
         isPregnant = false;
-        count = 1;
+        count = BigInteger.valueOf(1);
     }
 
     public boolean isPregnant(){
@@ -36,47 +36,47 @@ public class FemaleFox extends Fox{
         isPregnant = true;
     }
 
-    public long getCount() {
+    public BigInteger getCount() {
         return count;
     }
 
-    public void setCount(long count) {
+    public void setCount(BigInteger count) {
         this.count = count;
     }
 
-    public static List<Animal> breedFoxes(long count){
-        final int averageOffspringCount = 5;
+    public static List<Animal> breedFoxes(BigInteger count){
+        final BigInteger averageOffspringCount = BigInteger.valueOf(5);
 
         List<Animal> animals = new ArrayList<>();
 
         MaleFox malefox = new MaleFox();
         FemaleFox femalefox = new FemaleFox();
 
-        long[] randomGenders;
+        BigInteger[] randomGenders;
 
-        if (count > Settings.MAX_COUNT_THRESHOLD){
-            long totalOffspring = count*averageOffspringCount;
-            malefox.setCount(totalOffspring/2);
-            femalefox.setCount(totalOffspring/2);
+        if (count.compareTo(Settings.MAX_COUNT_THRESHOLD) > 0){
+            BigInteger totalOffspring = BigInteger.valueOf(count.multiply(averageOffspringCount));
+            malefox.setCount(totalOffspring.divide(BigInteger.valueOf(2)));
+            femalefox.setCount(totalOffspring.divide(BigInteger.valueOf(2)));
         } else {
-            long countMaleOffspring = 0;
-            long countFemaleOffspring = 0;
+            BigInteger countMaleOffspring = BigInteger.valueOf(0);
+            BigInteger countFemaleOffspring = BigInteger.valueOf(0);
 
-            long totalOffspring = 0;
+            BigInteger totalOffspring = BigInteger.valueOf(0);
 
-            long[] childrenArray = Randomizer.getRandomFoxOffspring(count);
+            BigInteger[] childrenArray = Randomizer.getRandomFoxOffspring(count);
 
-            for (long child : childrenArray) {
-                totalOffspring += child;
+            for (BigInteger child : childrenArray) {
+                totalOffspring = totalOffspring.add(child);
             }
 
             randomGenders = Randomizer.getRandomGender(totalOffspring);
 
-            for(int j = 0; j < totalOffspring; j++) {
-                if (randomGenders[j] == 1) {
-                    countMaleOffspring++;
+            for(int j = 0; j < totalOffspring.intValue(); j++) {
+                if (randomGenders[j].compareTo(BigInteger.valueOf(1)) == 0) {
+                    countMaleOffspring = countMaleOffspring.add(BigInteger.ONE);
                 } else {
-                    countFemaleOffspring++;
+                    countFemaleOffspring = countFemaleOffspring.add(BigInteger.ONE);
                 }
             }
 
