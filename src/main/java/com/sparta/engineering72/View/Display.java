@@ -16,9 +16,17 @@ public class Display {
     public static void displayReportChoice(){
         System.out.println("--------------------------------------------------------------");
         System.out.println("Please choose how you want the report to be displayed:");
-        System.out.println("    enter 1 for a final report");
-        System.out.println("    enter 2 for a month-by-month breakdown for the simulation");
-        System.out.println("    enter 3 for no report (data written to JSON file)");
+        System.out.println("    Enter 1 for a single report at the end of the simulation");
+        System.out.println("    Enter 2 for a month-by-month breakdown of the simulation");
+        System.out.println("    Enter 3 for no report (data will saved to a JSON file)");
+        System.out.println("--------------------------------------------------------------");
+    }
+
+    public static void displayApplicationChoice() {
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Please choose how you want to run the application:");
+        System.out.println("    Enter 1 for a console");
+        System.out.println("    Enter 2 for a GUI");
         System.out.println("--------------------------------------------------------------");
     }
 
@@ -50,4 +58,7 @@ public class Display {
         System.out.print("Enter a number of " + timeScale.toLowerCase() + ": ");
     }
 
+    public static void displayChoicePrompt() {
+        System.out.print("Choice: ");
+    }
 }

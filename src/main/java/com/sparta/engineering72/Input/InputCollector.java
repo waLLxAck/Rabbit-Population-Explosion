@@ -5,6 +5,7 @@ import com.sparta.engineering72.Utility.Sleeper;
 import com.sparta.engineering72.View.Display;
 import com.sparta.engineering72.View.Printer;
 
+import java.sql.PreparedStatement;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -14,10 +15,31 @@ public class InputCollector {
         Scanner scanner = new Scanner(System.in);
         int input = -1;
         Display.displayReportChoice();
+        Display.displayChoicePrompt();
         do {
             try {
                 input = scanner.nextInt();
                 if (input < 1 || input > 3) {
+                    throw new InputMismatchException("Invalid input");
+                }
+                return input;
+            } catch (InputMismatchException ime) {
+                Logger.logError(ime, "Invalid input");
+                Display.displayError();
+                Sleeper.sleep(100);
+            }
+        } while (true);
+    }
+
+    public static int getApplicationChoice() {
+        Scanner scanner = new Scanner(System.in);
+        int input = -1;
+        Display.displayApplicationChoice();
+        Display.displayChoicePrompt();
+        do {
+            try {
+                input = scanner.nextInt();
+                if (input < 1 || input > 2) {
                     throw new InputMismatchException("Invalid input");
                 }
                 return input;
@@ -38,7 +60,7 @@ public class InputCollector {
                 numberOfYears = getTime("Years");
                 continue;
             }
-            if (numberOfMonths < 0 || isaBoolean(numberOfYears, numberOfMonths)) {
+            if (numberOfMonths < 0 || isZeroYearsAndNoMonths(numberOfYears, numberOfMonths)) {
                 numberOfMonths = getTime("Months");
                 continue;
             }
@@ -48,7 +70,7 @@ public class InputCollector {
         } while (true);
     }
 
-    private static boolean isaBoolean(int numberOfYears, int numberOfMonths) { //FIXME name
+    private static boolean isZeroYearsAndNoMonths(int numberOfYears, int numberOfMonths) {
         return numberOfYears == 0 && numberOfMonths <= 0;
     }
 

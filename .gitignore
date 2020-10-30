@@ -35,3 +35,4 @@ out/
 *.iws
 resources/report.txt
 resources/report.json
+resources/log.txt

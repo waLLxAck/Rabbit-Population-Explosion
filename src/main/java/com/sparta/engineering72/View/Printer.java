@@ -76,7 +76,7 @@ public class Printer {
     }
 
     private static void printRabbitAgeDeathCount(long number) {
-        System.out.println("The total number of Rabbits that died: " + myFormatter.format(number));
+        System.out.println("The total number of Rabbits that died of old age: " + myFormatter.format(number));
     }
 
     private static void printRabbitPreyDeathCount(long number) {
@@ -84,7 +84,7 @@ public class Printer {
     }
 
     private static void printFoxDeathCount(long number) {
-        System.out.println("The total number of Foxes that died: " + myFormatter.format(number));
+        System.out.println("The total number of Foxes that died of old age: " + myFormatter.format(number));
     }
 
     private static void printRabbitPreyDeathCount(int number) {
