@@ -49,14 +49,14 @@ public class Simulator {
             updateFoxSkulkLists();
 
             ReportPacker reportPackerMonthly = getReportPacker();
-            produceReportJSON(reportPackerMonthly);
+//            produceReportJSON(reportPackerMonthly);
 
             displayMonthlyReport(reportChoice, i, reportPackerMonthly);
         }
 
         reportPackerFinal = getReportPacker();
 
-        produceReportJSON(reportPackerFinal);
+//        produceReportJSON(reportPackerFinal);
         produceFinalReport(time, reportChoice, reportPackerFinal);
 
         Display.displaySimulationCompleted();

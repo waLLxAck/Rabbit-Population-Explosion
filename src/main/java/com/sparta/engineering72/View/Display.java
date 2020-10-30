@@ -40,7 +40,7 @@ public class Display {
 
     public static void displaySimulationStart(){
         System.out.println("--------------------------------------------------------------");
-        System.out.println("The Simulation starts off with 1 male and 1 female rabbit");
+        System.out.println("The Simulation starts off with 1 male and 1 female rabbit and 1 male and 1 female fox.");
         System.out.println("The Simulation is starting now...");
         System.out.println("--------------------------------------------------------------\n");
     }

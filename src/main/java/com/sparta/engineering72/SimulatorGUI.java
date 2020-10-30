@@ -1,5 +1,8 @@
 package com.sparta.engineering72;
 
+import com.sparta.engineering72.Animal.Fox.Fox;
+import com.sparta.engineering72.Animal.Rabbit.Rabbit;
+import com.sparta.engineering72.Log.Logger;
 import com.sparta.engineering72.Simulation.Simulator;
 import com.sparta.engineering72.Utility.ReportPacker;
 
@@ -60,10 +63,18 @@ public class SimulatorGUI extends JFrame{
 
     public SimulatorGUI(String s){
         super(s);
-        setUpJFrame();
-        styleFields();
-        buttonHandler();
-        pack();
+        start();
+    }
+
+    public void start(){
+        try {
+            setUpJFrame();
+            styleFields();
+            buttonHandler();
+            pack();
+        } catch(Exception e){
+            Logger.logError(e, e.getMessage());
+        }
     }
 
     private void setUpJFrame(){
@@ -76,11 +87,11 @@ public class SimulatorGUI extends JFrame{
     private void styleFields() {
 
         // allowing a range of values -million to +million, then providing user with a feedback
-        rabbitMaturityAgeSpinner.setModel(new SpinnerNumberModel(3, 1, 12, 1));
-        rabbitDeathAgeSpinner.setModel(new SpinnerNumberModel(60, 1, 120, 1));
-        foxMaturityAgeSpinner.setModel(new SpinnerNumberModel(12, 1, 120, 1));
-        foxDeathAgeSpinner.setModel(new SpinnerNumberModel(60, 1, 120, 1));
-        yearsSpinner.setModel(new SpinnerNumberModel(0, 0, 50, 1));
+        rabbitMaturityAgeSpinner.setModel(new SpinnerNumberModel(3, 0, 1000, 1));
+        rabbitDeathAgeSpinner.setModel(new SpinnerNumberModel(60, 0, 1000, 1));
+        foxMaturityAgeSpinner.setModel(new SpinnerNumberModel(12, 0, 1000, 1));
+        foxDeathAgeSpinner.setModel(new SpinnerNumberModel(60, 0, 1000, 1));
+        yearsSpinner.setModel(new SpinnerNumberModel(0, 0, 9999, 1));
         monthsSpinner.setModel(new SpinnerNumberModel(0, 0, 11, 1));
     }
 
@@ -96,8 +107,16 @@ public class SimulatorGUI extends JFrame{
 
         int years = Integer.parseInt(yearsSpinner.getValue().toString());
         int months = Integer.parseInt(monthsSpinner.getValue().toString());
-
         int totalMonths = years * 12 + months;
+
+        int rabbitMaturityAge = Integer.parseInt(rabbitMaturityAgeSpinner.getValue().toString());
+        Rabbit.setMaturityAge(rabbitMaturityAge);
+        int rabbitDeathAge = Integer.parseInt(rabbitDeathAgeSpinner.getValue().toString());
+        Rabbit.setDeathAge(rabbitDeathAge);
+        int foxMaturityAge = Integer.parseInt(foxMaturityAgeSpinner.getValue().toString());
+        Fox.setMaturityAge(foxMaturityAge);
+        int foxDeathAge = Integer.parseInt(foxDeathAgeSpinner.getValue().toString());
+        Fox.setDeathAge(foxDeathAge);
 
         enableButtons(false);
         ReportPacker reportPacker = Simulator.resetAllStaticValues(totalMonths, 1);

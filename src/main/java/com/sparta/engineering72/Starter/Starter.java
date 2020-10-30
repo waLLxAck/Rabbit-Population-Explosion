@@ -12,11 +12,11 @@ public class Starter {
 
     private static void chooseApplicationStart(int input) {
         if (input == 1) {
+            Display.displayStartMessage();
             int constantChoice =  InputCollector.getConstantsChoice();
             if (constantChoice != 1) {
                 InputCollector.getConstantsInput();
             }
-            Display.displayStartMessage();
             Simulator.runSimulation(InputCollector.getUserInput(), InputCollector.getReportChoice());
         } else if (input == 2) {
             new SimulatorGUI("Rabbit Simulator");

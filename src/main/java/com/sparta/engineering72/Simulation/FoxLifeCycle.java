@@ -113,7 +113,7 @@ public class FoxLifeCycle implements LifeCycle {
         rabbitsHunted = rabbitsHunted.add(rabbitsEaten.min(rabbitPopulation));
         ArrayList<MaleRabbit> maleRabbits = RabbitFluffle.getMaleRabbitList();
         ArrayList<FemaleRabbit> femaleRabbits = RabbitFluffle.getFemaleRabbitList();
-        long idRange = maleRabbits.size() + femaleRabbits.size() - 1;
+        long idRange = maleRabbits.size() + femaleRabbits.size();
         while (rabbitsToHunt.compareTo(BigInteger.valueOf(0)) > 0) {
             long id = Randomizer.getRandomId(idRange);
             if (id > maleRabbits.size() - 1) {
