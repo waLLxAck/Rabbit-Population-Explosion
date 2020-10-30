@@ -1,5 +1,7 @@
 package com.sparta.engineering72.View;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.sparta.engineering72.Utility.ReportPacker;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -12,8 +14,11 @@ public class JSONHandler {
 
     static DecimalFormat myFormatter = new DecimalFormat("###,###,###");
     public static JSONArray jsonArray = new JSONArray();
+    public static ObjectMapper objectMapper=new ObjectMapper();
+
 
     public static JSONArray populateJSON(ReportPacker reportPacker){
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("totalRabbits", myFormatter.format(reportPacker.getTotalRabbits()));
         jsonObject.put("maleRabbits", myFormatter.format(reportPacker.getMaleFoxes()));
@@ -29,7 +34,12 @@ public class JSONHandler {
     }
 
     public static void writeJSONReport(BufferedWriter bufferedWriter, JSONArray jsonArray) throws IOException {
-        bufferedWriter.write(jsonArray.toJSONString());
+        //bufferedWriter.write(jsonArray.toJSONString());
+        bufferedWriter.write(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonArray));
+
+
+
+
     }
 
 }
