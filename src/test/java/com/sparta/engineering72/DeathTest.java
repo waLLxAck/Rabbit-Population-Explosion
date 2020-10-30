@@ -7,33 +7,36 @@ import com.sparta.engineering72.Simulation.Simulator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
+
 public class DeathTest{
     @Test
     public void deathTestBefore1Year() {
         Simulator.runSimulation(11,1);
-        Assertions.assertEquals(true, FoxLifeCycle.rabbitsHunted == 0);
+        Assertions.assertEquals(true, FoxLifeCycle.rabbitsHunted.equals(0));
     }
     @Test
     public void deathTestAfter1Year() {
         Simulator.runSimulation(13, 1);
-        Assertions.assertEquals(true,FoxLifeCycle.rabbitsHunted <= 20);
+        BigInteger ra = BigInteger.valueOf(22);
+        Assertions.assertEquals(true,FoxLifeCycle.rabbitsHunted.compareTo(20) <= 0);
     }
 
     @Test
     public void NaturalRabbitDeathsTest() {
         Simulator.runSimulation(61, 1);
-        Assertions.assertEquals(true, RabbitLifeCycle.naturalDeathCount <= 2);
+        Assertions.assertEquals(true, RabbitLifeCycle.naturalDeathCount.compareTo(2) <= 0);
     }
 
     @Test
     public void FoxLivesBeforeFiveYears() {
         Simulator.runSimulation(59, 1);
-        Assertions.assertEquals(true, FoxLifeCycle.FoxDeathCount == 0);
+        Assertions.assertEquals(true, FoxLifeCycle.FoxDeathCount.equals(0));
     }
     @Test
     public void FoxDiesAfterFiveYears() {
         Simulator.runSimulation(61, 1);
-        Assertions.assertEquals(true, FoxLifeCycle.FoxDeathCount == 2);
+        Assertions.assertEquals(true, FoxLifeCycle.FoxDeathCount.equals(2));
     }
 
 }
