@@ -11,8 +11,8 @@ public class Starter {
     }
 
     private static void chooseApplicationStart(int input) {
+        Display.displayStartMessage();
         if (input == 1) {
-            Display.displayStartMessage();
             int constantChoice =  InputCollector.getConstantsChoice();
             if (constantChoice != 1) {
                 InputCollector.getConstantsInput();
