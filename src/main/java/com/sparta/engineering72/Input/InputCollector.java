@@ -1,5 +1,7 @@
 package com.sparta.engineering72.Input;
 
+import com.sparta.engineering72.Animal.Fox.Fox;
+import com.sparta.engineering72.Animal.Rabbit.Rabbit;
 import com.sparta.engineering72.Log.Logger;
 import com.sparta.engineering72.Utility.Sleeper;
 import com.sparta.engineering72.View.Display;
@@ -90,5 +92,58 @@ public class InputCollector {
             Sleeper.sleep(100);
         }
         return -1;
+    }
+
+    public static int getConstantsChoice() {
+        Scanner scanner = new Scanner(System.in);
+        int input = -1;
+        Display.displayConstantsChoice();
+        do {
+            try {
+                input = scanner.nextInt();
+                if (input < 1 || input > 2) {
+                    throw new InputMismatchException("Invalid input");
+                }
+                return input;
+            } catch (InputMismatchException ime) {
+                Logger.logError(ime, "Invalid input");
+                Display.displayError();
+                Sleeper.sleep(100);
+            }
+        } while (true);
+    }
+
+    public static void getConstantsInput(){
+        int rabbitMaturityAge = -1;
+        int rabbitDeathAge = -1;
+        int foxMaturityAge = -1;
+        int foxDeathAge = -1;
+        do {
+            if (rabbitMaturityAge < 0) {
+                Display.displayRabbitMaturityAge();
+                rabbitMaturityAge = getTime("Months");
+                Rabbit.setMaturityAge(rabbitMaturityAge);
+                continue;
+            }
+            if (rabbitDeathAge < 0) {
+                Display.displayRabbitDeathAge();
+                rabbitDeathAge = getTime("Months");
+                Rabbit.setDeathAge(rabbitDeathAge);
+                continue;
+            }
+            if (foxMaturityAge < 0) {
+                Display.displayFoxMaturityAge();
+                foxMaturityAge = getTime("Months");
+                Fox.setMaturityAge(foxMaturityAge);
+                continue;
+            }
+            if (foxDeathAge < 0) {
+                Display.displayFoxDeathAge();
+                foxDeathAge = getTime("Months");
+                Fox.setDeathAge(foxDeathAge);
+                continue;
+            }
+            return;
+        } while (true);
     }
 }
