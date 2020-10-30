@@ -52,10 +52,10 @@ public class FemaleFox extends Fox{
         MaleFox malefox = new MaleFox();
         FemaleFox femalefox = new FemaleFox();
 
-        BigInteger[] randomGenders;
+        long[] randomGenders;
 
         if (count.compareTo(Settings.MAX_COUNT_THRESHOLD) > 0){
-            BigInteger totalOffspring = BigInteger.valueOf(count.multiply(averageOffspringCount));
+            BigInteger totalOffspring = count.multiply(averageOffspringCount);
             malefox.setCount(totalOffspring.divide(BigInteger.valueOf(2)));
             femalefox.setCount(totalOffspring.divide(BigInteger.valueOf(2)));
         } else {
@@ -64,16 +64,16 @@ public class FemaleFox extends Fox{
 
             BigInteger totalOffspring = BigInteger.valueOf(0);
 
-            BigInteger[] childrenArray = Randomizer.getRandomFoxOffspring(count);
+            long[] childrenArray = Randomizer.getRandomFoxOffspring(count.longValue());
 
-            for (BigInteger child : childrenArray) {
-                totalOffspring = totalOffspring.add(child);
+            for (long child : childrenArray) {
+                totalOffspring = totalOffspring.add(BigInteger.valueOf(child));
             }
 
-            randomGenders = Randomizer.getRandomGender(totalOffspring);
+            randomGenders = Randomizer.getRandomGender(totalOffspring.longValue());
 
             for(int j = 0; j < totalOffspring.intValue(); j++) {
-                if (randomGenders[j].compareTo(BigInteger.valueOf(1)) == 0) {
+                if (randomGenders[j] == 1) {
                     countMaleOffspring = countMaleOffspring.add(BigInteger.ONE);
                 } else {
                     countFemaleOffspring = countFemaleOffspring.add(BigInteger.ONE);

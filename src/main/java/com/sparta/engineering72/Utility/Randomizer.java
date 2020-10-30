@@ -16,7 +16,7 @@ public class Randomizer {
         return ThreadLocalRandom.current().nextInt(14)+1;
     }
 
-    public static BigInteger[] getRandomFoxOffspring(BigInteger pregnancies) {
+    public static long[] getRandomFoxOffspring(long pregnancies) {
         return ThreadLocalRandom.current().longs(pregnancies, 1, 11).toArray();
     }
 

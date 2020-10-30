@@ -1,6 +1,7 @@
 package com.sparta.engineering72.Simulation;
 
 import com.sparta.engineering72.Animal.Animal;
+import com.sparta.engineering72.Animal.Fox.FemaleFox;
 import com.sparta.engineering72.Animal.Rabbit.FemaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.MaleRabbit;
 import com.sparta.engineering72.Animal.Rabbit.RabbitFluffle;
@@ -44,7 +45,7 @@ public class RabbitLifeCycle implements LifeCycle {
     @Override
     public void breed() {
         if (pregnancies.compareTo(BigInteger.valueOf(0)) > 0) {
-            List<Animal> animals = FemaleRabbit.breed(BigInteger.valueOf(pregnancies));
+            List<Animal> animals = FemaleRabbit.breed(pregnancies);
             for (Animal animal : animals) {
                 if (animal.getGender() == Animal.Gender.MALE) {
                     maleRabbits.add((MaleRabbit) animal);
@@ -60,13 +61,13 @@ public class RabbitLifeCycle implements LifeCycle {
         BigInteger maleRabbitCount = BigInteger.valueOf(0);
         for (MaleRabbit rabbit : maleRabbits) {
             if (rabbit.isMature()) {
-                maleRabbitCount.add(BigInteger.valueOf(rabbit.getCount());
+                maleRabbitCount = maleRabbitCount.add(rabbit.getCount());
             }
         }
         BigInteger femaleRabbitCount = BigInteger.valueOf(0);
         for (FemaleRabbit rabbit : femaleRabbits) {
             if (rabbit.isMature()) {
-                femaleRabbitCount.add(BigInteger.valueOf(rabbit.getCount());
+                femaleRabbitCount = femaleRabbitCount.add(rabbit.getCount());
             }
         }
         BigInteger potentialPregnancies = maleRabbitCount.min(femaleRabbitCount);
@@ -76,13 +77,13 @@ public class RabbitLifeCycle implements LifeCycle {
             totalPregnancies = potentialPregnancies;
         } else {
             if (potentialPregnancies.compareTo(Settings.MAX_COUNT_THRESHOLD) > 0) {
-                // see whats happening with this
-                totalPregnancies = (BigInteger) (potentialPregnancies * FemaleRabbit.getPregnancyChance());
+                int pregnancyChance = (int) (1/ FemaleRabbit.getPregnancyChance());
+                totalPregnancies = potentialPregnancies.divide(BigInteger.valueOf(pregnancyChance));
             } else {
                 int potentialPregnanciesInt = potentialPregnancies.intValue();
                 for (int i = 0; i < potentialPregnanciesInt; i++) {
                     if (Randomizer.getPregnancyChance(FemaleRabbit.getPregnancyChance()) == 1) {
-                        totalPregnancies.add(BigInteger.valueOf(1));
+                        totalPregnancies = totalPregnancies.add(BigInteger.valueOf(1));
                     }
                 }
             }

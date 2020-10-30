@@ -29,25 +29,25 @@ public class Printer {
 
     private static void printRabbitPopulation(ReportPacker reportPacker){
         System.out.println(" == RABBIT POPULATION REPORT == ");
-        printFinalPopulation(BigInteger.valueOf(reportPacker.getTotalRabbits()),"Rabbits");
-        printMalePopulation(BigInteger.valueOf(reportPacker.getMaleRabbits()),"Rabbits");
-        printFemalePopulation(BigInteger.valueOf(reportPacker.getFemaleRabbits()),"Rabbits");
+        printFinalPopulation(reportPacker.getTotalRabbits(),"Rabbits");
+        printMalePopulation(reportPacker.getMaleRabbits(),"Rabbits");
+        printFemalePopulation(reportPacker.getFemaleRabbits(),"Rabbits");
         System.out.println("--------------------------------------------------------------");
     }
 
     private static void printFoxPopulation(ReportPacker reportPacker){
         System.out.println(" == FOX POPULATION REPORT == ");
-        printFinalPopulation(BigInteger.valueOf(reportPacker.getTotalFoxes()),"Foxes");
-        printMalePopulation(BigInteger.valueOf(reportPacker.getMaleFoxes()),"Foxes");
-        printFemalePopulation(BigInteger.valueOf(reportPacker.getFemaleFoxes()),"Foxes");
+        printFinalPopulation(reportPacker.getTotalFoxes(),"Foxes");
+        printMalePopulation(reportPacker.getMaleFoxes(),"Foxes");
+        printFemalePopulation(reportPacker.getFemaleFoxes(),"Foxes");
         System.out.println("--------------------------------------------------------------");
     }
 
     private static void printRabbitDeaths(ReportPacker reportPacker){
         System.out.println(" == DEATH REPORT == ");
-        printRabbitAgeDeathCount(BigInteger.valueOf(reportPacker.getRabbitAgeDeaths()));
-        printRabbitPreyDeathCount(BigInteger.valueOf(reportPacker.getRabbitPreyDeaths()));
-        printFoxDeathCount(BigInteger.valueOf(reportPacker.getFoxDeaths()));
+        printRabbitAgeDeathCount(reportPacker.getRabbitAgeDeaths());
+        printRabbitPreyDeathCount(reportPacker.getRabbitPreyDeaths());
+        printFoxDeathCount(reportPacker.getFoxDeaths());
         System.out.println("==============================================================\n");
     }
 

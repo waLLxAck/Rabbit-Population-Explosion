@@ -23,7 +23,7 @@ public class RabbitFluffle {
     public BigInteger getFemaleRabbitPopulation(){
         BigInteger femalePopulation = BigInteger.valueOf(0);
         for(FemaleRabbit femaleRabbit : femaleRabbitList){
-            femalePopulation = femalePopulation.add(BigInteger.valueOf(femaleRabbit.getCount()));
+            femalePopulation = femalePopulation.add(femaleRabbit.getCount());
         }
         return femalePopulation;
     }
